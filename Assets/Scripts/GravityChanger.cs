@@ -1,24 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GravityChanger : MonoBehaviour {
 
     public float FRotSpeed = 1.0F;
 
     CapsuleCollider CharacterCollider;
+    Rigidbody RigidbodyComp;
+    RaycastHit GroundRaycastHit;
 
     GameObject Ground;
     bool BisRotating = false;
     Vector3 VCollisionPoint;
     Vector3 VUpVector;
     Vector3 VForwardVector;
+    Vector3 VMovmentVector;
     Quaternion StartRot;
     Quaternion TargetRot;
+    RigidbodyFirstPersonController FirstPersonControllerScript;
     float FstartTime;
     float FjourneyLength;
 
 	// Use this for initialization
 	void Start () {
+        CharacterCollider = gameObject.GetComponent<CapsuleCollider>();
+        RigidbodyComp = gameObject.GetComponent<Rigidbody>();
+        FirstPersonControllerScript = gameObject.GetComponent<RigidbodyFirstPersonController>();
 	
 	}
 	
@@ -38,6 +46,7 @@ public class GravityChanger : MonoBehaviour {
                 SendMessage("ReInitMouseLook");
             }
         }
+
 	
 	}
 
@@ -67,21 +76,42 @@ public class GravityChanger : MonoBehaviour {
         if(other.collider.gameObject.name == Ground.name)
         {
             Debug.Log("CollisionExit");
-            Debug.DrawRay(transform.position, transform.up * -10, Color.yellow, 100.0f);
-            Vector3 RayCastStart = transform.position;
-            RayCastStart = RayCastStart - Physics.gravity.normalized * CharacterCollider.height;
-            Debug.Log(RayCastStart);
-            RaycastHit hit;
-            /*if (Physics.Raycast(transform.position, transform.up, out hit))
+
+            VMovmentVector = RigidbodyComp.velocity;
+            if(Physics.gravity.x != 0)
             {
+                VMovmentVector.x = 0;
+            }
+            else
+            {
+                if (Physics.gravity.y != 0)
+                {
+                    VMovmentVector.y = 0;
+                } 
+                else
+                {
+                    VMovmentVector.z = 0;
+                }
+            }
+            Vector3 RayCastStart;
+            RayCastStart = transform.position - (transform.up * CharacterCollider.height/2);
+            Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -2) + (transform.up * CharacterCollider.radius * -1); 
+            RaycastHit hit;
+            Debug.DrawRay(RayCastStart, RayCastDir, Color.yellow, 100.0f);
+
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 1.0f, 1<<8))
+            {
+                Debug.Log(hit.collider.name);
+                FstartTime = Time.time;
                 StartRot = transform.rotation;
-                VUpVector = hit.transform.up;
+                VUpVector = hit.normal;
                 VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
                 TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
+                RigidbodyComp.AddForce(VForwardVector * 100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
                 BisRotating = true;
                 SendMessage("setRotating", true);
-                Physics.gravity = hit.transform.up * -9.81F;
-            }*/
+                Physics.gravity = hit.normal * -9.81F;
+            }
         }
     }
 
