@@ -424,7 +424,7 @@ GameObject:
   - 33: {fileID: 623739345}
   - 23: {fileID: 623739343}
   - 65: {fileID: 623739342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane 2
   m_TagString: Wand
   m_Icon: {fileID: 0}
@@ -497,9 +497,9 @@ GameObject:
   - 33: {fileID: 632589720}
   - 65: {fileID: 632589719}
   - 23: {fileID: 632589718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube 1
-  m_TagString: Untagged
+  m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,7 +570,7 @@ GameObject:
   - 33: {fileID: 642495252}
   - 23: {fileID: 642495250}
   - 65: {fileID: 642495249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Wand
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   - 33: {fileID: 1017159539}
   - 23: {fileID: 1017159537}
   - 65: {fileID: 1017159536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane 3
   m_TagString: Wand
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   - 33: {fileID: 1121631851}
   - 23: {fileID: 1121631849}
   - 65: {fileID: 1121631848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane 4
   m_TagString: Wand
   m_Icon: {fileID: 0}
@@ -922,9 +922,9 @@ GameObject:
   - 33: {fileID: 1191460026}
   - 136: {fileID: 1191460025}
   - 23: {fileID: 1191460024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1308,7 +1308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FRotSpeed: 3
-  Ground: {fileID: 642495248}
 --- !u!1 &1702522376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1514,7 @@ GameObject:
   - 33: {fileID: 1872854529}
   - 23: {fileID: 1872854527}
   - 65: {fileID: 1872854526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane 5
   m_TagString: Wand
   m_Icon: {fileID: 0}
@@ -1661,7 +1660,7 @@ GameObject:
   - 33: {fileID: 2142922172}
   - 23: {fileID: 2142922170}
   - 65: {fileID: 2142922169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane 1
   m_TagString: Wand
   m_Icon: {fileID: 0}

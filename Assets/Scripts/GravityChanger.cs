@@ -4,7 +4,9 @@ using System.Collections;
 public class GravityChanger : MonoBehaviour {
 
     public float FRotSpeed = 1.0F;
-    
+
+    CapsuleCollider CharacterCollider;
+
     GameObject Ground;
     bool BisRotating = false;
     Vector3 VCollisionPoint;
@@ -57,6 +59,29 @@ public class GravityChanger : MonoBehaviour {
             BisRotating = true;
             SendMessage("setRotating", true);
             Physics.gravity = AttatchToWall.normal * -9.81F;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if(other.collider.gameObject.name == Ground.name)
+        {
+            Debug.Log("CollisionExit");
+            Debug.DrawRay(transform.position, transform.up * -10, Color.yellow, 100.0f);
+            Vector3 RayCastStart = transform.position;
+            RayCastStart = RayCastStart - Physics.gravity.normalized * CharacterCollider.height;
+            Debug.Log(RayCastStart);
+            RaycastHit hit;
+            /*if (Physics.Raycast(transform.position, transform.up, out hit))
+            {
+                StartRot = transform.rotation;
+                VUpVector = hit.transform.up;
+                VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
+                TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
+                BisRotating = true;
+                SendMessage("setRotating", true);
+                Physics.gravity = hit.transform.up * -9.81F;
+            }*/
         }
     }
 
