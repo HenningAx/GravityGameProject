@@ -154,13 +154,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (m_RigidBody.velocity.sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
                 {
-                    m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    m_RigidBody.AddForce(desiredMove*SlopeMultiplier() * (m_RigidBody.drag/5), ForceMode.Impulse);
                 }
             }
 
             if (m_IsGrounded)
             {
-                m_RigidBody.drag = 5f;
+               m_RigidBody.drag = advancedSettings.slowDownRate; 
 
                 if (m_Jump)
                 {

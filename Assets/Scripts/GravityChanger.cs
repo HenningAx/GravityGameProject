@@ -95,11 +95,11 @@ public class GravityChanger : MonoBehaviour {
             }
             Vector3 RayCastStart;
             RayCastStart = transform.position - (transform.up * CharacterCollider.height/2);
-            Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -2) + (transform.up * CharacterCollider.radius * -1); 
+            Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -8); 
             RaycastHit hit;
-            Debug.DrawRay(RayCastStart, RayCastDir, Color.yellow, 100.0f);
+            Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5, Color.yellow, 100.0f);
 
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 1.0f, 1<<8))
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1<<8))
             {
                 Debug.Log(hit.collider.name);
                 FstartTime = Time.time;
