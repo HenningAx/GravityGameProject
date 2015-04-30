@@ -87,6 +87,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_GroundContactNormal;
         private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
         bool BisRotating = false;
+        private Vector3 desiredMove;
 
 
         public Vector3 Velocity
@@ -144,7 +145,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
                 // always move along the camera forward as it is the direction that it being aimed at
-                Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
+                desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
                 desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
@@ -272,6 +273,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void setRotating(bool isRot)
         {
             BisRotating = isRot;
+        }
+
+        public Vector3 GetdesiredMove()
+        {
+            return desiredMove;
         }
     }
 }

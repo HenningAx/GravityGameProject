@@ -3,15 +3,17 @@ using System.Collections;
 
 public class WheelSpinner : MonoBehaviour {
 
-    public float FrotSpeed = 1.0F;
+    public float FRotSpeed = 1.0F;
+    float FstartTime;
+
     Quaternion StartRot;
     Quaternion TargetRot;
     Quaternion CurrentRot;
 
-    Vector3 VgravityRight = new Vector3 (1.0.0);
-    Vector3 VgravityLeft = new Vector3 (-1.0.0);
-    Vector3 VgravityTop = new Vector3 (0.1.0);
-    Vector3 VgravityBottom = new Vector3(0.-1.0);
+    Vector3 VgravityRight = new Vector3 ( 1F, 0F, 0F);
+    Vector3 VgravityLeft = new Vector3 (-1F, 0F, 0F);
+    Vector3 VgravityTop = new Vector3 (0F, 1F, 0F);
+    Vector3 VgravityBottom = new Vector3(0F, -1F, 0F);
 
 
     public GameObject RotRight;
@@ -37,10 +39,10 @@ public class WheelSpinner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(Gravity.physics.ormalize == VgravityRight.Normalize){
+	if(Physics.gravity.normalized == VgravityRight.normalized){
 
         StartRot = transform.rotation;
-        TargetRot = RotRight;
+        TargetRot = RotRight.transform.rotation;
 
         float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
