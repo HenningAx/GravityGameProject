@@ -716,6 +716,7 @@ GameObject:
   - 33: {fileID: 736714034}
   - 65: {fileID: 736714033}
   - 23: {fileID: 736714032}
+  - 114: {fileID: 736714036}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -773,11 +774,22 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 736714031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.58699989, y: -.736999989, z: -1.42900002}
+  m_LocalPosition: {x: 5.59000015, y: 1.66999996, z: -1.42999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1235142843}
   m_RootOrder: 1
+--- !u!114 &736714036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736714031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0ca79b8a4144f46952bf255d8e54b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &840120969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1364,7 @@ MonoBehaviour:
   advancedSettings:
     groundCheckDistance: .100000001
     stickToGroundHelperDistance: .600000024
-    slowDownRate: 20
+    slowDownRate: 16
     airControl: 0
 --- !u!4 &1637787052
 Transform:

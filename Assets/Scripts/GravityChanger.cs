@@ -12,6 +12,7 @@ public class GravityChanger : MonoBehaviour {
 
     GameObject Ground;
     bool BisRotating = false;
+    bool bOverEdge = false;
     Vector3 VCollisionPoint;
     Vector3 VUpVector;
     Vector3 VForwardVector;
@@ -19,6 +20,7 @@ public class GravityChanger : MonoBehaviour {
     Quaternion StartRot;
     Quaternion TargetRot;
     RigidbodyFirstPersonController FirstPersonControllerScript;
+    float Timer;
     float FstartTime;
     float FjourneyLength;
 
@@ -46,8 +48,6 @@ public class GravityChanger : MonoBehaviour {
                 SendMessage("ReInitMouseLook");
             }
         }
-
-	
 	}
 
     void OnCollisionEnter(Collision other)
@@ -56,27 +56,17 @@ public class GravityChanger : MonoBehaviour {
         if(other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
         {
             VCollisionPoint = other.contacts[0].point;
-            Debug.DrawRay(transform.position, (VCollisionPoint - transform.position) * 6, Color.red, 100.0f);
             RaycastHit AttatchToWall;
             Physics.Raycast(transform.position, VCollisionPoint - transform.position, out AttatchToWall, 100.0f, 1 << 8);
-            FstartTime = Time.time;
-            Ground = AttatchToWall.collider.gameObject; 
-            StartRot = transform.rotation;
-            VUpVector = AttatchToWall.normal;
-            VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
-            TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
-            BisRotating = true;
-            SendMessage("setRotating", true);
-            Physics.gravity = AttatchToWall.normal * -9.81F;
+            StartWalkingOnWall(AttatchToWall);
+
         }
     }
 
     void OnCollisionExit(Collision other)
     {
-        if(other.collider.gameObject.name == Ground.name)
+        if(other.collider.gameObject.name == Ground.name && !BisRotating)
         {
-            Debug.Log("CollisionExit");
-
             VMovmentVector = RigidbodyComp.velocity;
             if(Physics.gravity.x != 0)
             {
@@ -93,25 +83,14 @@ public class GravityChanger : MonoBehaviour {
                     VMovmentVector.z = 0;
                 }
             }
-            Vector3 RayCastStart;
-            RayCastStart = transform.position - (transform.up * CharacterCollider.height/2);
+            Vector3 RayCastStart = transform.position - (transform.up * CharacterCollider.height/2);
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -8); 
             RaycastHit hit;
-            Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5, Color.yellow, 100.0f);
-
             if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1<<8))
             {
-                Debug.Log(hit.collider.name);
-                FstartTime = Time.time;
-                StartRot = transform.rotation;
-                VUpVector = hit.normal;
-                VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
-                TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
-                RigidbodyComp.AddForce(VForwardVector * 100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
-                BisRotating = true;
-                SendMessage("setRotating", true);
-                Physics.gravity = hit.normal * -9.81F;
+                StartWalkingOnWall(hit);
             }
+            RigidbodyComp.AddForce(transform.up * -100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
         }
     }
 
@@ -119,19 +98,24 @@ public class GravityChanger : MonoBehaviour {
     {
                 if(other.tag == "ChangePlatform" && other.gameObject != Ground && !BisRotating)
                 {
-                    FstartTime = Time.time;
                     RaycastHit hit;
                     if(Physics.Raycast(transform.position, transform.up, out hit))
                     {
-                        Ground = hit.transform.gameObject;
-                    }
-                    StartRot = transform.rotation;
-                    VUpVector = hit.transform.up;
-                    VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
-                    TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
-                    BisRotating = true;
-                    SendMessage("setRotating", true);
-                    Physics.gravity = hit.transform.up * -9.81F;
+                        StartWalkingOnWall(hit);
+                    }   
                 }
     }
+
+    void StartWalkingOnWall(RaycastHit Wall)
+    {
+        FstartTime = Time.time;
+        Ground = Wall.collider.gameObject;
+        StartRot = transform.rotation;
+        VUpVector = Wall.normal;
+        TargetRot = Quaternion.Euler(Vector3.Cross(VUpVector, transform.up).normalized * -Vector3.Angle(VUpVector, transform.up)) * transform.rotation;
+        BisRotating = true;
+        SendMessage("setRotating", true);
+        Physics.gravity = Wall.normal * -9.81F;
+    }
+    
 }
