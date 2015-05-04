@@ -57,7 +57,7 @@ public class GravityChanger : MonoBehaviour {
         {
             VCollisionPoint = other.contacts[0].point;
             RaycastHit AttatchToWall;
-            Physics.Raycast(transform.position, VCollisionPoint - transform.position, out AttatchToWall, 100.0f, 1 << 8);
+            Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 100.0f, 1 << 8);
             StartWalkingOnWall(AttatchToWall);
         }
     }
@@ -72,10 +72,12 @@ public class GravityChanger : MonoBehaviour {
             VMovmentVector = Vector3.ProjectOnPlane(VMovmentVector, transform.up);
             Vector3 RayCastStart = transform.position - (transform.up * CharacterCollider.height/2);
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn); 
-            RaycastHit hit;
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1<<8))
+            RaycastHit hitNew;
+            RaycastHit hitOld;
+            Physics.Raycast(transform.position, -transform.up, out hitOld);
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hitNew, 5.0f, 1<<8) && hitNew.normal != hitOld.normal)
             {
-                StartWalkingOnWall(hit);
+                StartWalkingOnWall(hitNew);
             }
             RigidbodyComp.AddForce(transform.up * -100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
         }
