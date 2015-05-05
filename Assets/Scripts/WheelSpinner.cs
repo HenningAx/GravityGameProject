@@ -1,51 +1,83 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WheelSpinner : MonoBehaviour {
+public class SpinningWheelScript : MonoBehaviour
+{
 
-    public float FRotSpeed = 1.0F;
-    float FstartTime;
+    //Inspector variables
+    public float FrotSpeedSource;
 
-    Quaternion StartRot;
+    //Local variables
     Quaternion TargetRot;
-    Quaternion CurrentRot;
+    Quaternion StartRot;
+    float FstartTime;
+    float FrotAngle;
+    float FrotSpeed;
+    bool BisRotating = false;
+    Vector3 VGravity;
 
-    Vector3 VgravityRight = new Vector3 ( 1F, 0F, 0F);
-    Vector3 VgravityLeft = new Vector3 (-1F, 0F, 0F);
-    Vector3 VgravityTop = new Vector3 (0F, 1F, 0F);
-    Vector3 VgravityBottom = new Vector3(0F, -1F, 0F);
+    // Use this for initialization
+    void Start()
+    {
+        VGravity = Physics.gravity;
 
-
-    public GameObject RotRight;
-    public GameObject RotLeft;
-    public GameObject RotTop;
-    public GameObject RotBottom;
-
-   
-
- 
-
-   // Quaternion RotRight = Quaternion.EulerAngles(-20,0,0);
-    //Quaternion RotLeft = Quaternion.EulerAngles(160,0,0);
-    //Quaternion RotTop = Quaternion.EulerAngles(70,0,0);
-    //Quaternion RotBottom = Quaternion.EulerAngles(250,0,0);
-
-
-
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	if(Physics.gravity.normalized == VgravityRight.normalized){
-
-        StartRot = transform.rotation;
-        TargetRot = RotRight.transform.rotation;
-
-        float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
-            transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
     }
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (VGravity != Physics.gravity)
+        {
+            GravityChange();
+        }
+
+        if (BisRotating)
+        {
+            float FdistCovered = (Time.time - FstartTime) * FrotSpeed;
+            if (FrotAngle != 0)
+            {
+                //Rotate the wheel with ease in and ease out
+                float FrotFrac = FdistCovered / FrotAngle;
+                //float FsmoothDistance = Mathf.SmoothStep(0, 1, FrotFrac);
+                float FsmoothDistance = smootherstep(0, 1, FrotFrac);
+                transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FsmoothDistance);
+                if (FrotFrac >= 1)
+                {
+                    BisRotating = false;
+                }
+            }
+        }
+
+        VGravity = Physics.gravity;
+
+
+    }
+
+    void GravityChange()
+    {
+        //Project the gravity vector on the plane the wheel is onto
+        Vector3 GravityProjected = Vector3.ProjectOnPlane(Physics.gravity, transform.forward);
+        //if the magnitude of this vector is zero the wheel will not spin because the gravity parallel to the axis of the wheel
+        if (GravityProjected.magnitude != 0)
+        {
+            //Get the new rotation of the wheel by making the up vector of the wheel, which is facing the heayiest point of the wheel, the same as the projected gravity vector
+            //Because the gravity vector is projected to the plan of the wheel, the wheel can only spin around its forward axis, which is parralel to its physic axis
+            TargetRot = Quaternion.LookRotation(transform.forward, GravityProjected);
+            StartRot = transform.rotation;
+            FrotSpeed = FrotSpeedSource * GravityProjected.magnitude;
+            FstartTime = Time.time;
+            BisRotating = true;
+            FrotAngle = Quaternion.Angle(StartRot, TargetRot);
+        }
+
+    }
+
+    //Very smooth interpolate between f1 und f2
+    float smootherstep(float edge0, float edge1, float x)
+    {
+        // Scale, and clamp x to 0..1 range
+        x = Mathf.Clamp((x - edge0) / (edge1 - edge0), 0.0f, 1.0f);
+        // Evaluate polynomial
+        return x * x * x * (x * (x * 6 - 15) + 10);
+    }
 }
