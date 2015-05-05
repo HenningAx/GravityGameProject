@@ -42,6 +42,7 @@ namespace UnityStandardAssets.Utility
 
 			// Damp the height
 			currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+            print(heightDamping * Time.deltaTime);
 
 			// Convert the angle into a rotation
 			var currentRotation = Quaternion.Euler(0, currentRotationAngle, 0);
