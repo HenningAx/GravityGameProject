@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class GravityChanger : MonoBehaviour {
+public class GravityChanger : MonoBehaviour
+{
 
     public float FRotSpeedEdge = 1.0F;
     public float FRotSpeedFlip = 2.0F;
@@ -20,83 +21,94 @@ public class GravityChanger : MonoBehaviour {
     Vector3 VMovmentVector;
     Quaternion StartRot;
     Quaternion TargetRot;
+    RaycastHit LastHit;
     float Timer;
     float FstartTime;
     float FjourneyLength;
     float FRotSpeed;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         CharacterCollider = gameObject.GetComponent<CapsuleCollider>();
         RigidbodyComp = gameObject.GetComponent<Rigidbody>();
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
 
-        if(BisRotating)
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (BisRotating)
         {
             float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
             SendMessage("setRotating", false);
             SendMessage("ReInitMouseLook");
-            if(FdistCovered >= 1)
+            if (FdistCovered >= 1)
             {
                 BisRotating = false;
                 SendMessage("setRotating", false);
                 SendMessage("ReInitMouseLook");
             }
         }
-	}
+    }
 
     void OnCollisionEnter(Collision other)
     {
-        
-        if(other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
+        print("enter");
+        if (other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
         {
             VCollisionPoint = other.contacts[0].point;
             RaycastHit AttatchToWall;
-            Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 100.0f, 1 << 8);
-            StartWalkingOnWall(AttatchToWall);
+            if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f, 1 << 8))
+            {
+                StartWalkingOnWall(AttatchToWall);
+            }
         }
     }
 
   void OnCollisionExit(Collision other)
     {
-        if(other.collider.gameObject.name == Ground.name && !BisRotating)
+        if (other.gameObject.tag == "Wand" && !BisRotating)
         {
             //Get the vector in which direction the player moves
             VMovmentVector = RigidbodyComp.velocity;
             //Project the vector on the plane the character is walking on 
             VMovmentVector = Vector3.ProjectOnPlane(VMovmentVector, transform.up);
-            Vector3 RayCastStart = transform.position - (transform.up * CharacterCollider.height/2);
-            Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn); 
-            RaycastHit hitNew;
-            RaycastHit hitOld;
-            Physics.Raycast(transform.position, -transform.up, out hitOld);
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hitNew, 5.0f, 1<<8) && hitNew.normal != hitOld.normal)
+            Vector3 RayCastStart = transform.position - (transform.up * CharacterCollider.height / 3);
+            Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
+            RaycastHit hit;
+            Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5.0f, Color.green, 5.0f);
+            print("exit");
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1 << 8))
             {
-                StartWalkingOnWall(hitNew);
+                //print("WalkOverEdge " + hit.collider.name);
+                if (LastHit.normal != hit.normal)
+                {
+                    print(LastHit.normal);
+                    print(hit.normal);
+                    StartWalkingOnWall(hit);
+                }
             }
             RigidbodyComp.AddForce(transform.up * -100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
         }
-    } 
+    }
 
     void OnTriggerEnter(Collider other)
     {
         //Check if the Trigger is a platform to change gravity
-                if(other.tag == "ChangePlatform" && other.gameObject != Ground && !BisRotating)
-                {
-                    //Sent an Raycast straight upwards to find the new ground of the Player
-                    RaycastHit hit;
-                    if(Physics.Raycast(transform.position, transform.up, out hit))
-                    {
-                        //Flip the Gravity using the surface hit by the Raycast
-                        FlipGravity(hit);
-                    }   
-                }
-    }
+        if (other.tag == "ChangePlatform" && other.gameObject != Ground && !BisRotating)
+        {
+            //Sent an Raycast straight upwards to find the new ground of the Player
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.up, out hit))
+            {
+                //Flip the Gravity using the surface hit by the Raycast
+                FlipGravity(hit);
+            }
+            RigidbodyComp.AddForce(transform.up * -100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
+        }
+    } 
 
     void StartWalkingOnWall(RaycastHit Wall)
     {
@@ -120,6 +132,8 @@ public class GravityChanger : MonoBehaviour {
 
         //Change Gravity
         Physics.gravity = Wall.normal * -9.81F;
+
+        LastHit = Wall;
     }
 
     void FlipGravity(RaycastHit Wall)
@@ -147,5 +161,4 @@ public class GravityChanger : MonoBehaviour {
         Physics.gravity = Wall.normal * -9.81F;
 
     }
-    
 }
