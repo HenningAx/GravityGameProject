@@ -33,23 +33,23 @@ public class PickUpScript : MonoBehaviour {
                 if (Input.GetButtonDown("PickUp"))
                 {
                     BhasObject = true;
+
                     //Save the picked up obejct
                     GpickUpObject = pickUpObjectHit.collider.gameObject;
+
                     //Save the old parent of the picked up object
                     if (GpickUpObject.transform.parent != null && GpickUpObject.transform.parent != Camera.main.transform)
                     {
                         GoldParent = GpickUpObject.transform.parent.gameObject;
                         GpickUpObject.transform.parent = null;
                     }
+
+                    //GpickUpObject.transform.SetParent(Camera.main.transform);
+
                     //Set the main Camera as the new parent of the object
                     pickedUpRot = GpickUpObject.transform.rotation;
                     VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
-                    Debug.DrawRay(VtargetPosition, Vector3.up, Color.red, 20.0f);
-                    Debug.DrawRay(VtargetPosition, Vector3.down, Color.red, 20.0f);
-                    Debug.DrawRay(VtargetPosition, Vector3.back, Color.red, 20.0f);
-                    Debug.DrawRay(VtargetPosition, Vector3.forward, Color.red, 20.0f);
-                    Debug.DrawRay(VtargetPosition, Vector3.right, Color.red, 20.0f);
-                    Debug.DrawRay(VtargetPosition, Vector3.left, Color.red, 20.0f);
+                    DebugExtensions.DrawPoint(VtargetPosition, Color.yellow, 20.0f);
                     pickUpObjectRigidbody = GpickUpObject.GetComponent<Rigidbody>();
                     //Set the pickup object to kinematic
                     pickUpObjectRigidbody.useGravity = false;
@@ -63,7 +63,7 @@ public class PickUpScript : MonoBehaviour {
         {
             VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
             MoveToTargetWithDamp(GpickUpObject, VtargetPosition, FmoveDampning);
-            //RotateToWithDamp(GpickUpObject, pickedUpRot, FrotDampning);
+            RotateToWithDamp(GpickUpObject,Camera.main.transform.rotation, FrotDampning);
             if(Input.GetButtonDown("PickUp"))
             {
                 BhasObject = false;
@@ -73,6 +73,7 @@ public class PickUpScript : MonoBehaviour {
                 {
                     GpickUpObject.transform.parent = GoldParent.transform;
                 }
+                GpickUpObject.transform.SetParent(null);
                 GoldParent = null;
             }
         }

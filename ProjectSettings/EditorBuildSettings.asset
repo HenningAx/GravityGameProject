@@ -6,4 +6,4 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/3d Assets/Scenes/PrototypeRoom.unity
+    path: Assets/Scenes/PrototypeRoom.unity
