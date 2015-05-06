@@ -13,6 +13,7 @@ public class PickUpScript : MonoBehaviour {
     Vector3 VoffsetVector;
     Vector3 VtargetPosition;
     Quaternion pickedUpRot;
+    Quaternion realtivRotation;
     Rigidbody pickUpObjectRigidbody;
     bool BhasObject = false;
 
@@ -27,7 +28,7 @@ public class PickUpScript : MonoBehaviour {
         if(!BhasObject)
         {
             Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 3.0f, Color.green, 5.0f);
-            //Make a Raycast that only hits object on the "PickUpObjects" layer
+            //Make a Raycast that only hits objects on the "PickUpObjects" layer
             if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * 3.0f, out pickUpObjectHit, 5.0f, 1 << 9))
             {
                 if (Input.GetButtonDown("PickUp"))
@@ -48,6 +49,8 @@ public class PickUpScript : MonoBehaviour {
 
                     //Set the main Camera as the new parent of the object
                     pickedUpRot = GpickUpObject.transform.rotation;
+                    realtivRotation = Quaternion.Inverse(this.transform.rotation) * pickedUpRot;
+                    Debug.Log(pickedUpRot.eulerAngles);
                     VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
                     DebugExtensions.DrawPoint(VtargetPosition, Color.yellow, 20.0f);
                     pickUpObjectRigidbody = GpickUpObject.GetComponent<Rigidbody>();
@@ -63,7 +66,7 @@ public class PickUpScript : MonoBehaviour {
         {
             VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
             MoveToTargetWithDamp(GpickUpObject, VtargetPosition, FmoveDampning);
-            RotateToWithDamp(GpickUpObject,Camera.main.transform.rotation, FrotDampning);
+            RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
             if(Input.GetButtonDown("PickUp"))
             {
                 BhasObject = false;
