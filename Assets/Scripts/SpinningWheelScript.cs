@@ -30,19 +30,21 @@ public class SpinningWheelScript : MonoBehaviour {
 
         if (BisRotating)
         {
-            float FdistCovered = (Time.time - FstartTime) * FrotSpeed;
-            if (FrotAngle != 0)
-            {
-                //Rotate the wheel with ease in and ease out
-                float FrotFrac = FdistCovered / FrotAngle;
-                //float FsmoothDistance = Mathf.SmoothStep(0, 1, FrotFrac);
-                float FsmoothDistance = smootherstep(0, 1, FrotFrac);
-                transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FsmoothDistance);
-                if (FrotFrac >= 1)
-                {
-                    BisRotating = false;
-                }
-            }
+            //float FdistCovered = (Time.time - FstartTime) * FrotSpeed;
+            //if (FrotAngle != 0)
+            //{
+            //    //Rotate the wheel with ease in and ease out
+            //    float FrotFrac = FdistCovered / FrotAngle;
+            //    //float FsmoothDistance = Mathf.SmoothStep(0, 1, FrotFrac);
+            //    float FsmoothDistance = smootherstep(0, 1, FrotFrac);
+            //    transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FsmoothDistance);
+            //    if (FrotFrac >= 1)
+            //    {
+            //        BisRotating = false;
+            //    }
+            //}
+
+            gameObject.smoothRotate(StartRot, TargetRot, FrotAngle, FstartTime, FrotSpeed);
         }
 
         VGravity = Physics.gravity;

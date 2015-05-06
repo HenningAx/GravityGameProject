@@ -37,18 +37,19 @@ public class SlidingDoorsScript : MonoBehaviour {
 
         if (BisMoving)
         {
-            float FdistCovered = (Time.time - FstartTime) * FmoveSpeed;
-            if (FmoveDistance != 0)
-            {
-                //Move the door with ease in and ease out
-                float FmoveFrac = FdistCovered / FmoveDistance;
-                float FsmoothDistance = smootherstep(0, 1, FmoveFrac);
-                transform.position = Vector3.Lerp(VstartPos, VtargetPos, FsmoothDistance);
-                if (FmoveFrac >= 1)
-                {
-                    BisMoving = false;
-                }
-            }
+            //float FdistCovered = (Time.time - FstartTime) * FmoveSpeed;
+            //if (FmoveDistance != 0)
+            //{
+            //    //Move the door with ease in and ease out
+            //    float FmoveFrac = FdistCovered / FmoveDistance;
+            //    float FsmoothDistance = smootherstep(0, 1, FmoveFrac);
+            //    transform.position = Vector3.Lerp(VstartPos, VtargetPos, FsmoothDistance);
+            //    if (FmoveFrac >= 1)
+            //    {
+            //        BisMoving = false;
+            //    }
+            //}
+            BisMoving = gameObject.smoothTranslate(VstartPos, VtargetPos, FmoveDistance, FstartTime, FmoveSpeed);
         }
 
         VoldGravity = Physics.gravity;

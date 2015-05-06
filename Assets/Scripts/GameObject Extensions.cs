@@ -25,4 +25,26 @@ public static class GameObjectExtensions
             return false;
         }
     }
+
+    public static bool smoothRotate (this GameObject gameObject, Quaternion startRot, Quaternion targetRot, float angle, float startTime, float speed)
+    {
+        float FdistCovered = (Time.time - startTime) * speed;
+        if (angle != 0)
+        {
+            //Rotate the wheel with ease in and ease out
+            float FrotFrac = FdistCovered / angle;
+            float FsmoothDistance = MathExtensions.smootherstep(0, 1, FrotFrac);
+            gameObject.transform.rotation = Quaternion.Slerp(startRot, targetRot, FsmoothDistance);
+            if (FrotFrac >= 1)
+            {
+                return false;
+            } else
+            {
+                return true;
+            }
+        } else
+        {
+            return false;
+        }
+    }
 }
