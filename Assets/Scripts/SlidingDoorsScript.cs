@@ -5,6 +5,7 @@ public class SlidingDoorsScript : MonoBehaviour {
 
     public float FmoveSpeedSource;
     public bool BdoubleSided;
+    public bool BisLocked;
 
     Vector3 VoldGravity;
     Vector3 VstartPos;
@@ -19,7 +20,8 @@ public class SlidingDoorsScript : MonoBehaviour {
 	void Start () {
         VoldGravity = Physics.gravity;
         VsourcePos = transform.position;
-	
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
@@ -58,12 +60,12 @@ public class SlidingDoorsScript : MonoBehaviour {
 
     void MoveDoorDouble()
     {
-        //Project the gravity vector on the plane the wheel is onto
+        //Project the gravity vector on the forward-right plane of the object
         Vector3 GravityProjected = Vector3.ProjectOnPlane(Physics.gravity, transform.up);
-        //Project the vector on another plane to project it at the right axis of the object
+        //Project the vector on the right-up plane to project it at the right axis of the object
         Vector3 GravityOnAxis = Vector3.ProjectOnPlane(GravityProjected, transform.forward);
-        //if the magnitude of this vector is zero the wheel will not spin because the gravity parallel to the axis of the wheel
-        if (GravityProjected.magnitude != 0 && GravityOnAxis.magnitude > 0.001f)
+        //if the magnitude of this vector is zero the object will not move because the gravity has no effect in the move direction of the object
+        if (GravityProjected.magnitude != 0 && GravityOnAxis.magnitude > 0.001f && !BisLocked)
         {
             BisMoving = true;
             VstartPos = transform.position;
@@ -76,12 +78,12 @@ public class SlidingDoorsScript : MonoBehaviour {
 
     void MoveDoorSingle()
     {
-        //Project the gravity vector on the plane the wheel is onto
+        //Project the gravity vector on the forward-right plane of the object
         Vector3 GravityProjected = Vector3.ProjectOnPlane(Physics.gravity, transform.up);
-        //Project the vector on another plane to project it at the right axis of the object
+        //Project the vector on the right-up plane to project it at the right axis of the object
         Vector3 GravityOnAxis = Vector3.ProjectOnPlane(GravityProjected, transform.forward);
-        //if the magnitude of this vector is zero the wheel will not spin because the gravity parallel to the axis of the wheel
-        if (GravityProjected.magnitude != 0 && GravityOnAxis.magnitude > 0.001f)
+        //if the magnitude of this vector is zero the object will not move because the gravity has no effect in the move direction of the object
+        if (GravityProjected.magnitude != 0 && GravityOnAxis.magnitude > 0.001f && !BisLocked)
         {
             if (Vector3.Dot(GravityOnAxis, transform.right) > 0)
             {
@@ -109,5 +111,15 @@ public class SlidingDoorsScript : MonoBehaviour {
         x = Mathf.Clamp((x - edge0) / (edge1 - edge0), 0.0f, 1.0f);
         // Evaluate polynomial
         return x * x * x * (x * (x * 6 - 15) + 10);
+    }
+
+    void Activate()
+    {
+        BisLocked = false;
+    }
+
+    void DeActivate()
+    {
+        BisLocked = true;
     }
 }

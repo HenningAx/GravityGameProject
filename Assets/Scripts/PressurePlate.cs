@@ -15,12 +15,13 @@ public class PressurePlate : MonoBehaviour {
     Vector3 VstartPos;
     Vector3 VtargetPos;
     GameObject GtriggerObject;
+    GameObject GpressurePlate;
 
 	// Use this for initialization
 	void Start () 
     {
-        VoriginalPos = transform.position;
-	
+        GpressurePlate = transform.FindChild("PressurePlate").gameObject;
+        VoriginalPos = GpressurePlate.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -28,7 +29,8 @@ public class PressurePlate : MonoBehaviour {
     {
         if(BisMoving)
         {
-            BisMoving = gameObject.smoothTranslate(VstartPos, VtargetPos, FmoveDistance, FstartTime, FmoveSpeed);
+            //Move the PressurePlate smooth over time
+            BisMoving = GpressurePlate.gameObject.smoothTranslate(VstartPos, VtargetPos, FmoveDistance, FstartTime, FmoveSpeed);
         }
 	}
 
@@ -36,11 +38,12 @@ public class PressurePlate : MonoBehaviour {
     {
         if(other.gameObject.GetComponent<Rigidbody>().mass >= FpressureThreshold)
         {
+            //Call the Activate function on the target
             GtargetObject.SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
             BisMoving = true;
             FstartTime = Time.time;
-            VstartPos = transform.position;
-            VtargetPos = VoriginalPos - Vector3.up * this.GetComponent<MeshRenderer>().bounds.size.y * FpressedDistance;
+            VstartPos = GpressurePlate.transform.position;
+            VtargetPos = VoriginalPos - Vector3.up * GpressurePlate.GetComponent<MeshRenderer>().bounds.size.y * FpressedDistance;
             FmoveDistance = (VtargetPos - VstartPos).magnitude;
             GtriggerObject = other.gameObject;
         }
@@ -50,10 +53,11 @@ public class PressurePlate : MonoBehaviour {
     {
         if (other.gameObject == GtriggerObject)
         {
+            //Call the Deactivate function on the target
             GtargetObject.SendMessage("DeActivate", SendMessageOptions.DontRequireReceiver);
             BisMoving = true;
             FstartTime = Time.time;
-            VstartPos = transform.position;
+            VstartPos = GpressurePlate.transform.position;
             VtargetPos = VoriginalPos;
             FmoveDistance = (VtargetPos - VstartPos).magnitude;
         }
