@@ -67,7 +67,7 @@ public class SlidingDoorsScript : MonoBehaviour {
         {
             BisMoving = true;
             VstartPos = transform.position;
-            VtargetPos = VsourcePos + this.GetComponent<Collider>().bounds.size.z * GravityOnAxis.normalized;
+            VtargetPos = VsourcePos + this.GetComponent<Collider>().bounds.size.x * GravityOnAxis.normalized;
             FstartTime = Time.time;
             FmoveSpeed = FmoveSpeedSource * GravityProjected.magnitude/9.81f;
             FmoveDistance = (VtargetPos - VstartPos).magnitude;
@@ -87,7 +87,7 @@ public class SlidingDoorsScript : MonoBehaviour {
             {
                 BisMoving = true;
                 VstartPos = transform.position;
-                VtargetPos = VsourcePos + this.GetComponent<Collider>().bounds.size.z * GravityOnAxis.normalized;
+                VtargetPos = VsourcePos + this.GetComponent<Collider>().bounds.size.x * GravityOnAxis.normalized;
                 FstartTime = Time.time;
                 FmoveSpeed = FmoveSpeedSource * GravityProjected.magnitude / 9.81f;
                 FmoveDistance = (VtargetPos - VstartPos).magnitude;
