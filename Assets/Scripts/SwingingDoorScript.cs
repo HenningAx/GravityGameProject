@@ -44,7 +44,6 @@ public class SwingingDoorScript : MonoBehaviour {
         //if the magnitude of this vector is zero the wheel will not spin because the gravity parallel to the axis of the wheel
         if (GravityProjected.magnitude != 0 && Vector3.Dot(VoriginalForwardVector, Physics.gravity) >= -0.0001f)
         {
-            Debug.Log("startRot");
             //Get the new rotation of the wheel by making the up vector of the wheel, which is facing the heayiest point of the wheel, the same as the projected gravity vector
             //Because the gravity vector is projected to the plan of the wheel, the wheel can only spin around its forward axis, which is parralel to its physic axis
             targetRot = Quaternion.LookRotation((Quaternion.AngleAxis(90, transform.up) * Vector3.ProjectOnPlane(Physics.gravity, transform.up)), transform.up);
