@@ -55,7 +55,6 @@ public class GravityChanger : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        print("enter");
         if (other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
         {
             VCollisionPoint = other.contacts[0].point;
@@ -79,14 +78,11 @@ public class GravityChanger : MonoBehaviour
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
             RaycastHit hit;
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5.0f, Color.green, 5.0f);
-            print("exit");
             if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1 << 8))
             {
                 //print("WalkOverEdge " + hit.collider.name);
                 if (LastHit.normal != hit.normal)
                 {
-                    print(LastHit.normal);
-                    print(hit.normal);
                     StartWalkingOnWall(hit);
                 }
             }

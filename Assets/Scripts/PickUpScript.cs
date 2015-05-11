@@ -50,9 +50,7 @@ public class PickUpScript : MonoBehaviour {
                     //Set the main Camera as the new parent of the object
                     pickedUpRot = GpickUpObject.transform.rotation;
                     realtivRotation = Quaternion.Inverse(this.transform.rotation) * pickedUpRot;
-                    Debug.Log(pickedUpRot.eulerAngles);
                     VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
-                    DebugExtensions.DrawPoint(VtargetPosition, Color.yellow, 20.0f);
                     pickUpObjectRigidbody = GpickUpObject.GetComponent<Rigidbody>();
                     //Set the pickup object to kinematic
                     pickUpObjectRigidbody.useGravity = false;
