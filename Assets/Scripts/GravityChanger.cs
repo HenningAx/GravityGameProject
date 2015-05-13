@@ -8,6 +8,7 @@ public class GravityChanger : MonoBehaviour
     public float FRotSpeedEdge = 1.0F;
     public float FRotSpeedFlip = 2.0F;
     public float FMinimumObjectSizeToWalkOn = 2.0f;
+    public float FOverEdgePush = 2.0F;
 
     CapsuleCollider CharacterCollider;
     Rigidbody RigidbodyComp;
@@ -86,7 +87,8 @@ public class GravityChanger : MonoBehaviour
                     StartWalkingOnWall(hit);
                 }
             }
-            RigidbodyComp.AddForce(transform.up * -100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
+            RigidbodyComp.AddForce(transform.up * -FOverEdgePush, ForceMode.Impulse);
+            Debug.DrawRay(transform.position, transform.up * -FOverEdgePush, Color.red, 20.0f);
         }
     }
 
@@ -102,7 +104,6 @@ public class GravityChanger : MonoBehaviour
                 //Flip the Gravity using the surface hit by the Raycast
                 FlipGravity(hit);
             }
-            RigidbodyComp.AddForce(transform.up * -100 / RigidbodyComp.velocity.magnitude, ForceMode.Impulse);
         }
     } 
 
@@ -127,7 +128,7 @@ public class GravityChanger : MonoBehaviour
         SendMessage("setRotating", true);
 
         //Change Gravity
-        Physics.gravity = Wall.normal * -9.81F;
+        Physics.gravity = Wall.normal * -10.0F;
 
         LastHit = Wall;
     }
@@ -154,7 +155,7 @@ public class GravityChanger : MonoBehaviour
         SendMessage("setRotating", true);
 
         //Change Gravity
-        Physics.gravity = Wall.normal * -9.81F;
+        Physics.gravity = Wall.normal * -10.0f;
 
     }
 }

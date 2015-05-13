@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wand
   - ChangePlatform
+  - PickUp
   layers:
   - Default
   - TransparentFX

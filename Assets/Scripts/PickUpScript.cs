@@ -48,6 +48,8 @@ public class PickUpScript : MonoBehaviour {
                         GpickUpObject.transform.parent = null;
                     }
 
+                    GpickUpObject.SendMessage("PickedUp", SendMessageOptions.DontRequireReceiver);
+
                     //GpickUpObject.transform.SetParent(Camera.main.transform);
 
                     //Set the main Camera as the new parent of the object
