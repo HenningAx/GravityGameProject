@@ -87,8 +87,7 @@ public class GravityChanger : MonoBehaviour
                     StartWalkingOnWall(hit);
                 }
             }
-            RigidbodyComp.AddForce(transform.up * -FOverEdgePush, ForceMode.Impulse);
-            Debug.DrawRay(transform.position, transform.up * -FOverEdgePush, Color.red, 20.0f);
+            RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
         }
     }
 
