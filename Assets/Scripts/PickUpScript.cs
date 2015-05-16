@@ -15,7 +15,10 @@ public class PickUpScript : MonoBehaviour {
     Quaternion pickedUpRot;
     Quaternion realtivRotation;
     Rigidbody pickUpObjectRigidbody;
+    bool BisColliding = false;
     bool BhasObject = false;
+    float ForiginalDrag;
+    float ForiginalAngularDrag;
 
 
 	// Use this for initialization
@@ -24,7 +27,7 @@ public class PickUpScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
         if(!BhasObject)
         {
             Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 3.0f, Color.green, 5.0f);
@@ -45,6 +48,8 @@ public class PickUpScript : MonoBehaviour {
                         GpickUpObject.transform.parent = null;
                     }
 
+                    GpickUpObject.SendMessage("PickedUp", SendMessageOptions.DontRequireReceiver);
+
                     //GpickUpObject.transform.SetParent(Camera.main.transform);
 
                     //Set the main Camera as the new parent of the object
@@ -54,6 +59,8 @@ public class PickUpScript : MonoBehaviour {
                     pickUpObjectRigidbody = GpickUpObject.GetComponent<Rigidbody>();
                     //Set the pickup object to kinematic
                     pickUpObjectRigidbody.useGravity = false;
+                    ForiginalDrag = pickUpObjectRigidbody.drag;
+                    ForiginalAngularDrag = pickUpObjectRigidbody.angularDrag;
                     pickUpObjectRigidbody.drag = 0;
                     pickUpObjectRigidbody.angularDrag = 100;
                 }
@@ -63,13 +70,15 @@ public class PickUpScript : MonoBehaviour {
         else
         {
             VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
-            MoveToTargetWithDamp(GpickUpObject, VtargetPosition, FmoveDampning);
+            pickUpObjectRigidbody.velocity = (VtargetPosition - GpickUpObject.transform.position) * FmoveDampning;
             RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
             if(Input.GetButtonDown("PickUp"))
             {
                 BhasObject = false;
                 pickUpObjectRigidbody.useGravity = true;
                 pickUpObjectRigidbody.velocity = Vector3.zero;
+                pickUpObjectRigidbody.drag = ForiginalDrag;
+                pickUpObjectRigidbody.angularDrag = ForiginalAngularDrag;
                 if (GoldParent != null)
                 {
                     GpickUpObject.transform.parent = GoldParent.transform;
