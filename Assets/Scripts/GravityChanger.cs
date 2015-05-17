@@ -81,7 +81,6 @@ public class GravityChanger : MonoBehaviour
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5.0f, Color.green, 5.0f);
             if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1 << 8))
             {
-                //print("WalkOverEdge " + hit.collider.name);
                 if (LastHit.normal != hit.normal)
                 {
                     StartWalkingOnWall(hit);

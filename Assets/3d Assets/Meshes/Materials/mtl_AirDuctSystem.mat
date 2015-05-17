@@ -25,7 +25,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 4c066fd45bf67b54f825708a17632bfb, type: 3}
+          m_Texture: {fileID: 2800000, guid: c94bad67abedcb04bb09a2346fd564af, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -100,7 +100,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .0252999999
+        second: .0357999988
       data:
         first:
           name: _ZWrite
