@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: 'Material #23'
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _NORMALMAP _SPECGLOSSMAP
+  m_ShaderKeywords: _ALPHABLEND_ON _SPECGLOSSMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
   m_SavedProperties:
@@ -19,7 +19,7 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: 1655ff3c1881eff40a2639df6a56efcf, type: 3}
-          m_Scale: {x: 3, y: 9}
+          m_Scale: {x: 5, y: 9}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -54,7 +54,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 3, y: 9}
+          m_Scale: {x: 5, y: 9}
           m_Offset: {x: 0, y: 0}
       data:
         first:

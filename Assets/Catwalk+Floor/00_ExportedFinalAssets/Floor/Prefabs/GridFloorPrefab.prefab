@@ -893,6 +893,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 423156}
+  - 65: {fileID: 6543768}
   m_Layer: 0
   m_Name: GridFloorPrefab
   m_TagString: Untagged
@@ -1132,7 +1133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.17000008, y: 2.04999995, z: -16.7700005}
+  m_LocalPosition: {x: -.519999981, y: 2.83999991, z: -46.5200005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415760}
@@ -3033,6 +3034,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106576}
   m_Mesh: {fileID: 4300038, guid: d3db5445e7b19d747a53592debd61fb6, type: 3}
+--- !u!65 &6543768
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.0280247, y: .11587286, z: 9.03105164}
+  m_Center: {x: 3.99726009, y: -.0299091339, z: .00756072998}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

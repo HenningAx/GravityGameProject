@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 218b9166ede21594d8ff1259886febfa
+timeCreated: 1431960643
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BaseSystem.005
+    100002: bracket.004
+    100004: bracket.006
+    100006: //RootNode
+    100008: Grid
+    100010: Grid_03_Frame.005
+    100012: Grid_04_Frame.005
+    100014: railing.001
+    100016: screwConnection_Corner_01
+    100018: screwConnection_Cross_01.003
+    100020: screwConnection_T_01.005
+    100022: screwConnection_T_01.006
+    100024: screwConnection_T_01.007
+    100026: screwConnection_T_04.001
+    100028: screwConnection_Y_01
+    400000: BaseSystem.005
+    400002: bracket.004
+    400004: bracket.006
+    400006: //RootNode
+    400008: Grid
+    400010: Grid_03_Frame.005
+    400012: Grid_04_Frame.005
+    400014: railing.001
+    400016: screwConnection_Corner_01
+    400018: screwConnection_Cross_01.003
+    400020: screwConnection_T_01.005
+    400022: screwConnection_T_01.006
+    400024: screwConnection_T_01.007
+    400026: screwConnection_T_04.001
+    400028: screwConnection_Y_01
+    2300000: BaseSystem.005
+    2300002: bracket.004
+    2300004: bracket.006
+    2300006: Grid
+    2300008: Grid_03_Frame.005
+    2300010: Grid_04_Frame.005
+    2300012: railing.001
+    2300014: screwConnection_Corner_01
+    2300016: screwConnection_Cross_01.003
+    2300018: screwConnection_T_01.005
+    2300020: screwConnection_T_01.006
+    2300022: screwConnection_T_01.007
+    2300024: screwConnection_T_04.001
+    2300026: screwConnection_Y_01
+    3300000: BaseSystem.005
+    3300002: bracket.004
+    3300004: bracket.006
+    3300006: Grid
+    3300008: Grid_03_Frame.005
+    3300010: Grid_04_Frame.005
+    3300012: railing.001
+    3300014: screwConnection_Corner_01
+    3300016: screwConnection_Cross_01.003
+    3300018: screwConnection_T_01.005
+    3300020: screwConnection_T_01.006
+    3300022: screwConnection_T_01.007
+    3300024: screwConnection_T_04.001
+    3300026: screwConnection_Y_01
+    4300000: bracket.006
+    4300002: screwConnection_T_01.007
+    4300004: screwConnection_T_01.006
+    4300006: screwConnection_T_01.005
+    4300008: BaseSystem.005
+    4300010: Grid_04_Frame.005
+    4300012: Grid_03_Frame.005
+    4300014: railing.001
+    4300016: screwConnection_Cross_01.003
+    4300018: Grid
+    4300020: bracket.004
+    4300022: screwConnection_T_04.001
+    4300024: screwConnection_Y_01
+    4300026: screwConnection_Corner_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

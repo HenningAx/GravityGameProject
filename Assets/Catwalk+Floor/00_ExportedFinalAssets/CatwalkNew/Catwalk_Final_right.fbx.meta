@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 0c27bf759bb5d7143bd149aaa064a6d3
+timeCreated: 1431960642
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BaseSystem
+    100002: bracket
+    100004: //RootNode
+    100006: Grid
+    100008: Grid_01_Frame
+    100010: Grid_02_Frame
+    100012: Grid_03_Frame
+    100014: Grid_04_Frame
+    100016: railing
+    100018: screwConnection_Cross_01
+    100020: screwConnection_Cross_02
+    100022: screwConnection_T_01
+    100024: screwConnection_T_02
+    100026: screwConnection_T_03
+    100028: screwConnection_T_04
+    400000: BaseSystem
+    400002: bracket
+    400004: //RootNode
+    400006: Grid
+    400008: Grid_01_Frame
+    400010: Grid_02_Frame
+    400012: Grid_03_Frame
+    400014: Grid_04_Frame
+    400016: railing
+    400018: screwConnection_Cross_01
+    400020: screwConnection_Cross_02
+    400022: screwConnection_T_01
+    400024: screwConnection_T_02
+    400026: screwConnection_T_03
+    400028: screwConnection_T_04
+    2300000: BaseSystem
+    2300002: bracket
+    2300004: Grid
+    2300006: Grid_01_Frame
+    2300008: Grid_02_Frame
+    2300010: Grid_03_Frame
+    2300012: Grid_04_Frame
+    2300014: railing
+    2300016: screwConnection_Cross_01
+    2300018: screwConnection_Cross_02
+    2300020: screwConnection_T_01
+    2300022: screwConnection_T_02
+    2300024: screwConnection_T_03
+    2300026: screwConnection_T_04
+    3300000: BaseSystem
+    3300002: bracket
+    3300004: Grid
+    3300006: Grid_01_Frame
+    3300008: Grid_02_Frame
+    3300010: Grid_03_Frame
+    3300012: Grid_04_Frame
+    3300014: railing
+    3300016: screwConnection_Cross_01
+    3300018: screwConnection_Cross_02
+    3300020: screwConnection_T_01
+    3300022: screwConnection_T_02
+    3300024: screwConnection_T_03
+    3300026: screwConnection_T_04
+    4300000: screwConnection_T_04
+    4300002: screwConnection_T_03
+    4300004: screwConnection_T_01
+    4300006: bracket
+    4300008: BaseSystem
+    4300010: screwConnection_T_02
+    4300012: Grid_02_Frame
+    4300014: Grid_01_Frame
+    4300016: screwConnection_Cross_01
+    4300018: Grid
+    4300020: Grid_03_Frame
+    4300022: screwConnection_Cross_02
+    4300024: Grid_04_Frame
+    4300026: railing
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
