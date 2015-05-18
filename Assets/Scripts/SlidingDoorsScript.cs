@@ -83,7 +83,6 @@ public class SlidingDoorsScript : MonoBehaviour {
         //Project the vector on the right-up plane to project it at the right axis of the object
         Vector3 GravityOnAxis = Vector3.ProjectOnPlane(GravityProjected, transform.right);
         //if the magnitude of this vector is zero the object will not move because the gravity has no effect in the move direction of the object
-        print(Vector3.Dot(GravityOnAxis, transform.forward));
         if (GravityProjected.magnitude != 0 && GravityOnAxis.magnitude > 0.001f && !BisLocked)
         {
             if (Vector3.Dot(GravityOnAxis, transform.forward) > -0.00001f)
