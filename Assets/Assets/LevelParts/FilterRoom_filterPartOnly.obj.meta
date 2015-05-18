@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: 44d8c88d5493c8745b71e86455e6830f
+timeCreated: 1431772678
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Ceiling
+    100002: //RootNode
+    100004: floor
+    100006: Frame_floor
+    100008: Wall_1
+    100010: Wall_2
+    100012: Wall_3
+    100014: Wall_4
+    100016: Wall_5
+    100018: Wall_6
+    100020: Wall_7
+    100022: Wall_8
+    100024: Wall_9
+    100026: Wall_thickness_1
+    100028: Wall_thickness_2
+    100030: Wall_thickness_3
+    400000: Ceiling
+    400002: //RootNode
+    400004: floor
+    400006: Frame_floor
+    400008: Wall_1
+    400010: Wall_2
+    400012: Wall_3
+    400014: Wall_4
+    400016: Wall_5
+    400018: Wall_6
+    400020: Wall_7
+    400022: Wall_8
+    400024: Wall_9
+    400026: Wall_thickness_1
+    400028: Wall_thickness_2
+    400030: Wall_thickness_3
+    2300000: Ceiling
+    2300002: floor
+    2300004: Frame_floor
+    2300006: Wall_1
+    2300008: Wall_2
+    2300010: Wall_3
+    2300012: Wall_4
+    2300014: Wall_5
+    2300016: Wall_6
+    2300018: Wall_7
+    2300020: Wall_8
+    2300022: Wall_9
+    2300024: Wall_thickness_1
+    2300026: Wall_thickness_2
+    2300028: Wall_thickness_3
+    3300000: Ceiling
+    3300002: floor
+    3300004: Frame_floor
+    3300006: Wall_1
+    3300008: Wall_2
+    3300010: Wall_3
+    3300012: Wall_4
+    3300014: Wall_5
+    3300016: Wall_6
+    3300018: Wall_7
+    3300020: Wall_8
+    3300022: Wall_9
+    3300024: Wall_thickness_1
+    3300026: Wall_thickness_2
+    3300028: Wall_thickness_3
+    4300000: Ceiling
+    4300002: floor
+    4300004: Frame_floor
+    4300006: Wall_1
+    4300008: Wall_2
+    4300010: Wall_3
+    4300012: Wall_4
+    4300014: Wall_5
+    4300016: Wall_6
+    4300018: Wall_7
+    4300020: Wall_8
+    4300022: Wall_9
+    4300024: Wall_thickness_1
+    4300026: Wall_thickness_2
+    4300028: Wall_thickness_3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
