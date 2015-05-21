@@ -19,7 +19,7 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: 8f30f683591194d45bb47bf5c795a558, type: 3}
-          m_Scale: {x: 3, y: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: -1, y: -1}
       data:
         first:
@@ -55,7 +55,7 @@ Material:
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+          m_Offset: {x: -1, y: -1}
       data:
         first:
           name: _DetailMask

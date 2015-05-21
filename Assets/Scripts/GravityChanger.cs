@@ -31,6 +31,8 @@ public class GravityChanger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         CharacterCollider = gameObject.GetComponent<CapsuleCollider>();
         RigidbodyComp = gameObject.GetComponent<Rigidbody>();
     }
@@ -100,6 +102,7 @@ public class GravityChanger : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.up, out hit))
             {
                 //Flip the Gravity using the surface hit by the Raycast
+                RigidbodyComp.velocity = Vector3.zero;
                 FlipGravity(hit);
             }
         }
