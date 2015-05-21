@@ -1,27 +1,67 @@
 fileFormatVersion: 2
-guid: 47c0d140f468e8649a039976fdc4c15b
-timeCreated: 1431488699
+guid: 73759e3a102079d4381219a579b85a38
+timeCreated: 1431257987
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: LP_Filter_Membran
-    100002: LP_FilterBase
-    100004: LP_FilterGrid
-    100006: //RootNode
-    400000: LP_Filter_Membran
-    400002: LP_FilterBase
-    400004: LP_FilterGrid
-    400006: //RootNode
-    2300000: LP_Filter_Membran
-    2300002: LP_FilterBase
-    2300004: LP_FilterGrid
-    3300000: LP_Filter_Membran
-    3300002: LP_FilterBase
-    3300004: LP_FilterGrid
-    4300000: LP_Filter_Membran
-    4300002: LP_FilterBase
-    4300004: LP_FilterGrid
+    100000: BezierCurve
+    100002: Cage
+    100004: Camera
+    100006: Cylinder.000
+    100008: Cylinder.001
+    100010: Cylinder.002
+    100012: Cylinder.003
+    100014: Cylinder.004
+    100016: high_poly
+    100018: low_poly.001
+    100020: //RootNode
+    100022: Sun
+    100024: Sun.001
+    100026: Sun.002
+    400000: BezierCurve
+    400002: Cage
+    400004: Camera
+    400006: Cylinder.000
+    400008: Cylinder.001
+    400010: Cylinder.002
+    400012: Cylinder.003
+    400014: Cylinder.004
+    400016: high_poly
+    400018: low_poly.001
+    400020: //RootNode
+    400022: Sun
+    400024: Sun.001
+    400026: Sun.002
+    2300000: BezierCurve
+    2300002: Cage
+    2300004: Cylinder.000
+    2300006: Cylinder.001
+    2300008: Cylinder.002
+    2300010: Cylinder.003
+    2300012: Cylinder.004
+    2300014: high_poly
+    2300016: low_poly.001
+    2300018: //RootNode
+    3300000: BezierCurve
+    3300002: Cage
+    3300004: Cylinder.000
+    3300006: Cylinder.001
+    3300008: Cylinder.002
+    3300010: Cylinder.003
+    3300012: Cylinder.004
+    3300014: high_poly
+    3300016: low_poly.001
+    3300018: //RootNode
+    4300000: high_poly
+    4300002: BezierCurve
+    4300004: Cage
+    4300006: Cylinder.003
+    4300008: Cylinder.004
+    4300010: Cylinder.002
+    4300012: Cylinder.001
+    4300014: Cylinder.000
+    4300016: low_poly.001
   materials:
     importMaterials: 0
     materialName: 0
@@ -46,7 +86,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

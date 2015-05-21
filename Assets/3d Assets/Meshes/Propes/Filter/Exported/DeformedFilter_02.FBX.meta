@@ -1,29 +1,29 @@
 fileFormatVersion: 2
-guid: 47c0d140f468e8649a039976fdc4c15b
-timeCreated: 1431488699
+guid: 06be47b8de69055468d197819e09ec11
+timeCreated: 1431848884
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: LP_Filter_Membran
-    100002: LP_FilterBase
-    100004: LP_FilterGrid
-    100006: //RootNode
-    400000: LP_Filter_Membran
-    400002: LP_FilterBase
-    400004: LP_FilterGrid
-    400006: //RootNode
-    2300000: LP_Filter_Membran
-    2300002: LP_FilterBase
-    2300004: LP_FilterGrid
-    3300000: LP_Filter_Membran
-    3300002: LP_FilterBase
-    3300004: LP_FilterGrid
-    4300000: LP_Filter_Membran
-    4300002: LP_FilterBase
-    4300004: LP_FilterGrid
+    100000: //RootNode
+    100002: LP_Filter_MembranDefromed01
+    100004: LP_FilterBaseDefromed01
+    100006: LP_FilterGridDeformed01
+    400000: //RootNode
+    400002: LP_Filter_MembranDefromed01
+    400004: LP_FilterBaseDefromed01
+    400006: LP_FilterGridDeformed01
+    2300000: LP_Filter_MembranDefromed01
+    2300002: LP_FilterBaseDefromed01
+    2300004: LP_FilterGridDeformed01
+    3300000: LP_Filter_MembranDefromed01
+    3300002: LP_FilterBaseDefromed01
+    3300004: LP_FilterGridDeformed01
+    4300000: LP_FilterGridDeformed01
+    4300002: LP_Filter_MembranDefromed01
+    4300004: LP_FilterBaseDefromed01
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:

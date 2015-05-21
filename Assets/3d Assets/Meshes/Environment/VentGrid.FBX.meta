@@ -1,27 +1,22 @@
 fileFormatVersion: 2
-guid: 47c0d140f468e8649a039976fdc4c15b
-timeCreated: 1431488699
+guid: 659df756efe5dd342a0f49c285c4ed4e
+timeCreated: 1431485944
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: LP_Filter_Membran
-    100002: LP_FilterBase
-    100004: LP_FilterGrid
-    100006: //RootNode
-    400000: LP_Filter_Membran
-    400002: LP_FilterBase
-    400004: LP_FilterGrid
-    400006: //RootNode
-    2300000: LP_Filter_Membran
-    2300002: LP_FilterBase
-    2300004: LP_FilterGrid
-    3300000: LP_Filter_Membran
-    3300002: LP_FilterBase
-    3300004: LP_FilterGrid
-    4300000: LP_Filter_Membran
-    4300002: LP_FilterBase
-    4300004: LP_FilterGrid
+    100000: Grid
+    100002: Lamelle
+    100004: //RootNode
+    400000: Grid
+    400002: Lamelle
+    400004: //RootNode
+    2300000: Grid
+    2300002: Lamelle
+    3300000: Grid
+    3300002: Lamelle
+    4300000: Grid
+    4300002: Lamelle
   materials:
     importMaterials: 0
     materialName: 0
@@ -46,7 +41,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

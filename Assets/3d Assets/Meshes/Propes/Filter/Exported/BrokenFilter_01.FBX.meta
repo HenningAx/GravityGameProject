@@ -1,29 +1,29 @@
 fileFormatVersion: 2
-guid: 47c0d140f468e8649a039976fdc4c15b
-timeCreated: 1431488699
+guid: 79f7b3a1d19c66446b56356897dc37c9
+timeCreated: 1431848827
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: LP_Filter_Membran
-    100002: LP_FilterBase
-    100004: LP_FilterGrid
-    100006: //RootNode
-    400000: LP_Filter_Membran
-    400002: LP_FilterBase
-    400004: LP_FilterGrid
-    400006: //RootNode
-    2300000: LP_Filter_Membran
-    2300002: LP_FilterBase
-    2300004: LP_FilterGrid
-    3300000: LP_Filter_Membran
-    3300002: LP_FilterBase
-    3300004: LP_FilterGrid
-    4300000: LP_Filter_Membran
-    4300002: LP_FilterBase
-    4300004: LP_FilterGrid
+    100000: //RootNode
+    100002: LP_Filter_MembranDestroyed003
+    100004: LP_FilterBaseDestroyed003
+    100006: LP_FilterGridDestroyed003
+    400000: //RootNode
+    400002: LP_Filter_MembranDestroyed003
+    400004: LP_FilterBaseDestroyed003
+    400006: LP_FilterGridDestroyed003
+    2300000: LP_Filter_MembranDestroyed003
+    2300002: LP_FilterBaseDestroyed003
+    2300004: LP_FilterGridDestroyed003
+    3300000: LP_Filter_MembranDestroyed003
+    3300002: LP_FilterBaseDestroyed003
+    3300004: LP_FilterGridDestroyed003
+    4300000: LP_FilterGridDestroyed003
+    4300002: LP_FilterBaseDestroyed003
+    4300004: LP_Filter_MembranDestroyed003
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
