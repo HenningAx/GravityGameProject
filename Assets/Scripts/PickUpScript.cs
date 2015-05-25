@@ -30,7 +30,6 @@ public class PickUpScript : MonoBehaviour {
 	void Update () {
         if(!BhasObject)
         {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 3.0f, Color.green, 5.0f);
             //Make a Raycast that only hits objects on the "PickUpObjects" layer
             if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * 3.0f, out pickUpObjectHit, 5.0f, 1 << 9))
             {

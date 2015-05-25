@@ -88,6 +88,7 @@ public class GravityChanger : MonoBehaviour
                     StartWalkingOnWall(hit);
                 }
             }
+            RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
             RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
         }
     }
@@ -132,6 +133,7 @@ public class GravityChanger : MonoBehaviour
         Physics.gravity = Wall.normal * -10.0F;
 
         LastHit = Wall;
+        BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
     }
 
     void FlipGravity(RaycastHit Wall)
@@ -157,6 +159,8 @@ public class GravityChanger : MonoBehaviour
 
         //Change Gravity
         Physics.gravity = Wall.normal * -10.0f;
+
+        BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
 
     }
 }
