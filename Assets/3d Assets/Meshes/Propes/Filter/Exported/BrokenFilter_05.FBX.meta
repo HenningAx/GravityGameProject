@@ -28,7 +28,7 @@ ModelImporter:
     4300004: LP_Filter_MembranDestroyed007
     4300006: LP_Filter_MembranDestroyed008
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

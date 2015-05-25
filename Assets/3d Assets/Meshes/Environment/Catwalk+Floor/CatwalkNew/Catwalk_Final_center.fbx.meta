@@ -58,7 +58,7 @@ ModelImporter:
     4300016: screwConnection_T_02.001
     4300018: screwConnection_T_01.001
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

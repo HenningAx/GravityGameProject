@@ -78,7 +78,7 @@ ModelImporter:
     4300024: screwConnection_Cross_01
     4300026: bracket
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

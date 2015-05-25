@@ -1256,7 +1256,7 @@ ModelImporter:
     4300488: Grid_Frames
     4300490: Grid
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

@@ -34,9 +34,9 @@ ModelImporter:
     4300004: ToolboxCap
     4300006: ToolboxHandle
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -78,7 +78,7 @@ ModelImporter:
     4300024: screwConnection_Y_01
     4300026: screwConnection_Corner_01
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

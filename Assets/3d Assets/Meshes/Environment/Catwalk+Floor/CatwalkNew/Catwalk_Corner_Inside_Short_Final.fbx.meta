@@ -78,7 +78,7 @@ ModelImporter:
     4300024: bracket.001
     4300026: screwConnection_T_03.001
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
