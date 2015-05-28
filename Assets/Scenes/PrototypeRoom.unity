@@ -500,7 +500,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b3919a87bda2cfe40afef3a2d483bf27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: .360000014
+      value: 1.10000002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b3919a87bda2cfe40afef3a2d483bf27, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1645,7 +1645,7 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: b3919a87bda2cfe40afef3a2d483bf27, type: 3}
   m_PrefabInternal: {fileID: 155600597}
---- !u!65 &533877018
+--- !u!65 &533877016
 BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1656,7 +1656,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .599999964, y: .599999964, z: .599999964}
-  m_Center: {x: 0, y: .299999982, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &533877019
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3671,7 +3671,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 332e4b0d20474474b9517cab254a78f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: .303000003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 332e4b0d20474474b9517cab254a78f0, type: 3}
       propertyPath: m_LocalPosition.z
