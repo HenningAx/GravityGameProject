@@ -90,6 +90,7 @@ public class GravityChanger : MonoBehaviour
             }
             RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
             RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
+            Debug.DrawRay(transform.position, transform.up.normalized * -FOverEdgePush, Color.red, 10.0f);
         }
     }
 
