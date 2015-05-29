@@ -20,14 +20,28 @@ public class DestroyFragmentedObject : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if(col.relativeVelocity.magnitude > FdestroyThreshold && this.GetComponent<Rigidbody>().useGravity)
+        if (this.GetComponent<Rigidbody>() != null)
         {
-            
-            Gfragments.SetActive(true);
-            this.BroadcastMessage("FadeOut");
-            transform.DetachChildren();
-            PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower);
-            Destroy(this.gameObject);
+            if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && this.GetComponent<Rigidbody>().useGravity && col.collider.tag != "Player")
+            {
+
+                Gfragments.SetActive(true);
+                this.BroadcastMessage("FadeOut");
+                transform.DetachChildren();
+                PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower, this.GetComponent<Rigidbody>().velocity);
+                Destroy(this.gameObject);
+            }
+        } else
+        {
+            if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && col.collider.tag != "Player")
+            {
+
+                Gfragments.SetActive(true);
+                this.BroadcastMessage("FadeOut");
+                transform.DetachChildren();
+                PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower);
+                Destroy(this.gameObject);
+            }
         }
     }
 }
