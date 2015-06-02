@@ -1,0 +1,117 @@
+fileFormatVersion: 2
+guid: 7c66e5d1b88c7494f8efaee821703a4b
+timeCreated: 1433267747
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: WoodenPillar002
+    100002: WoodenPillar003
+    100004: WoodenPillar004
+    100006: WoodenPillar01
+    100008: //RootNode
+    100010: WorkroomCeiling
+    100012: WorkroomGround
+    100014: WorkroomWall01
+    100016: WorkroomWall02
+    100018: WorkroomWall03
+    100020: WorkroomWall04
+    400000: WoodenPillar002
+    400002: WoodenPillar003
+    400004: WoodenPillar004
+    400006: WoodenPillar01
+    400008: //RootNode
+    400010: WorkroomCeiling
+    400012: WorkroomGround
+    400014: WorkroomWall01
+    400016: WorkroomWall02
+    400018: WorkroomWall03
+    400020: WorkroomWall04
+    2300000: WoodenPillar002
+    2300002: WoodenPillar003
+    2300004: WoodenPillar004
+    2300006: WoodenPillar01
+    2300008: WorkroomCeiling
+    2300010: WorkroomGround
+    2300012: WorkroomWall01
+    2300014: WorkroomWall02
+    2300016: WorkroomWall03
+    2300018: WorkroomWall04
+    3300000: WoodenPillar002
+    3300002: WoodenPillar003
+    3300004: WoodenPillar004
+    3300006: WoodenPillar01
+    3300008: WorkroomCeiling
+    3300010: WorkroomGround
+    3300012: WorkroomWall01
+    3300014: WorkroomWall02
+    3300016: WorkroomWall03
+    3300018: WorkroomWall04
+    4300000: WorkroomGround
+    4300002: WorkroomWall03
+    4300004: WorkroomWall01
+    4300006: WorkroomWall04
+    4300008: WorkroomWall02
+    4300010: WorkroomCeiling
+    4300012: WoodenPillar01
+    4300014: WoodenPillar002
+    4300016: WoodenPillar003
+    4300018: WoodenPillar004
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
