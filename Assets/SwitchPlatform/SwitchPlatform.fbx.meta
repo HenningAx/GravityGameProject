@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: a057f5c71f4c9ae43b6f0d5d92a5198f
+timeCreated: 1432818274
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: cable
+    100002: CableBig
+    100004: cableCap
+    100006: ceilingPlate
+    100008: detector
+    100010: detectorBase
+    100012: electricSocket
+    100014: FuseBase
+    100016: fuseBaseOnTop
+    100018: fuseCap
+    100020: fuseHolder
+    100022: //RootNode
+    100024: woodLath
+    100026: woodScrews
+    400000: cable
+    400002: CableBig
+    400004: cableCap
+    400006: ceilingPlate
+    400008: detector
+    400010: detectorBase
+    400012: electricSocket
+    400014: FuseBase
+    400016: fuseBaseOnTop
+    400018: fuseCap
+    400020: fuseHolder
+    400022: //RootNode
+    400024: woodLath
+    400026: woodScrews
+    2300000: cable
+    2300002: CableBig
+    2300004: cableCap
+    2300006: ceilingPlate
+    2300008: detector
+    2300010: detectorBase
+    2300012: electricSocket
+    2300014: FuseBase
+    2300016: fuseBaseOnTop
+    2300018: fuseCap
+    2300020: fuseHolder
+    2300022: woodLath
+    2300024: woodScrews
+    3300000: cable
+    3300002: CableBig
+    3300004: cableCap
+    3300006: ceilingPlate
+    3300008: detector
+    3300010: detectorBase
+    3300012: electricSocket
+    3300014: FuseBase
+    3300016: fuseBaseOnTop
+    3300018: fuseCap
+    3300020: fuseHolder
+    3300022: woodLath
+    3300024: woodScrews
+    4300000: woodScrews
+    4300002: fuseCap
+    4300004: fuseHolder
+    4300006: fuseBaseOnTop
+    4300008: electricSocket
+    4300010: CableBig
+    4300012: cableCap
+    4300014: cable
+    4300016: FuseBase
+    4300018: detector
+    4300020: detectorBase
+    4300022: woodLath
+    4300024: ceilingPlate
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
