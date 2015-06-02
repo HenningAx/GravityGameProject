@@ -69,7 +69,7 @@ public class GravityChanger : MonoBehaviour
         }
     }
 
-  void OnCollisionExit(Collision other)
+    void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Wand" && !BisRotating)
         {
@@ -93,22 +93,6 @@ public class GravityChanger : MonoBehaviour
             Debug.DrawRay(transform.position, transform.up.normalized * -FOverEdgePush, Color.red, 10.0f);
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        //Check if the Trigger is a platform to change gravity
-        if (other.tag == "ChangePlatform" && other.gameObject != Ground && !BisRotating)
-        {
-            //Sent an Raycast straight upwards to find the new ground of the Player
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.up, out hit))
-            {
-                //Flip the Gravity using the surface hit by the Raycast
-                RigidbodyComp.velocity = Vector3.zero;
-                FlipGravity(hit);
-            }
-        }
-    } 
 
     void StartWalkingOnWall(RaycastHit Wall)
     {
@@ -137,31 +121,42 @@ public class GravityChanger : MonoBehaviour
         BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
     }
 
-    void FlipGravity(RaycastHit Wall)
+    void FlipGravity(Collider other)
     {
-        //Set Start Time of Rotating Animation
-        FstartTime = Time.time;
+        if (other.gameObject != Ground && !BisRotating)
+        {
+            //Sent an Raycast straight upwards to find the new ground of the Player
+            RaycastHit Wall;
+            if (Physics.Raycast(transform.position, transform.up, out Wall))
+            {
+                //Flip the Gravity using the surface hit by the Raycast
+                RigidbodyComp.velocity = Vector3.zero;
 
-        //Set Animation Speed
-        FRotSpeed = FRotSpeedFlip;
+                //Set Start Time of Rotating Animation
+                FstartTime = Time.time;
 
-        //Set the new Ground the Player is walking on
-        Ground = Wall.collider.gameObject;
+                //Set Animation Speed
+                FRotSpeed = FRotSpeedFlip;
 
-        //Callculate the new rotation
-        StartRot = transform.rotation;
-        VUpVector = Wall.normal;
-        VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
-        TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
+                //Set the new Ground the Player is walking on
+                Ground = Wall.collider.gameObject;
 
-        //Set the Character in RotationState
-        BisRotating = true;
-        SendMessage("setRotating", true);
+                //Callculate the new rotation
+                StartRot = transform.rotation;
+                VUpVector = Wall.normal;
+                VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
+                TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
 
-        //Change Gravity
-        Physics.gravity = Wall.normal * -10.0f;
+                //Set the Character in RotationState
+                BisRotating = true;
+                SendMessage("setRotating", true);
 
-        BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+                //Change Gravity
+                Physics.gravity = Wall.normal * -10.0f;
 
+                BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+            }
+        }
     }
+
 }

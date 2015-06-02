@@ -21,10 +21,6 @@ public class FadeScript : MonoBehaviour
 	public bool fadeInOnStart = false; 
 	public bool fadeOutOnStart = false;
 	private bool logInitialFadeSequence = false;
-    private float alphaValueSmooth = 0;
- 
- 
- 
  
 	// store colours
 	private Color[] colors; 

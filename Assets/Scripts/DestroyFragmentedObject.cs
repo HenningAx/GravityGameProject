@@ -15,32 +15,29 @@ public class DestroyFragmentedObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
     void OnCollisionEnter(Collision col)
     {
         if (this.GetComponent<Rigidbody>() != null)
         {
-            if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && this.GetComponent<Rigidbody>().useGravity && col.collider.tag != "Player")
+            if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && this.GetComponent<Rigidbody>().useGravity && col.collider.tag != "Player" && col.collider.tag != "Frags")
             {
 
                 Gfragments.SetActive(true);
-                this.BroadcastMessage("FadeOut");
+                this.BroadcastMessage("FadeOut", SendMessageOptions.DontRequireReceiver);
                 transform.DetachChildren();
-                PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower, this.GetComponent<Rigidbody>().velocity);
-                Destroy(this.gameObject);
+                PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower, this.GetComponent<Rigidbody>().velocity);       
+                Destroy(this.gameObject); 
             }
         } else
         {
-            if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && col.collider.tag != "Player")
+            if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && col.collider.tag != "Player" && col.collider.tag != "Frags")
             {
-
                 Gfragments.SetActive(true);
-                this.BroadcastMessage("FadeOut");
+                this.BroadcastMessage("FadeOut", SendMessageOptions.DontRequireReceiver);
                 transform.DetachChildren();
                 PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower);
-                Destroy(this.gameObject);
             }
         }
     }

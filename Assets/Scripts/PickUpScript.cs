@@ -15,7 +15,6 @@ public class PickUpScript : MonoBehaviour {
     Quaternion pickedUpRot;
     Quaternion realtivRotation;
     Rigidbody pickUpObjectRigidbody;
-    bool BisColliding = false;
     bool BhasObject = false;
     float ForiginalDrag;
     float ForiginalAngularDrag;
