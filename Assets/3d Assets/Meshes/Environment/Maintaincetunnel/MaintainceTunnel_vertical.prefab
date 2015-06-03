@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &117082
 GameObject:
@@ -31,7 +31,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &126900
 GameObject:
@@ -47,7 +47,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &153258
 GameObject:
@@ -63,7 +63,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &191914
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &409926
 Transform:
@@ -123,8 +123,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117082}
-  m_LocalRotation: {x: 2.18556941e-08, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: .274540901, y: 6.72851133, z: -15.8553276}
+  m_LocalRotation: {x: 2.18556941e-08, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.51999998, y: 26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475840}
@@ -186,8 +186,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: .00999999978}
-  m_Center: {x: 0, y: 0, z: -1.5}
+  m_Size: {x: 3, y: 4, z: .100000001}
+  m_Center: {x: 0, y: 0, z: -1.54999995}
 --- !u!65 &6548092
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -198,8 +198,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: .00999999978}
-  m_Center: {x: 0, y: 0, z: 1.5}
+  m_Size: {x: 3, y: 4, z: .100000001}
+  m_Center: {x: 0, y: 0, z: 1.54999995}
 --- !u!65 &6581184
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -210,8 +210,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: .00999999978}
-  m_Center: {x: 0, y: 0, z: -1.5}
+  m_Size: {x: 3, y: 4, z: .100000001}
+  m_Center: {x: 0, y: 0, z: -1.54999995}
 --- !u!65 &6592924
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -222,8 +222,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: .00999999978}
-  m_Center: {x: 0, y: 0, z: 1.5}
+  m_Size: {x: 3, y: 4, z: .100000001}
+  m_Center: {x: 0, y: 0, z: 1.54999995}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

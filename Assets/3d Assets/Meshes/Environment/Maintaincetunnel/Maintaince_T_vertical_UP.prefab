@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &114712
 GameObject:
@@ -30,7 +30,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &127052
 GameObject:
@@ -46,7 +46,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143612
 GameObject:
@@ -63,7 +63,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &149454
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &158024
 GameObject:
@@ -95,7 +95,7 @@ GameObject:
   m_TagString: Wand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &402630
 Transform:
@@ -217,8 +217,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: .00999999978}
-  m_Center: {x: 0, y: 2.50801301, z: 7.68313475e-05}
+  m_Size: {x: 4, y: 4, z: .100000001}
+  m_Center: {x: 0, y: 2.50801301, z: .0500000007}
 --- !u!65 &6531154
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -229,8 +229,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3.98260212, z: .00999999978}
-  m_Center: {x: 0, y: 1.00855029, z: 7.67707825e-05}
+  m_Size: {x: 3, y: 3.98260212, z: .100000001}
+  m_Center: {x: 0, y: 1.00855029, z: .0500000007}
 --- !u!65 &6562714
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -241,8 +241,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: .00999999978}
-  m_Center: {x: 0, y: 2.50801301, z: 7.68313475e-05}
+  m_Size: {x: 4, y: 4, z: .100000001}
+  m_Center: {x: 0, y: 2.50801301, z: -.0500000007}
 --- !u!65 &6577606
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -253,8 +253,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 3, z: .00999999978}
-  m_Center: {x: 0, y: 2.50801301, z: 7.68313475e-05}
+  m_Size: {x: 4, y: 3, z: .100000001}
+  m_Center: {x: 0, y: 2.50801301, z: -.0500000007}
 --- !u!65 &6583952
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -265,8 +265,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 6.98161173, z: .00999999978}
-  m_Center: {x: 0, y: 2.50801301, z: 7.68313475e-05}
+  m_Size: {x: 3, y: 6.98161173, z: .100000001}
+  m_Center: {x: 0, y: 2.50801301, z: -.0500000007}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
