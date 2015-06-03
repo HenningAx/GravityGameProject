@@ -784,9 +784,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107130}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.86999989, y: .0799999982, z: 4.36000013}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: 3.18000054, y: .0209999084, z: 4.99199915}
+  m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1.20000005}
   m_Children:
   - {fileID: 457820}
   - {fileID: 464100}
@@ -3344,7 +3344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cab99545641404bb9dfc79579a95b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gfragments: {fileID: 0}
+  Gfragments: {fileID: 140562}
   FdestroyThreshold: 3
   FexplodeRadius: 3
   FexplodePower: 100
