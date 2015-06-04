@@ -27,6 +27,7 @@ public class GravityChanger : MonoBehaviour
     float FstartTime;
     float FjourneyLength;
     float FRotSpeed;
+    public Vector3 LastHitNormal;
 
     // Use this for initialization
     void Start()
@@ -64,7 +65,11 @@ public class GravityChanger : MonoBehaviour
             RaycastHit AttatchToWall;
             if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f, 1 << 8))
             {
-                StartWalkingOnWall(AttatchToWall);
+                if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1)
+                {
+                    Debug.Log("StopMouseMoveByEnter");
+                    StartWalkingOnWall(AttatchToWall);
+                }
             }
         }
     }
@@ -83,13 +88,14 @@ public class GravityChanger : MonoBehaviour
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5.0f, Color.green, 5.0f);
             if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1 << 8))
             {
-                if (LastHit.normal != hit.normal)
+                if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1))
                 {
                     StartWalkingOnWall(hit);
+                    Debug.Log("StopMouseMoveByExit");
+                    RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
+                    RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
                 }
             }
-            RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
-            RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
             Debug.DrawRay(transform.position, transform.up.normalized * -FOverEdgePush, Color.red, 10.0f);
         }
     }
@@ -118,6 +124,7 @@ public class GravityChanger : MonoBehaviour
         Physics.gravity = Wall.normal * -10.0F;
 
         LastHit = Wall;
+        LastHitNormal = MathExtensions.round(Wall.normal);
         BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
     }
 
