@@ -86,9 +86,9 @@ public class GravityChanger : MonoBehaviour
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
             RaycastHit hit;
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5.0f, Color.green, 5.0f);
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1 << 8))
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f))
             {
-                if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1))
+                if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
                 {
                     StartWalkingOnWall(hit);
                     Debug.Log("StopMouseMoveByExit");
