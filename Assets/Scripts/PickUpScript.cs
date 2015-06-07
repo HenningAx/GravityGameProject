@@ -74,9 +74,10 @@ public class PickUpScript : MonoBehaviour {
             {
                 BhasObject = false;
                 pickUpObjectRigidbody.useGravity = true;
-                pickUpObjectRigidbody.velocity = Vector3.zero;
+                pickUpObjectRigidbody.velocity = pickUpObjectRigidbody.velocity / 3;
                 pickUpObjectRigidbody.drag = ForiginalDrag;
                 pickUpObjectRigidbody.angularDrag = ForiginalAngularDrag;
+                GpickUpObject.SendMessage("Droped", SendMessageOptions.DontRequireReceiver);
                 if (GoldParent != null)
                 {
                     GpickUpObject.transform.parent = GoldParent.transform;

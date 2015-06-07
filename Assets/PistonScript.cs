@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class Child
 {
     public Transform trans;
@@ -19,8 +20,7 @@ public class PistonScript : MonoBehaviour {
 
 
 
-    List<Child> Childs = new List<Child>();
-
+    public List<Child> Childs = new List<Child>();
     Vector3 VparentOffset;
     Vector3 VmaxPos;
 

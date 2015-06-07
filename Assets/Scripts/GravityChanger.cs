@@ -67,7 +67,6 @@ public class GravityChanger : MonoBehaviour
             {
                 if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1)
                 {
-                    Debug.Log("StopMouseMoveByEnter");
                     StartWalkingOnWall(AttatchToWall);
                 }
             }
@@ -91,7 +90,6 @@ public class GravityChanger : MonoBehaviour
                 if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
                 {
                     StartWalkingOnWall(hit);
-                    Debug.Log("StopMouseMoveByExit");
                     RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
                     RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
                 }
