@@ -20,6 +20,7 @@ public class GravityChanger : MonoBehaviour
     Vector3 VUpVector;
     Vector3 VForwardVector;
     Vector3 VMovmentVector;
+    Vector3 VlastGravity;
     Quaternion StartRot;
     Quaternion TargetRot;
     RaycastHit LastHit;
@@ -91,10 +92,10 @@ public class GravityChanger : MonoBehaviour
                 {
                     StartWalkingOnWall(hit);
                     RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
-                    RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
+                    RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
                 }
             }
-            Debug.DrawRay(transform.position, transform.up.normalized * -FOverEdgePush, Color.red, 10.0f);
+            Debug.DrawRay(transform.position, transform.up.normalized * FOverEdgePush, Color.red, 10.0f);
         }
     }
 
@@ -119,6 +120,7 @@ public class GravityChanger : MonoBehaviour
         SendMessage("setRotating", true);
 
         //Change Gravity
+        VlastGravity = Physics.gravity;
         Physics.gravity = Wall.normal * -10.0F;
 
         LastHit = Wall;
@@ -157,6 +159,7 @@ public class GravityChanger : MonoBehaviour
                 SendMessage("setRotating", true);
 
                 //Change Gravity
+                VlastGravity = Physics.gravity;
                 Physics.gravity = Wall.normal * -10.0f;
 
                 BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
