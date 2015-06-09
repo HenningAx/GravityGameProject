@@ -266,7 +266,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-        void ReInitMouseLook()
+        public void ReInitMouseLook()
         {
             mouseLook.Init(transform, cam.transform);
         }

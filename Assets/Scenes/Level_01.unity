@@ -9545,6 +9545,7 @@ GameObject:
   - 23: {fileID: 224635281}
   - 64: {fileID: 224635280}
   - 54: {fileID: 224635279}
+  - 114: {fileID: 224635283}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_021
   m_TagString: Untagged
@@ -9626,6 +9627,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224635277}
   m_Mesh: {fileID: 4300038, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &224635283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224635277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1001 &224952003
 Prefab:
   m_ObjectHideFlags: 0
@@ -14231,6 +14247,7 @@ GameObject:
   - 23: {fileID: 354176173}
   - 64: {fileID: 354176172}
   - 54: {fileID: 354176171}
+  - 114: {fileID: 354176175}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_014_frag_001
   m_TagString: Untagged
@@ -14312,6 +14329,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 354176169}
   m_Mesh: {fileID: 4300046, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &354176175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354176169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &354331450
 GameObject:
   m_ObjectHideFlags: 0
@@ -14824,6 +14856,7 @@ GameObject:
   - 23: {fileID: 367770674}
   - 64: {fileID: 367770673}
   - 54: {fileID: 367770672}
+  - 114: {fileID: 367770676}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_002_frag_002
   m_TagString: Untagged
@@ -14905,6 +14938,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 367770670}
   m_Mesh: {fileID: 4300014, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &367770676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367770670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &368138225
 GameObject:
   m_ObjectHideFlags: 0
@@ -15439,17 +15487,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 453982, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
   m_PrefabInternal: {fileID: 916099619}
---- !u!114 &377819803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 377819796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dbac2efc57e7641b9d2fce4bac4e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &380867578
 GameObject:
   m_ObjectHideFlags: 0
@@ -18497,6 +18534,7 @@ GameObject:
   - 23: {fileID: 473831575}
   - 64: {fileID: 473831574}
   - 54: {fileID: 473831573}
+  - 114: {fileID: 473831577}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_015_frag_001
   m_TagString: Untagged
@@ -18578,6 +18616,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473831571}
   m_Mesh: {fileID: 4300064, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &473831577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 473831571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &474177078
 GameObject:
   m_ObjectHideFlags: 0
@@ -18652,6 +18705,7 @@ GameObject:
   - 23: {fileID: 475615057}
   - 64: {fileID: 475615056}
   - 54: {fileID: 475615055}
+  - 114: {fileID: 475615059}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_013_frag_004
   m_TagString: Untagged
@@ -18733,6 +18787,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 475615053}
   m_Mesh: {fileID: 4300006, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &475615059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475615053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &476218744 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183262, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
@@ -23496,6 +23565,7 @@ GameObject:
   - 23: {fileID: 626352384}
   - 64: {fileID: 626352383}
   - 54: {fileID: 626352382}
+  - 114: {fileID: 626352386}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_018
   m_TagString: Untagged
@@ -23577,6 +23647,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 626352380}
   m_Mesh: {fileID: 4300058, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &626352386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 626352380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &628437703
 GameObject:
   m_ObjectHideFlags: 0
@@ -26325,6 +26410,7 @@ GameObject:
   - 23: {fileID: 691878384}
   - 64: {fileID: 691878383}
   - 54: {fileID: 691878382}
+  - 114: {fileID: 691878386}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_002_frag_001
   m_TagString: Untagged
@@ -26406,6 +26492,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 691878380}
   m_Mesh: {fileID: 4300012, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &691878386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 691878380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &693524486
 GameObject:
   m_ObjectHideFlags: 0
@@ -26860,6 +26961,7 @@ GameObject:
   - 23: {fileID: 707787549}
   - 64: {fileID: 707787548}
   - 54: {fileID: 707787547}
+  - 114: {fileID: 707787551}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_005
   m_TagString: Untagged
@@ -26941,6 +27043,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707787545}
   m_Mesh: {fileID: 4300026, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &707787551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707787545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &709326751
 GameObject:
   m_ObjectHideFlags: 0
@@ -27928,6 +28045,7 @@ GameObject:
   - 23: {fileID: 732764714}
   - 64: {fileID: 732764713}
   - 54: {fileID: 732764712}
+  - 114: {fileID: 732764716}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_010_frag_002
   m_TagString: Untagged
@@ -28009,6 +28127,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732764710}
   m_Mesh: {fileID: 4300052, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &732764716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732764710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &733009788
 GameObject:
   m_ObjectHideFlags: 0
@@ -28398,6 +28531,7 @@ GameObject:
   - 23: {fileID: 741851336}
   - 64: {fileID: 741851335}
   - 54: {fileID: 741851334}
+  - 114: {fileID: 741851338}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_022
   m_TagString: Untagged
@@ -28479,6 +28613,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741851332}
   m_Mesh: {fileID: 4300040, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &741851338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741851332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &742599212
 GameObject:
   m_ObjectHideFlags: 0
@@ -29361,6 +29510,7 @@ GameObject:
   - 23: {fileID: 771872892}
   - 64: {fileID: 771872891}
   - 54: {fileID: 771872890}
+  - 114: {fileID: 771872894}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_015_frag_002
   m_TagString: Untagged
@@ -29442,6 +29592,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771872888}
   m_Mesh: {fileID: 4300066, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &771872894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771872888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &772119876
 GameObject:
   m_ObjectHideFlags: 0
@@ -31354,6 +31519,7 @@ GameObject:
   - 23: {fileID: 813998407}
   - 64: {fileID: 813998406}
   - 54: {fileID: 813998405}
+  - 114: {fileID: 813998409}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_006
   m_TagString: Untagged
@@ -31435,6 +31601,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 813998403}
   m_Mesh: {fileID: 4300028, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &813998409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813998403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &814052764
 GameObject:
   m_ObjectHideFlags: 0
@@ -32051,7 +32232,7 @@ Transform:
   m_PrefabParentObject: {fileID: 443210, guid: 6ac2984e5780050429b6d1252b7b643c, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 823284818}
-  m_LocalRotation: {x: .632697701, y: .315742999, z: .632697701, w: .31574294}
+  m_LocalRotation: {x: .632697761, y: .315743029, z: .632697761, w: .31574297}
   m_LocalPosition: {x: .000110757355, y: .00300758844, z: .0812630802}
   m_LocalScale: {x: .0480702072, y: .0480702072, z: .0480702072}
   m_Children: []
@@ -36226,14 +36407,6 @@ Prefab:
       propertyPath: m_Name
       value: WoodCrate_small 3
       objectReference: {fileID: 0}
-    - target: {fileID: 453982, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.50000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 453982, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.50000024
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
   m_IsPrefabParent: 0
@@ -37825,6 +37998,7 @@ GameObject:
   - 23: {fileID: 956374435}
   - 64: {fileID: 956374434}
   - 54: {fileID: 956374433}
+  - 114: {fileID: 956374437}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_001_frag_001
   m_TagString: Untagged
@@ -37906,6 +38080,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 956374431}
   m_Mesh: {fileID: 4300008, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &956374437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956374431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &956480974
 GameObject:
   m_ObjectHideFlags: 0
@@ -41373,6 +41562,7 @@ GameObject:
   - 23: {fileID: 1044523418}
   - 64: {fileID: 1044523417}
   - 54: {fileID: 1044523416}
+  - 114: {fileID: 1044523420}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_016_frag_001
   m_TagString: Untagged
@@ -41454,6 +41644,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044523414}
   m_Mesh: {fileID: 4300054, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1044523420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044523414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1046839098
 GameObject:
   m_ObjectHideFlags: 0
@@ -44388,6 +44593,7 @@ GameObject:
   - 23: {fileID: 1117346522}
   - 64: {fileID: 1117346521}
   - 54: {fileID: 1117346520}
+  - 114: {fileID: 1117346524}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_012
   m_TagString: Untagged
@@ -44469,6 +44675,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1117346518}
   m_Mesh: {fileID: 4300034, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1117346524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1117346518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1118590804
 GameObject:
   m_ObjectHideFlags: 0
@@ -46153,7 +46374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1693922705}
-  m_RootOrder: 19
+  m_RootOrder: 18
 --- !u!114 &1154869513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49006,6 +49227,7 @@ GameObject:
   - 23: {fileID: 1224606549}
   - 64: {fileID: 1224606548}
   - 54: {fileID: 1224606547}
+  - 114: {fileID: 1224606551}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_014_frag_002
   m_TagString: Untagged
@@ -49087,6 +49309,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224606545}
   m_Mesh: {fileID: 4300048, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1224606551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1224606545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1001 &1225411137
 Prefab:
   m_ObjectHideFlags: 0
@@ -49227,6 +49464,7 @@ GameObject:
   - 23: {fileID: 1228643773}
   - 64: {fileID: 1228643772}
   - 54: {fileID: 1228643771}
+  - 114: {fileID: 1228643775}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_008
   m_TagString: Untagged
@@ -49308,6 +49546,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228643769}
   m_Mesh: {fileID: 4300032, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1228643775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1228643769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1001 &1232188385
 Prefab:
   m_ObjectHideFlags: 0
@@ -49428,6 +49681,14 @@ Prefab:
     - target: {fileID: 453982, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445408, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
+      propertyPath: FfragsFadeOutTimeMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445408, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
+      propertyPath: FfragsFadeOutDelayMax
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
@@ -51515,6 +51776,7 @@ GameObject:
   - 23: {fileID: 1283060096}
   - 64: {fileID: 1283060095}
   - 54: {fileID: 1283060094}
+  - 114: {fileID: 1283060098}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_003_frag_001
   m_TagString: Untagged
@@ -51596,6 +51858,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1283060092}
   m_Mesh: {fileID: 4300020, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1283060098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283060092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1288803417
 GameObject:
   m_ObjectHideFlags: 0
@@ -51989,6 +52266,7 @@ GameObject:
   - 23: {fileID: 1303376744}
   - 64: {fileID: 1303376743}
   - 54: {fileID: 1303376742}
+  - 114: {fileID: 1303376746}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_001_frag_004
   m_TagString: Untagged
@@ -52070,6 +52348,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1303376740}
   m_Mesh: {fileID: 4300010, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1303376746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1303376740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1307572189
 GameObject:
   m_ObjectHideFlags: 0
@@ -54046,6 +54339,7 @@ GameObject:
   - 23: {fileID: 1367389994}
   - 64: {fileID: 1367389993}
   - 54: {fileID: 1367389992}
+  - 114: {fileID: 1367389996}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_007
   m_TagString: Untagged
@@ -54127,6 +54421,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1367389990}
   m_Mesh: {fileID: 4300030, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1367389996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367389990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1367462650
 GameObject:
   m_ObjectHideFlags: 0
@@ -56205,6 +56514,7 @@ GameObject:
   - 23: {fileID: 1420409476}
   - 64: {fileID: 1420409475}
   - 54: {fileID: 1420409474}
+  - 114: {fileID: 1420409478}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_019
   m_TagString: Untagged
@@ -56286,6 +56596,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1420409472}
   m_Mesh: {fileID: 4300036, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1420409478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420409472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1421508025
 GameObject:
   m_ObjectHideFlags: 0
@@ -57712,6 +58037,7 @@ GameObject:
   - 23: {fileID: 1481729407}
   - 64: {fileID: 1481729406}
   - 54: {fileID: 1481729405}
+  - 114: {fileID: 1481729409}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_004
   m_TagString: Untagged
@@ -57793,6 +58119,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481729403}
   m_Mesh: {fileID: 4300024, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1481729409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481729403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1001 &1482222159
 Prefab:
   m_ObjectHideFlags: 0
@@ -59400,6 +59741,7 @@ GameObject:
   - 23: {fileID: 1518156061}
   - 64: {fileID: 1518156060}
   - 54: {fileID: 1518156059}
+  - 114: {fileID: 1518156063}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_009_frag_003
   m_TagString: Untagged
@@ -59481,6 +59823,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518156057}
   m_Mesh: {fileID: 4300016, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1518156063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518156057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1520777500
 GameObject:
   m_ObjectHideFlags: 0
@@ -61296,6 +61653,7 @@ GameObject:
   - 23: {fileID: 1592948860}
   - 64: {fileID: 1592948859}
   - 54: {fileID: 1592948858}
+  - 114: {fileID: 1592948862}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_011_frag_001
   m_TagString: Untagged
@@ -61377,6 +61735,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592948856}
   m_Mesh: {fileID: 4300042, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1592948862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592948856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1593265291
 GameObject:
   m_ObjectHideFlags: 0
@@ -62914,7 +63287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 453982, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 183262, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
       propertyPath: m_Name
@@ -65181,8 +65554,8 @@ Transform:
   - {fileID: 377819797}
   - {fileID: 1907440464}
   - {fileID: 1404785549}
-  - {fileID: 476218745}
   - {fileID: 1154869512}
+  - {fileID: 476218745}
   m_Father: {fileID: 1981587489}
   m_RootOrder: 14
 --- !u!1 &1694774925
@@ -65507,6 +65880,7 @@ GameObject:
   - 23: {fileID: 1704572438}
   - 64: {fileID: 1704572437}
   - 54: {fileID: 1704572436}
+  - 114: {fileID: 1704572440}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_017_frag_002
   m_TagString: Untagged
@@ -65588,6 +65962,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704572434}
   m_Mesh: {fileID: 4300062, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1704572440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704572434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!4 &1705484289 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478840, guid: 05de2ceade89c714f9d8ef88795f8bc1, type: 2}
@@ -67671,6 +68060,7 @@ GameObject:
   - 23: {fileID: 1749493816}
   - 64: {fileID: 1749493815}
   - 54: {fileID: 1749493814}
+  - 114: {fileID: 1749493818}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_017_frag_001
   m_TagString: Untagged
@@ -67752,6 +68142,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749493812}
   m_Mesh: {fileID: 4300060, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1749493818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1749493812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1750121841
 GameObject:
   m_ObjectHideFlags: 0
@@ -71024,6 +71429,7 @@ GameObject:
   - 23: {fileID: 1789569189}
   - 64: {fileID: 1789569188}
   - 54: {fileID: 1789569187}
+  - 114: {fileID: 1789569191}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_002
   m_TagString: Untagged
@@ -71105,6 +71511,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789569185}
   m_Mesh: {fileID: 4300002, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1789569191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789569185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!4 &1790899904 stripped
 Transform:
   m_PrefabParentObject: {fileID: 446030, guid: d76ed91cdce866d4582b91e722492b3e, type: 2}
@@ -71484,6 +71905,7 @@ GameObject:
   - 23: {fileID: 1804519158}
   - 64: {fileID: 1804519157}
   - 54: {fileID: 1804519156}
+  - 114: {fileID: 1804519160}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_016_frag_002
   m_TagString: Untagged
@@ -71565,6 +71987,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1804519154}
   m_Mesh: {fileID: 4300056, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1804519160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804519154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1808350969
 GameObject:
   m_ObjectHideFlags: 0
@@ -73019,6 +73456,7 @@ GameObject:
   - 23: {fileID: 1840979878}
   - 64: {fileID: 1840979877}
   - 54: {fileID: 1840979876}
+  - 114: {fileID: 1840979880}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_011_frag_002
   m_TagString: Untagged
@@ -73100,6 +73538,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1840979874}
   m_Mesh: {fileID: 4300044, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1840979880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1840979874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1843130203
 GameObject:
   m_ObjectHideFlags: 0
@@ -74224,6 +74677,8 @@ MonoBehaviour:
   FdestroyThreshold: 3
   FexplodeRadius: 3
   FexplodePower: 100
+  FfragsFadeOutTimeMax: 2
+  FfragsFadeOutDelayMax: 2
 --- !u!23 &1867542917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75684,17 +76139,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 453982, guid: 466c0800e92b60648b71661f73ca7db8, type: 2}
   m_PrefabInternal: {fileID: 1232233434}
---- !u!114 &1907440470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1907440463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dbac2efc57e7641b9d2fce4bac4e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1908992177
 GameObject:
   m_ObjectHideFlags: 0
@@ -76389,6 +76833,7 @@ GameObject:
   - 23: {fileID: 1921283122}
   - 64: {fileID: 1921283121}
   - 54: {fileID: 1921283120}
+  - 114: {fileID: 1921283124}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_001
   m_TagString: Untagged
@@ -76470,6 +76915,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921283118}
   m_Mesh: {fileID: 4300000, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1921283124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921283118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1921730130
 GameObject:
   m_ObjectHideFlags: 0
@@ -77339,6 +77799,7 @@ GameObject:
   - 23: {fileID: 1933742892}
   - 64: {fileID: 1933742891}
   - 54: {fileID: 1933742890}
+  - 114: {fileID: 1933742894}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_013_frag_001
   m_TagString: Untagged
@@ -77420,6 +77881,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933742888}
   m_Mesh: {fileID: 4300004, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1933742894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1933742888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1934725683
 GameObject:
   m_ObjectHideFlags: 0
@@ -80044,6 +80520,7 @@ GameObject:
   - 23: {fileID: 1997510737}
   - 64: {fileID: 1997510736}
   - 54: {fileID: 1997510735}
+  - 114: {fileID: 1997510739}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_010_frag_001
   m_TagString: Untagged
@@ -80125,6 +80602,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1997510733}
   m_Mesh: {fileID: 4300050, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &1997510739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997510733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &1997574579
 GameObject:
   m_ObjectHideFlags: 0
@@ -85078,6 +85570,7 @@ GameObject:
   - 23: {fileID: 2114581202}
   - 64: {fileID: 2114581201}
   - 54: {fileID: 2114581200}
+  - 114: {fileID: 2114581204}
   m_Layer: 0
   m_Name: LP_Deckel_001_frag_003_frag_003_frag_002
   m_TagString: Untagged
@@ -85159,6 +85652,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2114581198}
   m_Mesh: {fileID: 4300022, guid: f1f90153669f61341b4d97c352f410f0, type: 3}
+--- !u!114 &2114581204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114581198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 0
+  fadeTime: .5
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
 --- !u!1 &2115787560
 GameObject:
   m_ObjectHideFlags: 0
@@ -85662,14 +86170,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2127371589}
-  - 114: {fileID: 2127371590}
   m_Layer: 0
   m_Name: WoodenCrate_Top_fragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2127371589
 Transform:
   m_ObjectHideFlags: 0
@@ -85715,22 +86222,6 @@ Transform:
   - {fileID: 741851333}
   m_Father: {fileID: 1867542913}
   m_RootOrder: 0
---- !u!114 &2127371590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11440728, guid: 6ac2984e5780050429b6d1252b7b643c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2127371588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26fd1665c6af7944dba4478926f40b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDelay: 2
-  fadeTime: 2
-  fadeInOnStart: 0
-  fadeOutOnStart: 0
 --- !u!1 &2128636304
 GameObject:
   m_ObjectHideFlags: 0

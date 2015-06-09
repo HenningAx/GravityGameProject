@@ -59,11 +59,12 @@ public class FadeScript : MonoBehaviour
 	}
  
 	// fade sequence
-	IEnumerator FadeSequence (float fadingOutTime)
+	IEnumerator FadeSequence (float fadingOutTime, float fadeingDelay)
 	{
 		// log fading direction, then precalculate fading speed as a multiplier
 		bool fadingOut = (fadingOutTime < 0.0f);
-		float fadingOutSpeed = 1.0f / fadingOutTime; 
+		float fadingOutSpeed = 1.0f / fadingOutTime;
+        fadeDelay = fadeingDelay;
 
         if(fadeDelay > 0)
         {
@@ -147,14 +148,26 @@ public class FadeScript : MonoBehaviour
 	public void FadeIn (float newFadeTime)
 	{
 		StopAllCoroutines(); 
-		StartCoroutine("FadeSequence", newFadeTime); 
+		StartCoroutine(FadeSequence(newFadeTime, fadeDelay)); 
 	}
  
 	public void FadeOut (float newFadeTime)
 	{
-		StopAllCoroutines(); 
-		StartCoroutine("FadeSequence", -newFadeTime);
+		StopAllCoroutines();
+        StartCoroutine(FadeSequence(-newFadeTime, fadeDelay)); 
 	}
+
+    public void FadeIn(float newFadeTime, float newFadeDelay)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeSequence(newFadeTime, newFadeDelay));
+    }
+
+    public void FadeOut(float newFadeTime, float newFadeDelay)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeSequence(-newFadeTime, newFadeDelay));
+    }
  
 }
  
