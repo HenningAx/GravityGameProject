@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/* This script is used for the gravity changing of the character
+ * when the character hits something which is marked as Wall or walks over a edge where the next surface is marked as Wall the gravity changes
+ * it also contains a function to switch the gravity around which is used by the switch platforms
+ * it also handels the rotation of the character when the gravity changes
+ */
+
+using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -28,7 +34,6 @@ public class GravityChanger : MonoBehaviour
     float FRotSpeed;
     public Vector3 LastHitNormal;
 
-    // Use this for initialization
     void Start()
     {
         Cursor.visible = false;
@@ -39,11 +44,10 @@ public class GravityChanger : MonoBehaviour
         LastHitNormal = Physics.gravity.normalized;
     }
 
-    // Update is called once per frame
-    void Update()
+    //Couroutine to rotate the character
+    IEnumerator RotateSequence()
     {
-
-        if (BisRotating)
+        while (BisRotating)
         {
             float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
@@ -53,6 +57,7 @@ public class GravityChanger : MonoBehaviour
                 CharacterControllerScript.setRotating(false);
                 CharacterControllerScript.ReInitMouseLook();
             }
+            yield return null;
         }
     }
 
@@ -116,7 +121,7 @@ public class GravityChanger : MonoBehaviour
 
         //Set the Character in RotationState
         BisRotating = true;
-        //SendMessage("setRotating", true);
+        CharacterControllerScript.setRotating(true);
 
         //Change Gravity
         VlastGravity = Physics.gravity;
@@ -125,6 +130,7 @@ public class GravityChanger : MonoBehaviour
         LastHit = Wall;
         LastHitNormal = MathExtensions.round(Wall.normal);
         BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+        StartCoroutine(RotateSequence());
     }
 
     void FlipGravity(Collider other)
@@ -155,13 +161,14 @@ public class GravityChanger : MonoBehaviour
 
                 //Set the Character in RotationState
                 BisRotating = true;
-                SendMessage("setRotating", true);
+                CharacterControllerScript.setRotating(true);
 
                 //Change Gravity
                 VlastGravity = Physics.gravity;
                 Physics.gravity = Wall.normal * -10.0f;
 
                 BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+                StartCoroutine(RotateSequence());
             }
         }
     }

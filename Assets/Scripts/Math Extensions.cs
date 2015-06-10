@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//This script contains usefull mathematic functions not inculed in Unity
+
+using UnityEngine;
 using System.Collections;
 
 public static class MathExtensions

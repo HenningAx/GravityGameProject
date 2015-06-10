@@ -1,27 +1,35 @@
-﻿using UnityEngine;
+﻿/* This script is used to let a lamp flicker
+ * it manipulates the intensity of the light component and the emission of the material
+ * the rate of the flicker, the chance that the light is on and the intensity of the light can be controlled
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class LampFlickerScript : MonoBehaviour {
 
+    public int IflickerRate = 20;
+    public float FlightChance = 0.8f;
+    public float FlightIntensity = 0.8f;
+
     Light lightComp;
     Material materialComp;
     int Icountdown = 0;
-    public int IflickerRate = 20;
 
-	// Use this for initialization
 	void Start () {
         lightComp = GetComponent<Light>();
         materialComp = GetComponent<Renderer>().material;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (Icountdown > IflickerRate)
         {
+            //Calculate a random value between 0 and 1
             float newIntensity = Random.value;
-            if(newIntensity > 0.8f)
+            //If the value is highter than the chance to flicker the light is turned on
+            if(newIntensity > FlightChance)
             {
-                lightComp.intensity = 0.8f;
+                lightComp.intensity = FlightIntensity;
                 materialComp.SetColor("_EmissionColor", Color.white);
             } else
             {

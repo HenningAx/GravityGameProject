@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿/* This script is used to destroy a prefragmented object on collision and fade them out to prevent performence drops from having to many Rigidbodies
+ * the fragments of the object have to be childs of the original object this script is attached to
+ * for fading out all fragments must have the FadeScript attached and the rendering mode of the material of the fragments has to be set to a transparent type
+ * on collision the script will check if the force of the collision is higher then the destroyThreshold
+ * if this is true the childs will be detached and the FadeOut Sequence on them is started
+ * for a cooler look a explosion force from the pivot of the original object is applied to all Rigidbodies near to the destruction
+ * the force of the explosion can be controlled over public variables
+ */
+
+
+using UnityEngine;
 using System.Collections;
 
 public class DestroyFragmentedObject : MonoBehaviour {
@@ -12,17 +22,13 @@ public class DestroyFragmentedObject : MonoBehaviour {
 
     FadeScript[] fadeScriptComps;
 
-	// Use this for initialization
 	void Start () {
+        //Get all FadeScripts on the fragments to save performence on runtime
         fadeScriptComps = GetComponentsInChildren<FadeScript>();
-        print(fadeScriptComps.Length);
+        //Set the fragments to inactive, so they are not visible while the object isn't destroyed
         Gfragments.SetActive(false);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	}
-
     void OnCollisionEnter(Collision col)
     {
         if (this.GetComponent<Rigidbody>() != null)
@@ -31,7 +37,6 @@ public class DestroyFragmentedObject : MonoBehaviour {
             {
 
                 Gfragments.SetActive(true);
-                //this.BroadcastMessage("FadeOut", SendMessageOptions.DontRequireReceiver);
                 foreach(FadeScript fs in fadeScriptComps)
                 {
                     fs.FadeOut(Random.Range(0, FfragsFadeOutTimeMax), Random.Range(0, FfragsFadeOutDelayMax));
@@ -45,13 +50,13 @@ public class DestroyFragmentedObject : MonoBehaviour {
             if (col.relativeVelocity.magnitude * Vector3.Dot(col.contacts[0].normal.normalized, col.relativeVelocity.normalized) > FdestroyThreshold && col.collider.tag != "Player" && col.collider.tag != "Frags")
             {
                 Gfragments.SetActive(true);
-                //this.BroadcastMessage("FadeOut", SendMessageOptions.DontRequireReceiver);
                 foreach (FadeScript fs in fadeScriptComps)
                 {
                     fs.FadeOut(Random.Range(0, FfragsFadeOutTimeMax), Random.Range(0, FfragsFadeOutDelayMax));
                 }
                 transform.DetachChildren();
                 PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower);
+                Destroy(this.gameObject); 
             }
         }
     }

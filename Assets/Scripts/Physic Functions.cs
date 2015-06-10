@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//This script contains usefull functions related to Physics
+
+using UnityEngine;
 using System.Collections;
 
 public static class PhysicFunctions

@@ -10,11 +10,6 @@ public class NegativGravityScript : MonoBehaviour {
         rigidbodyComp = this.GetComponent<Rigidbody>();
         rigidbodyComp.useGravity = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     void FixedUpdate()
     {

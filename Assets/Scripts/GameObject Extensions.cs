@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Contains some useful functions to extend the Unity GameObject
+
+using UnityEngine;
 using System.Collections;
 
 public static class GameObjectExtensions
