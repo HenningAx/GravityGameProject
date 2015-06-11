@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/* This script is used for the gravity changing of the character
+ * when the character hits something which is marked as Wall or walks over a edge where the next surface is marked as Wall the gravity changes
+ * it also contains a function to switch the gravity around which is used by the switch platforms
+ * it also handels the rotation of the character when the gravity changes
+ */
+
+using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -11,8 +17,8 @@ public class GravityChanger : MonoBehaviour
     public float FOverEdgePush = 2.0F;
 
     CapsuleCollider CharacterCollider;
+    RigidbodyFirstPersonController CharacterControllerScript;
     Rigidbody RigidbodyComp;
-    RaycastHit GroundRaycastHit;
 
     GameObject Ground;
     bool BisRotating = false;
@@ -20,39 +26,38 @@ public class GravityChanger : MonoBehaviour
     Vector3 VUpVector;
     Vector3 VForwardVector;
     Vector3 VMovmentVector;
+    Vector3 VlastGravity;
     Quaternion StartRot;
     Quaternion TargetRot;
     RaycastHit LastHit;
-    float Timer;
     float FstartTime;
-    float FjourneyLength;
     float FRotSpeed;
+    public Vector3 LastHitNormal;
 
-    // Use this for initialization
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         CharacterCollider = gameObject.GetComponent<CapsuleCollider>();
+        CharacterControllerScript = GetComponent<RigidbodyFirstPersonController>();
         RigidbodyComp = gameObject.GetComponent<Rigidbody>();
+        LastHitNormal = Physics.gravity.normalized;
     }
 
-    // Update is called once per frame
-    void Update()
+    //Couroutine to rotate the character
+    IEnumerator RotateSequence()
     {
-
-        if (BisRotating)
+        while (BisRotating)
         {
             float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
-            SendMessage("setRotating", false);
-            SendMessage("ReInitMouseLook");
             if (FdistCovered >= 1)
             {
                 BisRotating = false;
-                SendMessage("setRotating", false);
-                SendMessage("ReInitMouseLook");
+                CharacterControllerScript.setRotating(false);
+                CharacterControllerScript.ReInitMouseLook();
             }
+            yield return null;
         }
     }
 
@@ -64,12 +69,15 @@ public class GravityChanger : MonoBehaviour
             RaycastHit AttatchToWall;
             if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f, 1 << 8))
             {
-                StartWalkingOnWall(AttatchToWall);
+                if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1)
+                {
+                    StartWalkingOnWall(AttatchToWall);
+                }
             }
         }
     }
 
-  void OnCollisionExit(Collision other)
+    void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Wand" && !BisRotating)
         {
@@ -80,34 +88,18 @@ public class GravityChanger : MonoBehaviour
             Vector3 RayCastStart = transform.position - (transform.up * CharacterCollider.height / 3);
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
             RaycastHit hit;
-            Debug.DrawRay(RayCastStart, RayCastDir.normalized * 5.0f, Color.green, 5.0f);
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f, 1 << 8))
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f))
             {
-                if (LastHit.normal != hit.normal)
+                if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
                 {
                     StartWalkingOnWall(hit);
+                    //Apply some force to push the character over the edge
+                    RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
+                    RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
                 }
             }
-            RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
-            RigidbodyComp.AddForce(transform.up.normalized * -FOverEdgePush, ForceMode.Impulse);
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        //Check if the Trigger is a platform to change gravity
-        if (other.tag == "ChangePlatform" && other.gameObject != Ground && !BisRotating)
-        {
-            //Sent an Raycast straight upwards to find the new ground of the Player
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.up, out hit))
-            {
-                //Flip the Gravity using the surface hit by the Raycast
-                RigidbodyComp.velocity = Vector3.zero;
-                FlipGravity(hit);
-            }
-        }
-    } 
 
     void StartWalkingOnWall(RaycastHit Wall)
     {
@@ -123,44 +115,62 @@ public class GravityChanger : MonoBehaviour
         //Callculate the new rotation
         StartRot = transform.rotation;
         VUpVector = Wall.normal;
-        TargetRot = Quaternion.Euler(Vector3.Cross(VUpVector, transform.up).normalized * -Vector3.Angle(VUpVector, transform.up)) * transform.rotation;
+        //Get the new rotation by creating a rotation, that rotates around the axis between the current and the new up Vector
+        TargetRot = Quaternion.AngleAxis(-Vector3.Angle(VUpVector, transform.up), Vector3.Cross(VUpVector, transform.up).normalized) * transform.rotation;
+        Quaternion TargetUpRot = Quaternion.Euler(Vector3.Cross(VUpVector, transform.up).normalized * -Vector3.Angle(VUpVector, transform.up)) * transform.rotation;
 
         //Set the Character in RotationState
         BisRotating = true;
-        SendMessage("setRotating", true);
+        CharacterControllerScript.setRotating(true);
 
         //Change Gravity
+        VlastGravity = Physics.gravity;
         Physics.gravity = Wall.normal * -10.0F;
 
         LastHit = Wall;
+        LastHitNormal = MathExtensions.round(Wall.normal);
         BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+        StartCoroutine(RotateSequence());
     }
 
-    void FlipGravity(RaycastHit Wall)
+    void FlipGravity(Collider other)
     {
-        //Set Start Time of Rotating Animation
-        FstartTime = Time.time;
+        if (other.gameObject != Ground && !BisRotating)
+        {
+            //Sent an Raycast straight upwards to find the new ground of the Player
+            RaycastHit Wall;
+            if (Physics.Raycast(transform.position, transform.up, out Wall))
+            {
+                //Flip the Gravity using the surface hit by the Raycast
+                RigidbodyComp.velocity = Vector3.zero;
 
-        //Set Animation Speed
-        FRotSpeed = FRotSpeedFlip;
+                //Set Start Time of Rotating Animation
+                FstartTime = Time.time;
 
-        //Set the new Ground the Player is walking on
-        Ground = Wall.collider.gameObject;
+                //Set Animation Speed
+                FRotSpeed = FRotSpeedFlip;
 
-        //Callculate the new rotation
-        StartRot = transform.rotation;
-        VUpVector = Wall.normal;
-        VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
-        TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
+                //Set the new Ground the Player is walking on
+                Ground = Wall.collider.gameObject;
 
-        //Set the Character in RotationState
-        BisRotating = true;
-        SendMessage("setRotating", true);
+                //Callculate the new rotation
+                StartRot = transform.rotation;
+                VUpVector = Wall.normal;
+                VForwardVector = Vector3.Cross(VUpVector, transform.right) * -1;
+                TargetRot = Quaternion.LookRotation(VForwardVector, VUpVector);
 
-        //Change Gravity
-        Physics.gravity = Wall.normal * -10.0f;
+                //Set the Character in RotationState
+                BisRotating = true;
+                CharacterControllerScript.setRotating(true);
 
-        BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+                //Change Gravity
+                VlastGravity = Physics.gravity;
+                Physics.gravity = Wall.normal * -10.0f;
 
+                BroadcastMessage("UpdateUI", SendMessageOptions.DontRequireReceiver);
+                StartCoroutine(RotateSequence());
+            }
+        }
     }
+
 }

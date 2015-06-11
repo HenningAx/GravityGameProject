@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 465902}
   - 33: {fileID: 3322706}
   - 23: {fileID: 2322972}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Grid_01_Frame.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 432740}
   - 33: {fileID: 3337238}
   - 23: {fileID: 2370324}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Grid_02_Frame.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 410418}
   - 33: {fileID: 3329722}
   - 23: {fileID: 2309024}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Grid_04_Frame.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 426782}
   - 33: {fileID: 3386264}
   - 23: {fileID: 2333298}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Grid.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ GameObject:
   - 4: {fileID: 463484}
   - 65: {fileID: 6573750}
   - 65: {fileID: 6584618}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Catwalk_Final_center
-  m_TagString: Wand
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 445776}
   - 33: {fileID: 3356412}
   - 23: {fileID: 2334152}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: railing.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 4: {fileID: 453950}
   - 33: {fileID: 3377438}
   - 23: {fileID: 2306456}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BaseSystem.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - 4: {fileID: 464786}
   - 33: {fileID: 3394664}
   - 23: {fileID: 2334702}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Grid_03_Frame.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145990}
   m_LocalRotation: {x: .500000238, y: .499999821, z: .499999911, w: -.500000119}
-  m_LocalPosition: {x: -4.40138388, y: -.955599785, z: 9.55868149}
+  m_LocalPosition: {x: -6.01000023, y: 7.96999979, z: -43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453950}
@@ -478,8 +478,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.02143288, y: 3.78195286, z: .110499635}
-  m_Center: {x: -.00902768131, y: -.369970798, z: -.0335326903}
+  m_Size: {x: 2.02143288, y: 3.01447678, z: .110499635}
+  m_Center: {x: -.00902556814, y: .0137758395, z: -.0335326195}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,7 +1,7 @@
 // Shader created with Shader Forge v1.13 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.13;sub:START;pass:START;ps:flbk:,lico:1,lgpr:1,nrmq:1,nrsp:0,limd:3,spmd:0,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:False,rprd:False,enco:False,rmgx:True,rpth:0,hqsc:True,hqlp:False,tesm:0,bsrc:0,bdst:1,culm:0,dpts:2,wrdp:True,dith:0,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,ofsf:0,ofsu:0,f2p0:False;n:type:ShaderForge.SFN_Final,id:5272,x:33296,y:33226,varname:node_5272,prsc:2|diff-8016-OUT,spec-3006-OUT,gloss-2891-OUT,normal-4383-OUT,difocc-6547-R;n:type:ShaderForge.SFN_Tex2d,id:9263,x:32313,y:32303,ptovrint:False,ptlb:Albedo,ptin:_Albedo,varname:node_9263,prsc:2,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Slider,id:5309,x:32156,y:33181,ptovrint:False,ptlb:GlossMultiply,ptin:_GlossMultiply,varname:node_5309,prsc:2,min:0,cur:0,max:1;n:type:ShaderForge.SFN_Slider,id:9489,x:32156,y:32850,ptovrint:False,ptlb:SpecMultiply,ptin:_SpecMultiply,varname:node_9489,prsc:2,min:0,cur:0,max:1;n:type:ShaderForge.SFN_Tex2d,id:1744,x:32313,y:32668,ptovrint:False,ptlb:Spec,ptin:_Spec,varname:node_1744,prsc:2,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Multiply,id:2891,x:32700,y:32898,varname:node_2891,prsc:2|A-4916-RGB,B-5309-OUT;n:type:ShaderForge.SFN_Multiply,id:3006,x:32700,y:32677,varname:node_3006,prsc:2|A-1744-RGB,B-9489-OUT;n:type:ShaderForge.SFN_Color,id:707,x:32313,y:32499,ptovrint:False,ptlb:AlbedoMultiply,ptin:_AlbedoMultiply,varname:node_707,prsc:2,glob:False,c1:1,c2:1,c3:1,c4:1;n:type:ShaderForge.SFN_Multiply,id:8016,x:32685,y:32469,varname:node_8016,prsc:2|A-9263-RGB,B-707-RGB;n:type:ShaderForge.SFN_Tex2d,id:4916,x:32313,y:32961,ptovrint:False,ptlb:Gloss,ptin:_Gloss,varname:node_4916,prsc:2,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:6706,x:32313,y:33285,ptovrint:False,ptlb:Normal,ptin:_Normal,varname:node_6706,prsc:2,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Tex2d,id:6547,x:32299,y:33575,ptovrint:False,ptlb:Occlusion,ptin:_Occlusion,varname:node_6547,prsc:2,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:7953,x:32280,y:33771,ptovrint:False,ptlb:Height,ptin:_Height,varname:node_7953,prsc:2,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:4926,x:32443,y:33409,ptovrint:False,ptlb:Normal 2,ptin:_Normal2,varname:node_4926,prsc:2,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Add,id:4383,x:32699,y:33239,varname:node_4383,prsc:2|A-6706-RGB,B-4926-RGB;proporder:9263-1744-5309-9489-707-4916-6706-6547-7953-4926;pass:END;sub:END;*/
+/*SF_DATA;ver:1.13;sub:START;pass:START;ps:flbk:,lico:1,lgpr:1,nrmq:1,nrsp:0,limd:3,spmd:0,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:False,rprd:False,enco:False,rmgx:True,rpth:0,hqsc:True,hqlp:False,tesm:0,bsrc:0,bdst:1,culm:0,dpts:2,wrdp:True,dith:0,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,ofsf:0,ofsu:0,f2p0:False;n:type:ShaderForge.SFN_Final,id:5272,x:33329,y:32945,varname:node_5272,prsc:2|diff-8016-OUT,spec-3006-OUT,gloss-2891-OUT,normal-4383-OUT,difocc-6547-R;n:type:ShaderForge.SFN_Tex2d,id:9263,x:32313,y:32303,ptovrint:False,ptlb:Albedo,ptin:_Albedo,varname:node_9263,prsc:2,tex:6f1223dffdf257c418bc2b1f4551215d,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Slider,id:5309,x:32156,y:33181,ptovrint:False,ptlb:GlossMultiply,ptin:_GlossMultiply,varname:node_5309,prsc:2,min:0,cur:0,max:1;n:type:ShaderForge.SFN_Slider,id:9489,x:32156,y:32850,ptovrint:False,ptlb:SpecMultiply,ptin:_SpecMultiply,varname:node_9489,prsc:2,min:0,cur:0,max:1;n:type:ShaderForge.SFN_Tex2d,id:1744,x:32313,y:32668,ptovrint:False,ptlb:Spec,ptin:_Spec,varname:node_1744,prsc:2,tex:88348df7baf97214284088da75a93fe5,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Multiply,id:2891,x:32700,y:32898,varname:node_2891,prsc:2|A-4916-A,B-5309-OUT;n:type:ShaderForge.SFN_Multiply,id:3006,x:32700,y:32677,varname:node_3006,prsc:2|A-1744-RGB,B-9489-OUT;n:type:ShaderForge.SFN_Color,id:707,x:32313,y:32499,ptovrint:False,ptlb:AlbedoMultiply,ptin:_AlbedoMultiply,varname:node_707,prsc:2,glob:False,c1:1,c2:1,c3:1,c4:1;n:type:ShaderForge.SFN_Multiply,id:8016,x:32685,y:32469,varname:node_8016,prsc:2|A-9263-RGB,B-707-RGB;n:type:ShaderForge.SFN_Tex2d,id:4916,x:32313,y:32961,ptovrint:False,ptlb:Gloss,ptin:_Gloss,varname:node_4916,prsc:2,tex:88348df7baf97214284088da75a93fe5,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:6706,x:32313,y:33285,ptovrint:False,ptlb:Normal,ptin:_Normal,varname:node_6706,prsc:2,tex:b81dcd1c6169a154e93eb0433d7e60c3,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Tex2d,id:6547,x:32299,y:33575,ptovrint:False,ptlb:Occlusion,ptin:_Occlusion,varname:node_6547,prsc:2,tex:eae569a446f2f974d87fc6c77e2d7e2b,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:7953,x:32280,y:33771,ptovrint:False,ptlb:Height,ptin:_Height,varname:node_7953,prsc:2,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:4926,x:32443,y:33409,ptovrint:False,ptlb:Normal 2,ptin:_Normal2,varname:node_4926,prsc:2,ntxv:2,isnm:False;n:type:ShaderForge.SFN_Add,id:4383,x:32699,y:33239,varname:node_4383,prsc:2|A-6706-RGB,B-4926-RGB;proporder:9263-1744-5309-9489-707-4916-6706-6547-7953-4926;pass:END;sub:END;*/
 
 Shader "Shader Forge/PBR_SpecSlider" {
     Properties {
@@ -14,7 +14,7 @@ Shader "Shader Forge/PBR_SpecSlider" {
         _Normal ("Normal", 2D) = "bump" {}
         _Occlusion ("Occlusion", 2D) = "white" {}
         _Height ("Height", 2D) = "white" {}
-        _Normal2 ("Normal 2", 2D) = "bump" {}
+        _Normal2 ("Normal 2", 2D) = "black" {}
     }
     SubShader {
         Tags {
@@ -83,9 +83,8 @@ Shader "Shader Forge/PBR_SpecSlider" {
 /////// Vectors:
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float3 _Normal_var = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal)));
-                float3 _Normal2_var = UnpackNormal(tex2D(_Normal2,TRANSFORM_TEX(i.uv0, _Normal2)));
-                float3 node_4383 = (_Normal_var.rgb+_Normal2_var.rgb);
-                float3 normalLocal = node_4383;
+                float4 _Normal2_var = tex2D(_Normal2,TRANSFORM_TEX(i.uv0, _Normal2));
+                float3 normalLocal = (_Normal_var.rgb+_Normal2_var.rgb);
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
                 float3 lightColor = _LightColor0.rgb;
@@ -97,7 +96,7 @@ Shader "Shader Forge/PBR_SpecSlider" {
                 float InvPi = 0.31830988618;
 ///////// Gloss:
                 float4 _Gloss_var = tex2D(_Gloss,TRANSFORM_TEX(i.uv0, _Gloss));
-                float gloss = (_Gloss_var.rgb*_GlossMultiply);
+                float gloss = (_Gloss_var.a*_GlossMultiply);
                 float specPow = exp2( gloss * 10.0+1.0);
 /////// GI Data:
                 UnityLight light;
@@ -213,9 +212,8 @@ Shader "Shader Forge/PBR_SpecSlider" {
 /////// Vectors:
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float3 _Normal_var = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal)));
-                float3 _Normal2_var = UnpackNormal(tex2D(_Normal2,TRANSFORM_TEX(i.uv0, _Normal2)));
-                float3 node_4383 = (_Normal_var.rgb+_Normal2_var.rgb);
-                float3 normalLocal = node_4383;
+                float4 _Normal2_var = tex2D(_Normal2,TRANSFORM_TEX(i.uv0, _Normal2));
+                float3 normalLocal = (_Normal_var.rgb+_Normal2_var.rgb);
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));
                 float3 lightColor = _LightColor0.rgb;
@@ -227,7 +225,7 @@ Shader "Shader Forge/PBR_SpecSlider" {
                 float InvPi = 0.31830988618;
 ///////// Gloss:
                 float4 _Gloss_var = tex2D(_Gloss,TRANSFORM_TEX(i.uv0, _Gloss));
-                float gloss = (_Gloss_var.rgb*_GlossMultiply);
+                float gloss = (_Gloss_var.a*_GlossMultiply);
                 float specPow = exp2( gloss * 10.0+1.0);
 ////// Specular:
                 float NdotL = max(0, dot( normalDirection, lightDirection ));

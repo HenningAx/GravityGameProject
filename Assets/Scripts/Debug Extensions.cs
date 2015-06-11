@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// This script contains usefull functions to extend the Debug functions of the Unity editor
+
+
+using UnityEngine;
 using System.Collections;
 
 public static class DebugExtensions

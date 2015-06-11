@@ -249,7 +249,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius, Physics.gravity.normalized, out hitInfo,
+            if (Physics.SphereCast(transform.position, m_Capsule.radius * 0.98f, Physics.gravity.normalized, out hitInfo,
                                    ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance))
             {
                 m_IsGrounded = true;
@@ -266,7 +266,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-        void ReInitMouseLook()
+        public void ReInitMouseLook()
         {
             mouseLook.Init(transform, cam.transform);
         }
