@@ -73,6 +73,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float stickToGroundHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
             public bool airControl; // can the user control the direction that is being moved in the air
+            public float stickToGroundStrength = 2.0f; // the strength the character tries to stick to the ground
         }
 
 
@@ -204,7 +205,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Physics.gravity.normalized * -1)) < 85f)
                 {
-                    m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
+                    //m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
+                    m_RigidBody.velocity -= hitInfo.normal * advancedSettings.stickToGroundStrength;
                 }
             }
         }

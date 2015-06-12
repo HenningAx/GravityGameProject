@@ -20,6 +20,7 @@ public class GravityChanger : MonoBehaviour
     RigidbodyFirstPersonController CharacterControllerScript;
     Rigidbody RigidbodyComp;
 
+    public GameObject CollisionExitTestObject;
     GameObject Ground;
     bool BisRotating = false;
     Vector3 VCollisionPoint;
@@ -49,8 +50,10 @@ public class GravityChanger : MonoBehaviour
     {
         while (BisRotating)
         {
+            RigidbodyComp.useGravity = false;
             float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
+            //transform.position = Vector3.Lerp(StartPos, TargetPos, FdistCovered);
             if (FdistCovered >= 1)
             {
                 BisRotating = false;
@@ -59,6 +62,7 @@ public class GravityChanger : MonoBehaviour
             }
             yield return null;
         }
+        RigidbodyComp.useGravity = true;
     }
 
     void OnCollisionEnter(Collision other)
@@ -67,9 +71,9 @@ public class GravityChanger : MonoBehaviour
         {
             VCollisionPoint = other.contacts[0].point;
             RaycastHit AttatchToWall;
-            if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f, 1 << 8))
+            if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f))
             {
-                if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1)
+                if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1 && AttatchToWall.collider.tag == "Wand")
                 {
                     StartWalkingOnWall(AttatchToWall);
                 }
@@ -81,6 +85,7 @@ public class GravityChanger : MonoBehaviour
     {
         if (other.gameObject.tag == "Wand" && !BisRotating)
         {
+            //Instantiate(CollisionExitTestObject, transform.position, transform.rotation);
             //Get the vector in which direction the player moves
             VMovmentVector = RigidbodyComp.velocity;
             //Project the vector on the plane the character is walking on 
@@ -88,14 +93,21 @@ public class GravityChanger : MonoBehaviour
             Vector3 RayCastStart = transform.position - (transform.up * CharacterCollider.height / 3);
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
             RaycastHit hit;
+            RaycastHit Temp;
             if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f))
             {
-                if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
+                //Check if there is enough space for the character to stand, otherwise don't change gravity
+                if (!Physics.SphereCast(transform.position, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height))
                 {
-                    StartWalkingOnWall(hit);
-                    //Apply some force to push the character over the edge
-                    RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
-                    RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
+                    if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
+                    {
+                        StartWalkingOnWall(hit);
+                        //Apply some force to push the character over the edge
+                        //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
+                        RigidbodyComp.velocity = Vector3.zero;
+                        //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
+                        transform.position += VlastGravity.normalized * FOverEdgePush;
+                    }
                 }
             }
         }
@@ -117,7 +129,12 @@ public class GravityChanger : MonoBehaviour
         VUpVector = Wall.normal;
         //Get the new rotation by creating a rotation, that rotates around the axis between the current and the new up Vector
         TargetRot = Quaternion.AngleAxis(-Vector3.Angle(VUpVector, transform.up), Vector3.Cross(VUpVector, transform.up).normalized) * transform.rotation;
-        Quaternion TargetUpRot = Quaternion.Euler(Vector3.Cross(VUpVector, transform.up).normalized * -Vector3.Angle(VUpVector, transform.up)) * transform.rotation;
+        //Quaternion TargetUpRot = Quaternion.Euler(Vector3.Cross(VUpVector, transform.up).normalized * -Vector3.Angle(VUpVector, transform.up)) * transform.rotation;
+        //Vector3 Pivot =transform.position - transform.up * (this.GetComponent<CapsuleCollider>().height / 2);
+        //StartPos = transform.position;
+        //TargetPos = TargetRot * (transform.position - Pivot) + Pivot;
+        //print(Pivot);
+        //print(TargetRot * Pivot);
 
         //Set the Character in RotationState
         BisRotating = true;
