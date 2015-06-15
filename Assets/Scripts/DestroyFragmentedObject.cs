@@ -20,6 +20,10 @@ public class DestroyFragmentedObject : MonoBehaviour {
     public float FfragsFadeOutTimeMax = 10.0f;
     public float FfragsFadeOutDelayMax = 10.0f;
 
+
+    public AudioSource[] destroyingCrate;
+    private int clipNum;
+
     FadeScript[] fadeScriptComps;
 
 	void Start () {
@@ -43,7 +47,10 @@ public class DestroyFragmentedObject : MonoBehaviour {
                 }
                 transform.DetachChildren();
                 PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower, this.GetComponent<Rigidbody>().velocity);       
-                Destroy(this.gameObject); 
+                Destroy(this.gameObject);
+
+                clipNum = Random.Range(0, destroyingCrate.Length);
+                destroyingCrate[clipNum].Play();
             }
         } else
         {
@@ -56,7 +63,10 @@ public class DestroyFragmentedObject : MonoBehaviour {
                 }
                 transform.DetachChildren();
                 PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower);
-                Destroy(this.gameObject); 
+                Destroy(this.gameObject);
+
+                clipNum = Random.Range(0, destroyingCrate.Length);
+                destroyingCrate[clipNum].Play();
             }
         }
     }

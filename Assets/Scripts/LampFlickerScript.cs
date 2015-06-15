@@ -8,11 +8,11 @@ using System.Collections;
 
 public class LampFlickerScript : MonoBehaviour {
 
-
-    public AudioSource Clip;
     public int IflickerRate = 20;
     public float FlightChance = 0.8f;
     public float FlightIntensity = 0.8f;
+
+    public AudioSource flickerSound;
 
     Light lightComp;
     Material materialComp;
@@ -28,17 +28,16 @@ public class LampFlickerScript : MonoBehaviour {
         {
             //Calculate a random value between 0 and 1
             float newIntensity = Random.value;
-            //If the value is higher than the chance to flicker the light is turned on
+            //If the value is highter than the chance to flicker the light is turned on
             if(newIntensity > FlightChance)
             {
                 lightComp.intensity = FlightIntensity;
-                materialComp.SetColor("_EmissionColor", Color.white); 
-                Clip.Play();
+                materialComp.SetColor("_EmissionColor", Color.white);
+                flickerSound.Play();
             } else
             {
                 lightComp.intensity = 0.0f;
                 materialComp.SetColor("_EmissionColor", Color.black);
-                Clip.Stop();
             }
             
             Icountdown = 0;
