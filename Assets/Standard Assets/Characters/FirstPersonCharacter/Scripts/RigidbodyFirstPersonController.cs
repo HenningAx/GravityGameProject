@@ -73,8 +73,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float stickToGroundHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
             public bool airControl; // can the user control the direction that is being moved in the air
-            public float stickToGroundStrength = 2.0f; // the strength the character tries to stick to the ground
-            public float maxStepHeight = 0.5f;
         }
 
 
@@ -150,10 +148,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 // always move along the camera forward as it is the direction that it being aimed at
                 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
+
                 desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
                 desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
                 desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
-                Debug.DrawRay(transform.position, desiredMove);
                 if (m_RigidBody.velocity.sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
                 {
@@ -164,7 +162,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsGrounded)
             {
                 m_RigidBody.drag = advancedSettings.slowDownRate;
-                StairsHelper();
+
                 if (m_Jump)
                 {
                     m_RigidBody.drag = 0f;
@@ -203,35 +201,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Physics.SphereCast(transform.position, m_Capsule.radius, Physics.gravity.normalized, out hitInfo,
                                    ((m_Capsule.height / 2f) - m_Capsule.radius) +
                                    advancedSettings.stickToGroundHelperDistance))
-
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Physics.gravity.normalized * -1)) < 85f)
                 {
-                    //m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
-                    m_RigidBody.velocity -= hitInfo.normal * advancedSettings.stickToGroundStrength;
-                }
-            }
-        }
-
-        private void StairsHelper()
-        {          
-            Vector3 direction;
-            Vector3 cleanDesiredMove = desiredMove / movementSettings.CurrentTargetSpeed;
-            direction = cleanDesiredMove - transform.up * 10.0f;
-            RaycastHit hit;
-            Debug.DrawRay(transform.position + cleanDesiredMove * m_Capsule.radius, direction.normalized * m_Capsule.height / 2f);
-            if(Physics.Raycast(transform.position + cleanDesiredMove * m_Capsule.radius, direction, out hit, m_Capsule.height / 2f))
-            {
-                if(Vector3.Angle(hit.normal, -Physics.gravity.normalized) < 5.0f)
-                {
-                    Vector3 groundPos = transform.position - transform.up * m_Capsule.height / 2f;
-                    Vector3 stepPos = hit.point - groundPos;
-                    float stepHeight = Vector3.Scale((groundPos - hit.point), transform.up).magnitude;
-                    if(stepHeight < advancedSettings.maxStepHeight && Vector3.Angle(stepPos, Physics.gravity.normalized) > 90.0f)
-                    {
-                        transform.position += transform.up * stepHeight;
-                    }
-                    
+                    m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
                 }
             }
         }
