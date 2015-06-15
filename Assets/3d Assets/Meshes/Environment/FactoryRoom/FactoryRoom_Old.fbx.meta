@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 99108bbaa219d6e43b2de670cf455168
-timeCreated: 1434025804
+guid: 04ceb7bfc7499a143a5b6b3e88ad1daa
+timeCreated: 1434385839
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -39,8 +39,8 @@ ModelImporter:
     100062: Cube.015
     100064: Cube.016
     100066: Cube.017
-    100068: //RootNode
-    100070: factoryRoom
+    100068: factoryRoom
+    100070: //RootNode
     100072: fasteningRod.000
     100074: fasteningRod.001
     100076: MeltingPotlocked
@@ -125,8 +125,8 @@ ModelImporter:
     400062: Cube.015
     400064: Cube.016
     400066: Cube.017
-    400068: //RootNode
-    400070: factoryRoom
+    400068: factoryRoom
+    400070: //RootNode
     400072: fasteningRod.000
     400074: fasteningRod.001
     400076: MeltingPotlocked

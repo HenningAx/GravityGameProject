@@ -73,10 +73,14 @@ public class GravityChanger : MonoBehaviour
             RaycastHit AttatchToWall;
             if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f))
             {
-                if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1 && AttatchToWall.collider.tag == "Wand")
+                RaycastHit Temp;
+                if (!Physics.SphereCast(AttatchToWall.point, CharacterCollider.radius, AttatchToWall.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
                 {
-                    StartWalkingOnWall(AttatchToWall);
-                }
+                    if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1 && AttatchToWall.collider.tag == "Wand")
+                    {
+                        StartWalkingOnWall(AttatchToWall);
+                    }
+                } 
             }
         }
     }
@@ -94,21 +98,34 @@ public class GravityChanger : MonoBehaviour
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
             RaycastHit hit;
             RaycastHit Temp;
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 5.0f))
+            Debug.DrawRay(RayCastStart, RayCastDir.normalized * 1.5f, Color.green, 10.0f);
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 1.5f))
             {
-                //Check if there is enough space for the character to stand, otherwise don't change gravity
-                if (!Physics.SphereCast(transform.position, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height))
+
+                if(Physics.SphereCast(transform.position, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
                 {
-                    if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
-                    {
-                        StartWalkingOnWall(hit);
-                        //Apply some force to push the character over the edge
-                        //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
-                        RigidbodyComp.velocity = Vector3.zero;
-                        //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
-                        transform.position += VlastGravity.normalized * FOverEdgePush;
-                    }
+                    print("Cast Position hit " + Temp.collider.name);
                 }
+                if(Physics.SphereCast(hit.point, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
+                {
+                    print("Cast Point hit " + Temp.collider.name);
+                }
+
+                //Check if there is enough space for the character to stand, otherwise don't change gravity
+                DebugExtensions.DrawPoint(transform.position - RigidbodyComp.velocity.normalized * CharacterCollider.radius);
+                if (!Physics.SphereCast(transform.position - RigidbodyComp.velocity.normalized * CharacterCollider.radius, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius) && !Physics.SphereCast(hit.point - CharacterCollider.radius * hit.normal, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height))
+                {
+                        if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
+                        {
+                            Debug.Log("ChangeByExit " + hit.normal + " triggered by " + hit.collider.name);
+                            StartWalkingOnWall(hit);
+                            //Apply some force to push the character over the edge
+                            //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
+                            RigidbodyComp.velocity = Vector3.zero;
+                            //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
+                            transform.position += VlastGravity.normalized * FOverEdgePush;
+                        }
+                } 
             }
         }
     }
