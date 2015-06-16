@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 70c17f6874f164548b9d50c25725c18b
+timeCreated: 1434464469
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cable
+    100002: Ceiling001
+    100004: EndCeiling
+    100006: EndFloor
+    100008: EndWall01
+    100010: EndWall02
+    100012: //RootNode
+    100014: Floor001
+    100016: IronGate
+    100018: IronGateCross01
+    100020: IronGateCross02
+    100022: IronGateDoor01
+    100024: IronGateDoor02
+    100026: Platform01
+    100028: Platform02
+    100030: StartCeiling
+    100032: StartFloor
+    100034: StartWall
+    100036: StartWall01
+    100038: StartWall02
+    100040: SwitchPlatformWall
+    100042: Wall01
+    100044: Wall02
+    100046: Wall03
+    400000: Cable
+    400002: Ceiling001
+    400004: EndCeiling
+    400006: EndFloor
+    400008: EndWall01
+    400010: EndWall02
+    400012: //RootNode
+    400014: Floor001
+    400016: IronGate
+    400018: IronGateCross01
+    400020: IronGateCross02
+    400022: IronGateDoor01
+    400024: IronGateDoor02
+    400026: Platform01
+    400028: Platform02
+    400030: StartCeiling
+    400032: StartFloor
+    400034: StartWall
+    400036: StartWall01
+    400038: StartWall02
+    400040: SwitchPlatformWall
+    400042: Wall01
+    400044: Wall02
+    400046: Wall03
+    2300000: Cable
+    2300002: Ceiling001
+    2300004: EndCeiling
+    2300006: EndFloor
+    2300008: EndWall01
+    2300010: EndWall02
+    2300012: Floor001
+    2300014: IronGateCross01
+    2300016: IronGateCross02
+    2300018: IronGateDoor01
+    2300020: IronGateDoor02
+    2300022: Platform01
+    2300024: Platform02
+    2300026: StartCeiling
+    2300028: StartFloor
+    2300030: StartWall
+    2300032: StartWall01
+    2300034: StartWall02
+    2300036: SwitchPlatformWall
+    2300038: Wall01
+    2300040: Wall02
+    2300042: Wall03
+    3300000: Cable
+    3300002: Ceiling001
+    3300004: EndCeiling
+    3300006: EndFloor
+    3300008: EndWall01
+    3300010: EndWall02
+    3300012: Floor001
+    3300014: IronGateCross01
+    3300016: IronGateCross02
+    3300018: IronGateDoor01
+    3300020: IronGateDoor02
+    3300022: Platform01
+    3300024: Platform02
+    3300026: StartCeiling
+    3300028: StartFloor
+    3300030: StartWall
+    3300032: StartWall01
+    3300034: StartWall02
+    3300036: SwitchPlatformWall
+    3300038: Wall01
+    3300040: Wall02
+    3300042: Wall03
+    4300000: StartWall
+    4300002: Cable
+    4300004: Platform01
+    4300006: SwitchPlatformWall
+    4300008: Platform02
+    4300010: Floor001
+    4300012: Wall01
+    4300014: Ceiling001
+    4300016: EndWall01
+    4300018: EndWall02
+    4300020: EndFloor
+    4300022: EndCeiling
+    4300024: Wall02
+    4300026: Wall03
+    4300028: StartWall01
+    4300030: StartWall02
+    4300032: StartFloor
+    4300034: StartCeiling
+    4300036: IronGateDoor02
+    4300038: IronGateCross02
+    4300040: IronGateDoor01
+    4300042: IronGateCross01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
