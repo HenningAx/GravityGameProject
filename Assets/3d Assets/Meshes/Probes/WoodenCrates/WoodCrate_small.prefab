@@ -26411,7 +26411,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24365794, guid: cc54cd39469d71549a789d11c4350c4e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c69e527172cee7840af010e710a0c793, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -26419,8 +26419,8 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: .5
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -28591,10 +28591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4a044e8e90aba489ef7f813686cd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingOnStone:
-  - {fileID: 8269558}
-  FallingOnWood: []
-  FallingOnMetal: []
+  OnStone:
+  - {fileID: 8300000, guid: 638ac52e250ca1a499db2f782cdcddb0, type: 3}
+  OnMetal: []
+  OnWood: []
 --- !u!114 &11448998
 MonoBehaviour:
   m_ObjectHideFlags: 1

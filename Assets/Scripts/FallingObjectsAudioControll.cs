@@ -1,46 +1,84 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FallingObjectsAudioControll: MonoBehaviour {
+public class FallingObjectsAudioControll : MonoBehaviour
+{
 
 
-	public GameObject GoFallingOnStone;
-	public GameObject GoFallingOnWood;
-	public GameObject GoFallingOnMetal;
+    public AudioClip[] OnStone;
+    public AudioClip[] OnMetal;
+    public AudioClip[] OnWood;
 
-    private AudioSource FallingOnStone;
-	private AudioSource FallingOnWood;
-	private AudioSource FallingOnMetal;
-   
-	public int clipNum;
+
+    private AudioSource FallingSound;
     private float volumMult;
-   
+
+    private Rigidbody rb;
+
+    
+    
+
+
 
     void Awake()
     {
-		FallingOnStone = GoFallingOnStone.GetComponent<AudioSource> ();
-
+        FallingSound = this.GetComponent<AudioSource>();
+        rb = this.GetComponent<Rigidbody>();
     }
-	        
-       
-     
-    
+
+
+
+ 
+
     void OnCollisionEnter(Collision col)
     {
-
-		//Check if the Surface hit is made of stone and randomly set audio clip
-        //if (col.gameObject.GetComponent<MeshRenderer>().material.name.Contains "_Stone")
-        if(col.gameObject.tag == "Wand" )
+        if (!FallingSound.isPlaying && rb.useGravity && !(col.collider.tag == "Player") )
         {
-            volumMult = col.relativeVelocity.magnitude * 1/20;
+            volumMult = col.relativeVelocity.magnitude * 1 / 10;
+            int materialIndex = 0;
+            //Check what the Surface hit is made of
 
-			clipNum = Random.Range (0,GoFallingOnStone.GetComponent<AudioClipAssigner>().AudioClips.Length);
+            //if (col.gameObject.GetComponentInParent<MeshRenderer>().materials[materialIndex].name.Contains("_Stone"))
+            //{ 
+            //    PlaySound(OnStone);                
 
-			FallingOnStone.Play();
-			FallingOnStone.volume = volumMult;
-			print (clipNum);
-            
+            //}
+
+            //if (col.gameObject.GetComponentInParent<MeshRenderer>().materials[materialIndex].name.Contains("_Metal"))
+            //{
+            //    PlaySound(OnMetal);
+
+            //}
+
+            //if (col.gameObject.GetComponentInParent<MeshRenderer>().materials[materialIndex].name.Contains("_Wood"))
+            //{
+            //    PlaySound(OnWood);
+
+            //}
+            PlaySound(OnStone);
+
         }
 
+
+
+
+
     }
+
+    void PlaySound(AudioClip[] clips)
+    {
+
+
+        int clipNum = Random.Range(0, clips.Length);
+        FallingSound.clip = clips[clipNum];
+        FallingSound.Play();
+        FallingSound.volume = volumMult;
+        print("play");
+    }
+
+    
+
 }
+
+
+    

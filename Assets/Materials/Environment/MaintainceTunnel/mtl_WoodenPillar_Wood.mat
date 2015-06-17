@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: mtl_BrickWallIiron
+  m_Name: mtl_WoodenPillar_Wood
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
+  m_ShaderKeywords: _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -18,14 +18,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 0c0a3f1e8290cd0489966c13cd1e5291, type: 3}
+          m_Texture: {fileID: 2800000, guid: 887a0206c30e86946ae96f85676347e9, type: 3}
           m_Scale: {x: 1, y: 1}
-          m_Offset: {x: -1, y: 0}
+          m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 05dc7663982cdd846ab49542995d7722, type: 3}
+          m_Texture: {fileID: 2800000, guid: 7d097f07beaf3c44dba92e0609678dd9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -39,14 +39,14 @@ Material:
         first:
           name: _ParallaxMap
         second:
-          m_Texture: {fileID: 2800000, guid: 60249f59383f6fd4f8c0a2a3ef1b20f4, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _OcclusionMap
         second:
-          m_Texture: {fileID: 2800000, guid: d8c5be7e355348644bf9500ef51f2659, type: 3}
+          m_Texture: {fileID: 2800000, guid: fca5aed6ef9054d46a0d5c5a07fc357f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -72,16 +72,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MetallicGlossMap
+          name: _SpecGlossMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 5a7fc31b30915f842a0894e802bc137a, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
+          name: _MetallicGlossMap
         second:
-          m_Texture: {fileID: 2800000, guid: 72da7fd01ac42fe4d82b9b8c0236fa2c, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -100,7 +100,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .0329000019
+        second: .0199999996
       data:
         first:
           name: _ZWrite
