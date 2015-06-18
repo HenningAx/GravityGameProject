@@ -4931,7 +4931,7 @@ GameObject:
   - 114: {fileID: 11405304}
   m_Layer: 9
   m_Name: WoodCrate_small
-  m_TagString: Untagged
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

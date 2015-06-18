@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: a77772de5ae0e0145be631feec435a31
+timeCreated: 1434573882
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: buttons
+    100002: controler
+    100004: controlPanelBase
+    100006: //RootNode
+    100008: controlPaneltable
+    100010: roundButtons
+    100012: shelf
+    100014: switcherBase
+    100016: switcherBase_screws
+    100018: switcherBaseSmall
+    100020: switcherBaseSmall_screws
+    100022: switcherBox
+    100024: switcherCenter
+    100026: switcherLeft
+    100028: switcherRight
+    400000: buttons
+    400002: controler
+    400004: controlPanelBase
+    400006: //RootNode
+    400008: controlPaneltable
+    400010: roundButtons
+    400012: shelf
+    400014: switcherBase
+    400016: switcherBase_screws
+    400018: switcherBaseSmall
+    400020: switcherBaseSmall_screws
+    400022: switcherBox
+    400024: switcherCenter
+    400026: switcherLeft
+    400028: switcherRight
+    2300000: buttons
+    2300002: controler
+    2300004: controlPanelBase
+    2300006: controlPaneltable
+    2300008: roundButtons
+    2300010: shelf
+    2300012: switcherBase
+    2300014: switcherBase_screws
+    2300016: switcherBaseSmall
+    2300018: switcherBaseSmall_screws
+    2300020: switcherBox
+    2300022: switcherCenter
+    2300024: switcherLeft
+    2300026: switcherRight
+    3300000: buttons
+    3300002: controler
+    3300004: controlPanelBase
+    3300006: controlPaneltable
+    3300008: roundButtons
+    3300010: shelf
+    3300012: switcherBase
+    3300014: switcherBase_screws
+    3300016: switcherBaseSmall
+    3300018: switcherBaseSmall_screws
+    3300020: switcherBox
+    3300022: switcherCenter
+    3300024: switcherLeft
+    3300026: switcherRight
+    4300000: switcherBase_screws
+    4300002: switcherBase
+    4300004: switcherBaseSmall_screws
+    4300006: switcherLeft
+    4300008: switcherCenter
+    4300010: switcherRight
+    4300012: switcherBox
+    4300014: switcherBaseSmall
+    4300016: controler
+    4300018: shelf
+    4300020: buttons
+    4300022: roundButtons
+    4300024: controlPaneltable
+    4300026: controlPanelBase
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
