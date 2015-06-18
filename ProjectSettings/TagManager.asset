@@ -9,6 +9,7 @@ TagManager:
   - PickUp
   - Frags
   - RBActivator
+  - Snapshot Trigger
   layers:
   - Default
   - TransparentFX

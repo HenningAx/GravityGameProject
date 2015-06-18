@@ -9,9 +9,11 @@ public class FallingObjectsAudioControll : MonoBehaviour
     public AudioClip[] OnMetal;
     public AudioClip[] OnWood;
 
+	private float volumMult;
+
 
     private AudioSource FallingSound;
-    private float volumMult;
+    
 
     private Rigidbody rb;
 
@@ -32,38 +34,33 @@ public class FallingObjectsAudioControll : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (!FallingSound.isPlaying && rb.useGravity && !(col.collider.tag == "Player") )
-        {
-            volumMult = col.relativeVelocity.magnitude * 1 / 10;
-            int materialIndex = 0;
-            //Check what the Surface hit is made of
+		if (rb.useGravity && !(col.collider.tag == "Player")) {
+			volumMult = col.relativeVelocity.magnitude / 15;
+            
+			int materialIndex = 0;
+				
+			//Check what the Surface hit is made of
+			/*print ("Index " + materialIndex);
+			if (col.gameObject.GetComponentInParent<MeshRenderer> ().materials [materialIndex].name.Contains ("_Stone")) { 
+				PlaySound (OnStone);
+				materialIndex = 0;
 
-            //if (col.gameObject.GetComponentInParent<MeshRenderer>().materials[materialIndex].name.Contains("_Stone"))
-            //{ 
-            //    PlaySound(OnStone);                
+			} else if (col.gameObject.GetComponentInParent<MeshRenderer> ().materials [materialIndex].name.Contains ("_Metal")) {
+				PlaySound (OnMetal);
+				materialIndex = 0;
+			} else if (col.gameObject.GetComponentInParent<MeshRenderer> ().materials [materialIndex].name.Contains ("_Wood")) {
+				PlaySound (OnWood);
+				materialIndex = 0;
+			} */
 
-            //}
+			PlaySound (OnStone);
+		}
 
-            //if (col.gameObject.GetComponentInParent<MeshRenderer>().materials[materialIndex].name.Contains("_Metal"))
-            //{
-            //    PlaySound(OnMetal);
-
-            //}
-
-            //if (col.gameObject.GetComponentInParent<MeshRenderer>().materials[materialIndex].name.Contains("_Wood"))
-            //{
-            //    PlaySound(OnWood);
-
-            //}
-            PlaySound(OnStone);
-
-        }
+	}
 
 
 
-
-
-    }
+    
 
     void PlaySound(AudioClip[] clips)
     {
