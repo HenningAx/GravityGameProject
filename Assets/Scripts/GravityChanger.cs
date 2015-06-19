@@ -69,15 +69,19 @@ public class GravityChanger : MonoBehaviour
     {
         if (other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
         {
+            Debug.Log("Colliding with Wand: " + other.collider.name);
             VCollisionPoint = other.contacts[0].point;
             RaycastHit AttatchToWall;
-            if (Physics.Raycast(transform.position, (VCollisionPoint + RigidbodyComp.velocity.normalized) - transform.position, out AttatchToWall, 2.0f))
+            if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up) - transform.position, out AttatchToWall, 2.0f))
             {
+                Debug.Log("RaycastHit: " + AttatchToWall.collider.name);
                 RaycastHit Temp;
                 if (!Physics.SphereCast(AttatchToWall.point, CharacterCollider.radius, AttatchToWall.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
                 {
+                    Debug.Log("NoSphereCastHit");
                     if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1 && AttatchToWall.collider.tag == "Wand")
                     {
+                        Debug.Log("ChangeGravity");
                         StartWalkingOnWall(AttatchToWall);
                     }
                 } 

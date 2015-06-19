@@ -154,17 +154,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
                 desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
                 Debug.DrawRay(transform.position, desiredMove);
-                if (m_RigidBody.velocity.sqrMagnitude <
+                if (Vector3.ProjectOnPlane(m_RigidBody.velocity, transform.up).sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
                 {
-                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier() * (m_RigidBody.drag / 5), ForceMode.Impulse);
+                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier() * (advancedSettings.slowDownRate + 5 / 5), ForceMode.Impulse);
                 }
             }
 
-            if (m_IsGrounded)
+            if (m_IsGrounded && !BisRotating)
             {
-                m_RigidBody.drag = advancedSettings.slowDownRate;
+                //m_RigidBody.drag = advancedSettings.slowDownRate;
                 StairsHelper();
+                SlowDown();
                 if (m_Jump)
                 {
                     m_RigidBody.drag = 0f;
@@ -175,13 +176,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
                 {
-                    m_RigidBody.Sleep();
+                    //m_RigidBody.Sleep();
                 }
             }
             else
             {
                 m_RigidBody.drag = 0f;
-                if (m_PreviouslyGrounded && !m_Jumping)
+                if (m_PreviouslyGrounded && !m_Jumping && !BisRotating)
                 {
                     StickToGroundHelper();
                 }
@@ -207,8 +208,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Physics.gravity.normalized * -1)) < 85f)
                 {
+                    Debug.Log("SticktoGround");
                     //m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
                     m_RigidBody.velocity -= hitInfo.normal * advancedSettings.stickToGroundStrength;
+                    //transform.position -= Vector3.Scale(hitInfo.point, transform.up) + transform.up * m_Capsule.height / 2 - Vector3.Scale(transform.position, transform.up);
                 }
             }
         }
@@ -291,6 +294,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jumping = false;
             }
+        }
+
+        void SlowDown()
+        {
+            m_RigidBody.velocity = Vector3.Scale(m_RigidBody.velocity, Vector3.ProjectOnPlane(Vector3.one, transform.up) * (1 / advancedSettings.slowDownRate) + MathExtensions.absComps(transform.up));
         }
 
         public void ReInitMouseLook()

@@ -3,13 +3,22 @@ using System.Collections;
 
 public class ButtonActivator : MonoBehaviour {
 
+    public bool BhasAnimation = false;
+
+
     public ButtonTarget[] targets;
     public float buttonDelay;
 
     bool playerInRange = false;
+    Animator animation;
 
 	// Use this for initialization
 	void Start () {
+        if (BhasAnimation)
+        {
+            animation = this.GetComponent<Animator>();
+        }
+	
 	
 	}
 
@@ -23,6 +32,11 @@ public class ButtonActivator : MonoBehaviour {
     {
         if (playerInRange)
         {
+            if (BhasAnimation)
+            {
+                animation.SetTrigger("Activate");
+            }
+
             if (buttonDelay > 0)
             {
                 StartCoroutine(delay(buttonDelay));

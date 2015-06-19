@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: d6ebeb57cdfdcf845b31882a26a63dfc
+timeCreated: 1434701522
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bulp
+    100002: chain
+    100004: //RootNode
+    100006: Connector
+    100008: Ellipse01
+    100010: Ellipse013
+    100012: Ellipse02
+    100014: Ellipse03
+    100016: Ellipse04
+    100018: Ellipse05
+    100020: Ellipse06
+    100022: Ellipse07
+    100024: Ellipse08
+    100026: Ellipse09
+    100028: Ellipse10
+    100030: Ellipse11
+    100032: Ellipse12
+    100034: Grid01
+    100036: Grid02
+    100038: Grid03
+    100040: Grid04
+    100042: Grid05
+    100044: Grid06
+    100046: Grid07
+    100048: lamp
+    100050: Plate
+    400000: Bulp
+    400002: chain
+    400004: //RootNode
+    400006: Connector
+    400008: Ellipse01
+    400010: Ellipse013
+    400012: Ellipse02
+    400014: Ellipse03
+    400016: Ellipse04
+    400018: Ellipse05
+    400020: Ellipse06
+    400022: Ellipse07
+    400024: Ellipse08
+    400026: Ellipse09
+    400028: Ellipse10
+    400030: Ellipse11
+    400032: Ellipse12
+    400034: Grid01
+    400036: Grid02
+    400038: Grid03
+    400040: Grid04
+    400042: Grid05
+    400044: Grid06
+    400046: Grid07
+    400048: lamp
+    400050: Plate
+    2300000: Bulp
+    2300002: Connector
+    2300004: Ellipse01
+    2300006: Ellipse013
+    2300008: Ellipse02
+    2300010: Ellipse03
+    2300012: Ellipse04
+    2300014: Ellipse05
+    2300016: Ellipse06
+    2300018: Ellipse07
+    2300020: Ellipse08
+    2300022: Ellipse09
+    2300024: Ellipse10
+    2300026: Ellipse11
+    2300028: Ellipse12
+    2300030: Grid01
+    2300032: Grid02
+    2300034: Grid03
+    2300036: Grid04
+    2300038: Grid05
+    2300040: Grid06
+    2300042: Grid07
+    2300044: Plate
+    3300000: Bulp
+    3300002: Connector
+    3300004: Ellipse01
+    3300006: Ellipse013
+    3300008: Ellipse02
+    3300010: Ellipse03
+    3300012: Ellipse04
+    3300014: Ellipse05
+    3300016: Ellipse06
+    3300018: Ellipse07
+    3300020: Ellipse08
+    3300022: Ellipse09
+    3300024: Ellipse10
+    3300026: Ellipse11
+    3300028: Ellipse12
+    3300030: Grid01
+    3300032: Grid02
+    3300034: Grid03
+    3300036: Grid04
+    3300038: Grid05
+    3300040: Grid06
+    3300042: Grid07
+    3300044: Plate
+    4300000: Grid03
+    4300002: Grid06
+    4300004: Plate
+    4300006: Grid01
+    4300008: Grid02
+    4300010: Grid07
+    4300012: Grid04
+    4300014: Grid05
+    4300016: Bulp
+    4300018: Connector
+    4300020: Ellipse06
+    4300022: Ellipse10
+    4300024: Ellipse02
+    4300026: Ellipse03
+    4300028: Ellipse04
+    4300030: Ellipse05
+    4300032: Ellipse12
+    4300034: Ellipse07
+    4300036: Ellipse08
+    4300038: Ellipse09
+    4300040: Ellipse11
+    4300042: Ellipse01
+    4300044: Ellipse013
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
