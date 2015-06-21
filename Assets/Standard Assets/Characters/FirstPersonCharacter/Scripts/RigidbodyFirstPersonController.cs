@@ -115,7 +115,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
                 return movementSettings.Running;
 #else
-	            return false;
+                return false;
 #endif
             }
         }
@@ -201,40 +201,36 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius, Physics.gravity.normalized, out hitInfo,
-                                   ((m_Capsule.height / 2f) - m_Capsule.radius) +
-                                   advancedSettings.stickToGroundHelperDistance))
-
+            if (Physics.SphereCast(transform.position, m_Capsule.radius, Physics.gravity.normalized, out hitInfo, ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.stickToGroundHelperDistance))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Physics.gravity.normalized * -1)) < 85f)
                 {
-                    Debug.Log("SticktoGround");
                     //m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
-                    m_RigidBody.velocity -= hitInfo.normal * advancedSettings.stickToGroundStrength;
+                    m_RigidBody.velocity += Physics.gravity.normalized * advancedSettings.stickToGroundStrength;
                     //transform.position -= Vector3.Scale(hitInfo.point, transform.up) + transform.up * m_Capsule.height / 2 - Vector3.Scale(transform.position, transform.up);
                 }
             }
         }
 
         private void StairsHelper()
-        {          
+        {
             Vector3 direction;
             Vector3 cleanDesiredMove = desiredMove / movementSettings.CurrentTargetSpeed;
             direction = cleanDesiredMove - transform.up * 10.0f;
             RaycastHit hit;
             Debug.DrawRay(transform.position + cleanDesiredMove * m_Capsule.radius, direction.normalized * m_Capsule.height / 2f);
-            if(Physics.Raycast(transform.position + cleanDesiredMove * m_Capsule.radius, direction, out hit, m_Capsule.height / 2f))
+            if (Physics.Raycast(transform.position + cleanDesiredMove * m_Capsule.radius, direction, out hit, m_Capsule.height / 2f))
             {
-                if(Vector3.Angle(hit.normal, -Physics.gravity.normalized) < 5.0f)
+                if (Vector3.Angle(hit.normal, -Physics.gravity.normalized) < 5.0f)
                 {
                     Vector3 groundPos = transform.position - transform.up * m_Capsule.height / 2f;
                     Vector3 stepPos = hit.point - groundPos;
                     float stepHeight = Vector3.Scale((groundPos - hit.point), transform.up).magnitude;
-                    if(stepHeight < advancedSettings.maxStepHeight && Vector3.Angle(stepPos, Physics.gravity.normalized) > 90.0f)
+                    if (stepHeight < advancedSettings.maxStepHeight && Vector3.Angle(stepPos, Physics.gravity.normalized) > 90.0f)
                     {
                         transform.position += transform.up * stepHeight;
                     }
-                    
+
                 }
             }
         }
@@ -308,7 +304,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void setRotating(bool isRot)
         {
-            BisRotating = isRot;
+            if (isRot)
+            {
+                BisRotating = isRot;
+                m_RigidBody.drag = 16f;
+            }
+            else
+            {
+                BisRotating = isRot;
+                m_RigidBody.drag = 0f;
+            }
+
         }
 
         public Vector3 GetdesiredMove()

@@ -14,6 +14,7 @@ public class PickUpScript : MonoBehaviour {
     public float FmoveDampning = 1.0f;
     public float FrotDampning = 1.0f;
     public float FhighlightStrength = 0.005f;
+    public Animator aniTarget;
     public Color HighlightColor;
 
     GameObject GpickUpObject;
@@ -25,6 +26,9 @@ public class PickUpScript : MonoBehaviour {
     Quaternion realtivRotation;
     Rigidbody pickUpObjectRigidbody;
     bool BhasObject = false;
+    bool BdropTutorialPlayed = false;
+    bool BpickUpTutorialPlayed = false;
+    bool BSwitchPlatformTutorialPlayed = false;
     float ForiginalDrag;
     float ForiginalAngularDrag;
 
@@ -44,10 +48,28 @@ public class PickUpScript : MonoBehaviour {
                     if (objectHit.collider.tag == "PickUp")
                     {
                         HighlightObject(objectHit.collider.gameObject);
+                        if(!BpickUpTutorialPlayed)
+                        {
+                            aniTarget.SetTrigger("FadeInteractIn");
+                            BpickUpTutorialPlayed = true;
+                        }
                         GlastRaycastHit = objectHit.collider.gameObject;
                         if (Input.GetButtonDown("PickUp"))
                         {
+                            
                             PickUpObject(objectHit);
+                            if(!BdropTutorialPlayed && !GpickUpObject.name.Contains("SwitchPlatform"))
+                            {
+                                aniTarget.SetTrigger("DropIn");
+                                BdropTutorialPlayed = true;
+                            } else
+                            {
+                                if(!BSwitchPlatformTutorialPlayed)
+                                {
+                                    aniTarget.SetTrigger("SwitchPlatformIn");
+                                    BSwitchPlatformTutorialPlayed = true;
+                                }
+                            }
                             UnhighlightObject(objectHit.collider.gameObject);
                         }
                     } else
@@ -81,7 +103,9 @@ public class PickUpScript : MonoBehaviour {
             VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
             //Apply a velocity to the rigidbody towards the target position and rotate the object relative to the player 
             pickUpObjectRigidbody.velocity = (VtargetPosition - GpickUpObject.transform.position) * FmoveDampning;
-            RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
+            //pickUpObjectRigidbody.AddForce((VtargetPosition - GpickUpObject.transform.position) * FmoveDampning);
+            //RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
+            pickUpObjectRigidbody.angularVelocity = Quaternion.FromToRotation(GpickUpObject.transform.rotation, Camera.main.transform.rotation * realtivRotation);
             //If the player hits the PickUp button the object will be dropped
             if(Input.GetButtonDown("PickUp"))
             {

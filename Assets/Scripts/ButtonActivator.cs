@@ -4,6 +4,8 @@ using System.Collections;
 public class ButtonActivator : MonoBehaviour {
 
     public bool BhasAnimation = false;
+    public Animator feedbackText;
+    public string textTriggerName;
 
 
     public ButtonTarget[] targets;
@@ -35,6 +37,11 @@ public class ButtonActivator : MonoBehaviour {
             if (BhasAnimation)
             {
                 animation.SetTrigger("Activate");
+            }
+
+            if(feedbackText != null)
+            {
+                feedbackText.SetTrigger(textTriggerName);
             }
 
             if (buttonDelay > 0)

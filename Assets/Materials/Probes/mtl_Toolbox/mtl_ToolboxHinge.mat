@@ -141,6 +141,10 @@ Material:
         second: 0
       data:
         first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
           name: _ZWrite
         second: 1
       data:
@@ -151,10 +155,6 @@ Material:
         first:
           name: _BumpScale
         second: 1
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
       data:
         first:
           name: _OcclusionStrength
@@ -169,11 +169,11 @@ Material:
         second: 0
       data:
         first:
-          name: _Mode
+          name: _EmissionScaleUI
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
+          name: _Mode
         second: 0
       data:
         first:
@@ -187,10 +187,6 @@ Material:
         first:
           name: _SpecMultiply
         second: .0579999983
-      data:
-        first:
-          name: _Outline
-        second: 0
     m_Colors:
       data:
         first:
@@ -208,7 +204,3 @@ Material:
         first:
           name: _AlbedoMultiply
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _OutlineColor
-        second: {r: .110294104, g: .110294104, b: .110294104, a: 1}

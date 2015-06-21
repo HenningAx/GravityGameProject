@@ -20,6 +20,11 @@ public class DestroyFragmentedObject : MonoBehaviour {
     public float FfragsFadeOutTimeMax = 10.0f;
     public float FfragsFadeOutDelayMax = 10.0f;
 
+	private AudioSource source;
+
+
+    
+
     FadeScript[] fadeScriptComps;
 
 	void Start () {
@@ -27,6 +32,7 @@ public class DestroyFragmentedObject : MonoBehaviour {
         fadeScriptComps = GetComponentsInChildren<FadeScript>();
         //Set the fragments to inactive, so they are not visible while the object isn't destroyed
         Gfragments.SetActive(false);
+		source = Gfragments.GetComponent<AudioSource>();
 	}
 	
     void OnCollisionEnter(Collision col)
@@ -37,13 +43,15 @@ public class DestroyFragmentedObject : MonoBehaviour {
             {
 
                 Gfragments.SetActive(true);
+				source.Play();
                 foreach(FadeScript fs in fadeScriptComps)
                 {
                     fs.FadeOut(Random.Range(0, FfragsFadeOutTimeMax), Random.Range(0, FfragsFadeOutDelayMax));
                 }
                 transform.DetachChildren();
-                PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower, this.GetComponent<Rigidbody>().velocity);       
-                Destroy(this.gameObject); 
+                PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower, this.GetComponent<Rigidbody>().velocity);
+                Destroy(this.gameObject);
+
             }
         } else
         {
@@ -56,7 +64,10 @@ public class DestroyFragmentedObject : MonoBehaviour {
                 }
                 transform.DetachChildren();
                 PhysicFunctions.ExplodeOnImpact(this.transform.position, FexplodeRadius, FexplodePower);
-                Destroy(this.gameObject); 
+                Destroy(this.gameObject);
+
+                
+                
             }
         }
     }

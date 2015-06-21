@@ -67,24 +67,23 @@ public class GravityChanger : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
+        if (!Input.GetButton("StopGravityChange"))
         {
-            Debug.Log("Colliding with Wand: " + other.collider.name);
-            VCollisionPoint = other.contacts[0].point;
-            RaycastHit AttatchToWall;
-            if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up) - transform.position, out AttatchToWall, 2.0f))
+            if (other.collider.tag == "Wand" && other.gameObject != Ground && !BisRotating)
             {
-                Debug.Log("RaycastHit: " + AttatchToWall.collider.name);
-                RaycastHit Temp;
-                if (!Physics.SphereCast(AttatchToWall.point, CharacterCollider.radius, AttatchToWall.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
+                VCollisionPoint = other.contacts[0].point;
+                RaycastHit AttatchToWall;
+                if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up) - transform.position, out AttatchToWall, 2.0f))
                 {
-                    Debug.Log("NoSphereCastHit");
-                    if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1 && AttatchToWall.collider.tag == "Wand")
+                    RaycastHit Temp;
+                    if (!Physics.SphereCast(AttatchToWall.point, CharacterCollider.radius, AttatchToWall.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
                     {
-                        Debug.Log("ChangeGravity");
-                        StartWalkingOnWall(AttatchToWall);
+                        if (LastHitNormal != MathExtensions.round(AttatchToWall.normal) && LastHitNormal != MathExtensions.round(AttatchToWall.normal) * -1 && AttatchToWall.collider.tag == "Wand")
+                        {
+                            StartWalkingOnWall(AttatchToWall);
+                        }
                     }
-                } 
+                }
             }
         }
     }
@@ -93,6 +92,7 @@ public class GravityChanger : MonoBehaviour
     {
         if (other.gameObject.tag == "Wand" && !BisRotating)
         {
+            Debug.Log("ExitCollider " + other.gameObject.name);
             //Instantiate(CollisionExitTestObject, transform.position, transform.rotation);
             //Get the vector in which direction the player moves
             VMovmentVector = RigidbodyComp.velocity;
@@ -103,38 +103,37 @@ public class GravityChanger : MonoBehaviour
             RaycastHit hit;
             RaycastHit Temp;
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 1.5f, Color.green, 10.0f);
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 1.5f))
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 1.5f, 1<<8))
             {
-
-                if(Physics.SphereCast(transform.position, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
-                {
-                    print("Cast Position hit " + Temp.collider.name);
-                }
-                if(Physics.SphereCast(hit.point, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
-                {
-                    print("Cast Point hit " + Temp.collider.name);
-                }
-
+                Debug.Log("RaycastHit " + hit.collider.name);
                 //Check if there is enough space for the character to stand, otherwise don't change gravity
-                DebugExtensions.DrawPoint(transform.position - RigidbodyComp.velocity.normalized * CharacterCollider.radius);
                 if (!Physics.SphereCast(transform.position - RigidbodyComp.velocity.normalized * CharacterCollider.radius, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius) && !Physics.SphereCast(hit.point - CharacterCollider.radius * hit.normal, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height))
                 {
-                        if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
-                        {
-                            Debug.Log("ChangeByExit " + hit.normal + " triggered by " + hit.collider.name);
-                            StartWalkingOnWall(hit);
-                            //Apply some force to push the character over the edge
-                            //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
-                            RigidbodyComp.velocity = Vector3.zero;
-                            //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
-                            transform.position += VlastGravity.normalized * FOverEdgePush;
-                        }
-                } 
+                    Debug.Log("NoSphereCastHit");
+                    if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
+                    {
+                        Debug.Log("GravityShift");
+                        StartWalkingOnWall(hit);
+                        //Apply some force to push the character over the edge
+                        //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
+                        RigidbodyComp.velocity = Vector3.zero;
+                        //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
+                        transform.position += VlastGravity.normalized * FOverEdgePush;
+                    } else
+                    {
+                        Debug.DrawRay(hit.point, hit.normal * 3.0f, Color.green, 20.0f);
+                        Debug.Log(LastHitNormal);
+                        Debug.Log(hit.normal);
+                    }
+                } else
+                {
+                    Debug.Log("SpherecastHit " + Temp.collider.name);
+                }
             }
         }
     }
 
-    void StartWalkingOnWall(RaycastHit Wall)
+    public void StartWalkingOnWall(RaycastHit Wall)
     {
         //Set Start Time of Rotating Animation
         FstartTime = Time.time;
@@ -179,7 +178,7 @@ public class GravityChanger : MonoBehaviour
             RaycastHit Wall;
             if (Physics.Raycast(transform.position, transform.up, out Wall))
             {
-                
+
             }
             //Flip the Gravity using the surface hit by the Raycast
             RigidbodyComp.velocity = Vector3.zero;

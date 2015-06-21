@@ -12,6 +12,8 @@ public class LampFlickerScript : MonoBehaviour {
     public float FlightChance = 0.8f;
     public float FlightIntensity = 0.8f;
 
+    public AudioSource flickerSound;
+
     Light lightComp;
     Material materialComp;
     int Icountdown = 0;
@@ -31,6 +33,7 @@ public class LampFlickerScript : MonoBehaviour {
             {
                 lightComp.intensity = FlightIntensity;
                 materialComp.SetColor("_EmissionColor", Color.white);
+                flickerSound.Play();
             } else
             {
                 lightComp.intensity = 0.0f;
