@@ -106,6 +106,21 @@ public class PickUpScript : MonoBehaviour {
             //pickUpObjectRigidbody.AddForce((VtargetPosition - GpickUpObject.transform.position) * FmoveDampning);
             //RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
             //pickUpObjectRigidbody.angularVelocity = Quaternion.FromToRotation(GpickUpObject.transform.rotation, Camera.main.transform.rotation * realtivRotation);
+            //Vector3 x = Vector3.Cross((GpickUpObject.transform.rotation * Vector3.one).normalized, ((GpickUpObject.transform.rotation * (Camera.main.transform.rotation * realtivRotation)) * Vector3.one).normalized);
+            Vector3 x = Vector3.zero;
+            float theta = 0.0f;
+            (Quaternion.Inverse(GpickUpObject.transform.rotation) * (Camera.main.transform.rotation * realtivRotation)).ToAngleAxis(out theta, out x);
+            //Debug.DrawRay(GpickUpObject.transform.position, x * 2.0f, Color.cyan, 10.0f);
+            //print(x);
+            //print(theta);
+            //float theta = Mathf.Asin(x.magnitude);
+            //float angle = Vector3.Angle((GpickUpObject.transform.rotation * Vector3.one).normalized, ((GpickUpObject.transform.rotation * (Camera.main.transform.rotation * realtivRotation)) * Vector3.one).normalized) * Mathf.Deg2Rad;
+            //Vector3 w = x.normalized * theta * Mathf.Deg2Rad;
+            //Quaternion q = transform.rotation * pickUpObjectRigidbody.inertiaTensorRotation;
+            //Vector3 T = q * Vector3.Scale(pickUpObjectRigidbody.inertiaTensor, (Quaternion.Inverse(q) * w));
+            //pickUpObjectRigidbody.angularVelocity = w * FrotDampning;
+            pickUpObjectRigidbody.angularVelocity = x;
+
             //If the player hits the PickUp button the object will be dropped
             if(Input.GetButtonDown("PickUp"))
             {
@@ -174,7 +189,7 @@ public class PickUpScript : MonoBehaviour {
 
         //Set the drag of the pick up to 0 and the angular drag to 100 to gurantee a smooth movement but to prevent it from rotating all the time
         pickUpObjectRigidbody.drag = 0;
-        pickUpObjectRigidbody.angularDrag = 100;
+        pickUpObjectRigidbody.angularDrag = 0;
     }
 
     void CallButton(RaycastHit hit)
