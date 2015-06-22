@@ -105,7 +105,7 @@ public class PickUpScript : MonoBehaviour {
             pickUpObjectRigidbody.velocity = (VtargetPosition - GpickUpObject.transform.position) * FmoveDampning;
             //pickUpObjectRigidbody.AddForce((VtargetPosition - GpickUpObject.transform.position) * FmoveDampning);
             //RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
-            pickUpObjectRigidbody.angularVelocity = Quaternion.FromToRotation(GpickUpObject.transform.rotation, Camera.main.transform.rotation * realtivRotation);
+            //pickUpObjectRigidbody.angularVelocity = Quaternion.FromToRotation(GpickUpObject.transform.rotation, Camera.main.transform.rotation * realtivRotation);
             //If the player hits the PickUp button the object will be dropped
             if(Input.GetButtonDown("PickUp"))
             {

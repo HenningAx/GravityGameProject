@@ -103,7 +103,7 @@ public class GravityChanger : MonoBehaviour
             RaycastHit hit;
             RaycastHit Temp;
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 1.5f, Color.green, 10.0f);
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 1.5f, 1<<8))
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 3.0f, 1<<8))
             {
                 Debug.Log("RaycastHit " + hit.collider.name);
                 //Check if there is enough space for the character to stand, otherwise don't change gravity

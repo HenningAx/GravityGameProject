@@ -164,7 +164,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsGrounded && !BisRotating)
             {
                 //m_RigidBody.drag = advancedSettings.slowDownRate;
-                StairsHelper();
+                //StairsHelper();
                 SlowDown();
                 if (m_Jump)
                 {
