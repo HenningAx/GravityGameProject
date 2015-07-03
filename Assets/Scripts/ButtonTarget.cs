@@ -13,4 +13,9 @@ public class ButtonTarget : MonoBehaviour {
     {
         Debug.Log(this.name + " activated");
     }
+
+    public virtual void TargetDeactivate()
+    {
+        Debug.Log(this.name + " deactivated");
+    }
 }

@@ -51,6 +51,7 @@ public class GravityChanger : MonoBehaviour
         while (BisRotating)
         {
             RigidbodyComp.useGravity = false;
+            RigidbodyComp.velocity = Vector3.zero;
             float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
             //transform.position = Vector3.Lerp(StartPos, TargetPos, FdistCovered);
@@ -73,7 +74,7 @@ public class GravityChanger : MonoBehaviour
             {
                 VCollisionPoint = other.contacts[0].point;
                 RaycastHit AttatchToWall;
-                if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up) - transform.position, out AttatchToWall, 2.0f))
+                if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up) - transform.position, out AttatchToWall, 2.0f, 1<<8))
                 {
                     RaycastHit Temp;
                     if (!Physics.SphereCast(AttatchToWall.point, CharacterCollider.radius, AttatchToWall.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
@@ -92,7 +93,6 @@ public class GravityChanger : MonoBehaviour
     {
         if (other.gameObject.tag == "Wand" && !BisRotating)
         {
-            Debug.Log("ExitCollider " + other.gameObject.name);
             //Instantiate(CollisionExitTestObject, transform.position, transform.rotation);
             //Get the vector in which direction the player moves
             VMovmentVector = RigidbodyComp.velocity;
@@ -103,32 +103,21 @@ public class GravityChanger : MonoBehaviour
             RaycastHit hit;
             RaycastHit Temp;
             Debug.DrawRay(RayCastStart, RayCastDir.normalized * 1.5f, Color.green, 10.0f);
-            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 3.0f, 1<<8))
+            if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 3.0f, ~(1 << 13 | Physics.IgnoreRaycastLayer | 1 << 9)))
             {
-                Debug.Log("RaycastHit " + hit.collider.name);
                 //Check if there is enough space for the character to stand, otherwise don't change gravity
-                if (!Physics.SphereCast(transform.position - RigidbodyComp.velocity.normalized * CharacterCollider.radius, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius) && !Physics.SphereCast(hit.point - CharacterCollider.radius * hit.normal, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height))
+                if (!Physics.SphereCast(transform.position - RigidbodyComp.velocity.normalized * CharacterCollider.radius, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height - CharacterCollider.radius) && !Physics.SphereCast(hit.point - CharacterCollider.radius * hit.normal, CharacterCollider.radius, hit.normal, out Temp, CharacterCollider.height, ~(1 << 13 | Physics.IgnoreRaycastLayer | 1 << 9)))
                 {
-                    Debug.Log("NoSphereCastHit");
                     if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
                     {
-                        Debug.Log("GravityShift");
                         StartWalkingOnWall(hit);
                         //Apply some force to push the character over the edge
                         //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
                         RigidbodyComp.velocity = Vector3.zero;
                         //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
                         transform.position += VlastGravity.normalized * FOverEdgePush;
-                    } else
-                    {
-                        Debug.DrawRay(hit.point, hit.normal * 3.0f, Color.green, 20.0f);
-                        Debug.Log(LastHitNormal);
-                        Debug.Log(hit.normal);
-                    }
-                } else
-                {
-                    Debug.Log("SpherecastHit " + Temp.collider.name);
-                }
+                    }                   
+                } 
             }
         }
     }

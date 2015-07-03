@@ -199,24 +199,34 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 4.99949551
+  MaxDistance: 15
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .0666666701
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -15.0059967
+      outSlope: -15.0059967
+      tangentMode: 0
+    - time: .13333334
+      value: .5
+      inSlope: -2.82953072
+      outSlope: -2.82953072
+      tangentMode: 0
+    - time: .368306041
+      value: .124561407
+      inSlope: -.546528876
+      outSlope: -.546528876
       tangentMode: 0
     - time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -.0666933134
+      outSlope: -.0666933134
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -296,6 +306,7 @@ MonoBehaviour:
   IflickerRate: 3
   FlightChance: .800000012
   FlightIntensity: .800000012
+  flickerSound: {fileID: 8249068}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

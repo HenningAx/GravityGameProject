@@ -18,14 +18,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: e4800365da8f8804b8023c631d148f0b, type: 3}
-          m_Scale: {x: 1, y: 2}
+          m_Texture: {fileID: 2800000, guid: 39f03fa2edbb5234eb88fae6925c726a, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 5f215afe7684c6949b4970023e739241, type: 3}
+          m_Texture: {fileID: 2800000, guid: 2cc24594828be6c4aa64718155d9e329, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -46,7 +46,7 @@ Material:
         first:
           name: _OcclusionMap
         second:
-          m_Texture: {fileID: 2800000, guid: b20a96ef5ec65d84a811d43b947c19f3, type: 3}
+          m_Texture: {fileID: 2800000, guid: 2aa6b0f284d28b14e813d7eb521fedc1, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,7 +54,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 2}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -100,7 +100,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: .0161000006
       data:
         first:
           name: _ZWrite

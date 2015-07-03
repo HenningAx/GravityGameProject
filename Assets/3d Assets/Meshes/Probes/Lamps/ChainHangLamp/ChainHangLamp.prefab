@@ -13,7 +13,7 @@ GameObject:
   - 54: {fileID: 5432172}
   - 59: {fileID: 5934972}
   - 65: {fileID: 6513556}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ GameObject:
   - 54: {fileID: 5481574}
   - 59: {fileID: 5960124}
   - 65: {fileID: 6588728}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - 54: {fileID: 5433410}
   - 59: {fileID: 5965336}
   - 65: {fileID: 6511488}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - 54: {fileID: 5487668}
   - 59: {fileID: 5927126}
   - 65: {fileID: 6579006}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,9 @@ GameObject:
   - 54: {fileID: 5413336}
   - 59: {fileID: 5989998}
   - 65: {fileID: 6591070}
-  m_Layer: 0
+  - 114: {fileID: 11484184}
+  - 82: {fileID: 8240810}
+  m_Layer: 13
   m_Name: lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +108,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 449536}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +128,7 @@ GameObject:
   - 54: {fileID: 5400540}
   - 59: {fileID: 5980702}
   - 65: {fileID: 6592174}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +145,7 @@ GameObject:
   - 4: {fileID: 443194}
   - 33: {fileID: 3323630}
   - 23: {fileID: 2308954}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Connector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +162,7 @@ GameObject:
   - 4: {fileID: 420158}
   - 33: {fileID: 3339642}
   - 23: {fileID: 2381656}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +179,7 @@ GameObject:
   - 4: {fileID: 475580}
   - 33: {fileID: 3311926}
   - 23: {fileID: 2300610}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +197,7 @@ GameObject:
   - 33: {fileID: 3315010}
   - 23: {fileID: 2325734}
   - 65: {fileID: 6543070}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +217,7 @@ GameObject:
   - 54: {fileID: 5410880}
   - 59: {fileID: 5922246}
   - 65: {fileID: 6560298}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +234,7 @@ GameObject:
   - 4: {fileID: 445260}
   - 33: {fileID: 3310786}
   - 23: {fileID: 2373174}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +251,7 @@ GameObject:
   - 4: {fileID: 412700}
   - 33: {fileID: 3368430}
   - 23: {fileID: 2308286}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +271,7 @@ GameObject:
   - 54: {fileID: 5488282}
   - 59: {fileID: 5955332}
   - 65: {fileID: 6570296}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +287,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 480946}
   - 108: {fileID: 10842552}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +304,7 @@ GameObject:
   - 4: {fileID: 479804}
   - 33: {fileID: 3385420}
   - 23: {fileID: 2300290}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +321,7 @@ GameObject:
   - 4: {fileID: 496884}
   - 33: {fileID: 3349926}
   - 23: {fileID: 2374134}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +338,7 @@ GameObject:
   - 4: {fileID: 424786}
   - 33: {fileID: 3391854}
   - 23: {fileID: 2351190}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +353,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415744}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ChainHangLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +373,7 @@ GameObject:
   - 54: {fileID: 5446670}
   - 59: {fileID: 5914238}
   - 65: {fileID: 6524692}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +390,7 @@ GameObject:
   - 4: {fileID: 441662}
   - 33: {fileID: 3345326}
   - 23: {fileID: 2342762}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Grid07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +410,7 @@ GameObject:
   - 54: {fileID: 5458572}
   - 59: {fileID: 5923614}
   - 65: {fileID: 6560700}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +430,7 @@ GameObject:
   - 54: {fileID: 5412624}
   - 59: {fileID: 5947850}
   - 65: {fileID: 6562870}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +450,7 @@ GameObject:
   - 54: {fileID: 5479586}
   - 59: {fileID: 5946976}
   - 65: {fileID: 6522310}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +470,7 @@ GameObject:
   - 54: {fileID: 5411082}
   - 59: {fileID: 5974390}
   - 65: {fileID: 6504496}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ellipse05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +487,7 @@ GameObject:
   - 4: {fileID: 472056}
   - 33: {fileID: 3361376}
   - 23: {fileID: 2305730}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bulp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +537,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182884}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: .236998737, y: 12.2309999, z: -6.35999966}
+  m_LocalPosition: {x: -6.60299921, y: 12.2309999, z: 8.4299984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449536}
@@ -1760,7 +1762,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064493, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.57986954e-07, y: .0239798129, z: -1.06455911e-06}
+  m_ConnectedAnchor: {x: -2.57987637e-07, y: .0239798129, z: 1.79646383e-06}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1792,7 +1794,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064493, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.35624981e-07, y: .0239778608, z: -1.06455911e-06}
+  m_ConnectedAnchor: {x: -2.35625663e-07, y: .0239778608, z: 1.79646383e-06}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1824,7 +1826,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118065417, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.06683001e-06, y: .024565015, z: 1.77623733e-07}
+  m_ConnectedAnchor: {x: 1.79419294e-06, y: .024565015, z: 1.77623733e-07}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1856,7 +1858,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064463, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.06683001e-06, y: .0245646574, z: 2.6698865e-07}
+  m_ConnectedAnchor: {x: 1.79419294e-06, y: .0245646574, z: 2.6698865e-07}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1888,7 +1890,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064493, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.13263235e-07, y: .0239790119, z: -1.06455911e-06}
+  m_ConnectedAnchor: {x: -2.13263917e-07, y: .0239790119, z: 1.79646383e-06}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1920,7 +1922,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064493, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.68704133e-07, y: .0246687233, z: -1.06455911e-06}
+  m_ConnectedAnchor: {x: -1.68704815e-07, y: .0246687233, z: 1.79646383e-06}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1952,7 +1954,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064463, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.06683001e-06, y: .0245646276, z: 2.44626904e-07}
+  m_ConnectedAnchor: {x: 1.79419294e-06, y: .0245646276, z: 2.44626904e-07}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1984,7 +1986,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064493, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.36061335, y: 16.9565983, z: -47.9699326}
+  m_ConnectedAnchor: {x: -8.42938232, y: 16.9565983, z: -54.8099327}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2016,7 +2018,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064493, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.9098357e-07, y: .0246677995, z: -1.06455911e-06}
+  m_ConnectedAnchor: {x: -1.90984252e-07, y: .0246677995, z: 1.79646383e-06}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2048,7 +2050,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118065417, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.06683001e-06, y: .0245660581, z: 1.55344154e-07}
+  m_ConnectedAnchor: {x: 1.79419294e-06, y: .0245660581, z: 1.55344154e-07}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2080,7 +2082,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064463, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.06683001e-06, y: .0245638229, z: 1.99903312e-07}
+  m_ConnectedAnchor: {x: 1.79419294e-06, y: .0245638229, z: 1.99903312e-07}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2112,7 +2114,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: .118064463, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.06683001e-06, y: .0245657749, z: 2.22265044e-07}
+  m_ConnectedAnchor: {x: 1.79419294e-06, y: .0245657749, z: 2.22265044e-07}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2144,7 +2146,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: .460000008}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.85167906e-05, y: .017558217, z: .0061119874}
+  m_ConnectedAnchor: {x: 6.85167906e-05, y: .017558217, z: .00611484842}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2334,6 +2336,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0973154753, y: .13296701, z: .016497789}
   m_Center: {x: 0, y: .0515809581, z: 0}
+--- !u!82 &8240810
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112130}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24331498, guid: cdeb693d916ef3b4285a6bce9f8c7974,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: .230000004
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: .0652094781
+      value: 1
+      inSlope: -9.00359917
+      outSlope: -9.00359917
+      tangentMode: 0
+    - time: .173041895
+      value: .471052617
+      inSlope: -2.25089979
+      outSlope: -2.25089979
+      tangentMode: 0
+    - time: .467395276
+      value: .119736835
+      inSlope: -.562724948
+      outSlope: -.562724948
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!108 &10842552
 Light:
   m_ObjectHideFlags: 1
@@ -2344,8 +2426,8 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.20000005
-  m_Range: 13
+  m_Intensity: 2.20000005
+  m_Range: 18
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -2366,6 +2448,21 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11484184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4a044e8e90aba489ef7f813686cd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStone:
+  - {fileID: 8300000, guid: 247e46235eba8fd4fa261f24925972ea, type: 3}
+  OnMetal: []
+  OnWood: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

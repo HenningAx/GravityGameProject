@@ -4929,8 +4929,6 @@ GameObject:
   - 54: {fileID: 5452786}
   - 65: {fileID: 6574072}
   - 114: {fileID: 11445408}
-  - 114: {fileID: 11405304}
-  - 114: {fileID: 11424724}
   - 114: {fileID: 11448948}
   - 82: {fileID: 8269558}
   - 114: {fileID: 11444504}
@@ -7812,8 +7810,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183262}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 1.89200044, y: .430000305, z: 3.41099954}
-  m_LocalScale: {x: 1.50000024, y: 1.5, z: 1.50000024}
+  m_LocalPosition: {x: 3.63000035, y: .431999207, z: 3.43999934}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 463692}
   m_Father: {fileID: 0}
@@ -26350,20 +26348,40 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: .300000012
-  MaxDistance: .600000024
+  MinDistance: 1
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .0500000007
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -20.007967
+      outSlope: -20.007967
+      tangentMode: 0
+    - time: .100000001
+      value: .5
+      inSlope: -5.00199175
+      outSlope: -5.00199175
+      tangentMode: 0
+    - time: .193442628
+      value: .235526308
+      inSlope: -1.83294618
+      outSlope: -1.83294618
+      tangentMode: 10
+    - time: .406557351
+      value: .0574561357
+      inSlope: -.40416187
+      outSlope: -.40416187
+      tangentMode: 0
+    - time: .74754101
+      value: .00942982361
+      inSlope: -.00148635986
+      outSlope: -.00148635986
       tangentMode: 0
     - time: 1
       value: 0
@@ -26415,25 +26433,45 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: .5
   Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: .300000012
-  MaxDistance: .600000024
+  MinDistance: 1
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .0691121519
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -25.2600975
+      outSlope: -25.2600975
+      tangentMode: 0
+    - time: .108716115
+      value: .5
+      inSlope: -6.31502438
+      outSlope: -6.31502438
+      tangentMode: 0
+    - time: .187924027
+      value: .25
+      inSlope: -1.57875609
+      outSlope: -1.57875609
+      tangentMode: 0
+    - time: .369290709
+      value: .0912280679
+      inSlope: -.394689023
+      outSlope: -.394689023
+      tangentMode: 0
+    - time: .725466609
+      value: .0190789457
+      inSlope: -.0986722559
+      outSlope: -.0986722559
       tangentMode: 0
     - time: 1
       value: 0
@@ -26682,17 +26720,6 @@ MonoBehaviour:
   fadeTime: .5
   fadeInOnStart: 0
   fadeOutOnStart: 0
---- !u!114 &11405304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dbac2efc57e7641b9d2fce4bac4e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11406816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -27473,17 +27500,6 @@ MonoBehaviour:
   fadeTime: .5
   fadeInOnStart: 0
   fadeOutOnStart: 0
---- !u!114 &11424724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dbac2efc57e7641b9d2fce4bac4e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11424904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -28604,7 +28620,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnStone:
-  - {fileID: 8300000, guid: 638ac52e250ca1a499db2f782cdcddb0, type: 3}
+  - {fileID: 8300000, guid: 00c605590882afe4ea80839424527b64, type: 3}
+  - {fileID: 8300000, guid: 707348c58e018b441aec93fca5a16963, type: 3}
+  - {fileID: 8300000, guid: 37a949d46c209f442bb1ec8eed7c0ca4, type: 3}
   OnMetal: []
   OnWood: []
 --- !u!114 &11448998

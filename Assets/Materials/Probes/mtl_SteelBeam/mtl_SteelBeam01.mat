@@ -18,14 +18,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 4bdc6b4e2b5920940a8703b160afbc75, type: 3}
-          m_Scale: {x: 2, y: 5}
+          m_Texture: {fileID: 2800000, guid: 2a0ce3f92901f2b4eaa21ba9e276c5b9, type: 3}
+          m_Scale: {x: 4, y: 5}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 52c698545c09c9d4bb6282a6c3fb1a20, type: 3}
+          m_Texture: {fileID: 2800000, guid: 233435ebcb8333744b0f50e47ac6876e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,7 +54,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 2, y: 5}
+          m_Scale: {x: 4, y: 5}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -81,7 +81,7 @@ Material:
         first:
           name: _SpecGlossMap
         second:
-          m_Texture: {fileID: 2800000, guid: 44ebaaea6d68a734c86735e8c617877e, type: 3}
+          m_Texture: {fileID: 2800000, guid: fe412069f36729f408284c73abd2d56c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -145,7 +145,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .154411793, g: .117171302, b: .0885597095, a: 1}
+        second: {r: .411764681, g: .411764681, b: .411764681, a: 1}
       data:
         first:
           name: _SpecColor

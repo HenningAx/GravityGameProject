@@ -43,7 +43,10 @@ public class DestroyFragmentedObject : MonoBehaviour {
             {
 
                 Gfragments.SetActive(true);
-				source.Play();
+                if (source)
+                {
+                    source.Play();
+                }
                 foreach(FadeScript fs in fadeScriptComps)
                 {
                     fs.FadeOut(Random.Range(0, FfragsFadeOutTimeMax), Random.Range(0, FfragsFadeOutDelayMax));

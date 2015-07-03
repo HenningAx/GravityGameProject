@@ -10,6 +10,7 @@ TagManager:
   - Frags
   - RBActivator
   - Button
+  - DamagePlayer
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - WalkingObjects
-  - PickUpObjects
+  - PickUpObject
   - Piston
   - NonSelfColliding
   - PlayerBlocking

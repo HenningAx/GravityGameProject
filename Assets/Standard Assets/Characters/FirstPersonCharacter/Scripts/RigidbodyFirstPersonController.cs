@@ -145,7 +145,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GroundCheck();
             Vector2 input = GetInput();
 
-            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
+            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded) && !BisRotating)
             {
                 // always move along the camera forward as it is the direction that it being aimed at
                 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
@@ -157,15 +157,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (Vector3.ProjectOnPlane(m_RigidBody.velocity, transform.up).sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
                 {
-                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier() * (advancedSettings.slowDownRate + 5 / 5), ForceMode.Impulse);
+                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
+                    
                 }
             }
 
-            if (m_IsGrounded && !BisRotating)
+            if (m_IsGrounded)
             {
                 //m_RigidBody.drag = advancedSettings.slowDownRate;
                 //StairsHelper();
                 SlowDown();
+                
                 if (m_Jump)
                 {
                     m_RigidBody.drag = 0f;
@@ -275,8 +277,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * 0.98f, Physics.gravity.normalized, out hitInfo,
-                                   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance))
+            if (Physics.SphereCast(transform.position, m_Capsule.radius * 0.98f, Physics.gravity.normalized, out hitInfo, ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~(1 << 13 | Physics.IgnoreRaycastLayer | 1 << 9)))
             {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;
@@ -307,12 +308,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (isRot)
             {
                 BisRotating = isRot;
-                m_RigidBody.drag = 16f;
+                //m_RigidBody.drag = 10000f;
             }
             else
             {
                 BisRotating = isRot;
-                m_RigidBody.drag = 0f;
+                //m_RigidBody.drag = 0f;
             }
 
         }

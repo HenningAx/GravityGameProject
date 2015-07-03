@@ -34,6 +34,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &171852
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 480598}
+  - 82: {fileID: 8253802}
+  m_Layer: 0
+  m_Name: FlickerSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &172656
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +78,7 @@ GameObject:
   - 33: {fileID: 3319858}
   - 23: {fileID: 2344704}
   - 108: {fileID: 10877322}
+  - 114: {fileID: 11428446}
   m_Layer: 0
   m_Name: OpacityGlass
   m_TagString: Untagged
@@ -112,6 +129,7 @@ Transform:
   m_Children:
   - {fileID: 492514}
   - {fileID: 448186}
+  - {fileID: 480598}
   m_Father: {fileID: 400560}
   m_RootOrder: 0
 --- !u!4 &411028
@@ -139,6 +157,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 402786}
   m_RootOrder: 1
+--- !u!4 &480598
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171852}
+  m_LocalRotation: {x: -2.98023224e-08, y: 2.98023224e-08, z: -.707106829, w: .707106709}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 402786}
+  m_RootOrder: 2
 --- !u!4 &492514
 Transform:
   m_ObjectHideFlags: 1
@@ -366,6 +396,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .738591611, y: .038086839, z: .0299999993}
   m_Center: {x: .000294163794, y: -3.77721717e-16, z: 0}
+--- !u!82 &8253802
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171852}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24378086, guid: b760ee05718fa214281945efa21d66d8,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 765968e9dbeaac14a9f6979574543571, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 13.0799999
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: .12254902
+      value: 1
+      inSlope: -8.16326237
+      outSlope: -8.16326237
+      tangentMode: 0
+    - time: .231983289
+      value: .475877196
+      inSlope: -2.71834946
+      outSlope: -2.71834946
+      tangentMode: 0
+    - time: .477081299
+      value: .11008773
+      inSlope: -.538521171
+      outSlope: -.538521171
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -.0294298287
+      outSlope: -.0294298287
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!108 &10877322
 Light:
   m_ObjectHideFlags: 1
@@ -398,6 +508,21 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11428446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a45f54405f65064186b5c68c49e729d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IflickerRate: 2
+  FlightChance: .800000012
+  FlightIntensity: .800000012
+  flickerSound: {fileID: 8253802}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

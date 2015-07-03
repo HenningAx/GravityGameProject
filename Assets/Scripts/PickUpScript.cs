@@ -48,39 +48,23 @@ public class PickUpScript : MonoBehaviour {
                     if (objectHit.collider.tag == "PickUp")
                     {
                         HighlightObject(objectHit.collider.gameObject);
-                        if(!BpickUpTutorialPlayed)
-                        {
-                            aniTarget.SetTrigger("FadeInteractIn");
-                            BpickUpTutorialPlayed = true;
-                        }
                         GlastRaycastHit = objectHit.collider.gameObject;
                         if (Input.GetButtonDown("PickUp"))
-                        {
-                            
+                        {                            
                             PickUpObject(objectHit);
-                            if(!BdropTutorialPlayed && !GpickUpObject.name.Contains("SwitchPlatform"))
-                            {
-                                aniTarget.SetTrigger("DropIn");
-                                BdropTutorialPlayed = true;
-                            } else
-                            {
-                                if(!BSwitchPlatformTutorialPlayed)
-                                {
-                                    aniTarget.SetTrigger("SwitchPlatformIn");
-                                    BSwitchPlatformTutorialPlayed = true;
-                                }
-                            }
                             UnhighlightObject(objectHit.collider.gameObject);
                         }
                     } else
                     {
                         if(objectHit.collider.tag == "Button")
                         {
-                            if(objectHit.collider.GetComponent<ButtonActivator>().GetInRange())
+                            print(objectHit.collider);
+                            ButtonActivator buttonScript = objectHit.collider.GetComponentInParent<ButtonActivator>();
+                            if(buttonScript.GetInRange() && !buttonScript.BisActive)
                             {
                                 if (Input.GetButtonDown("PickUp"))
                                 {
-                                    CallButton(objectHit);
+                                    buttonScript.ButtonActivate();
                                 }
                                 HighlightObject(objectHit.collider.gameObject);
                                 GlastRaycastHit = objectHit.collider.gameObject; 
@@ -105,22 +89,12 @@ public class PickUpScript : MonoBehaviour {
             pickUpObjectRigidbody.velocity = (VtargetPosition - GpickUpObject.transform.position) * FmoveDampning;
             //pickUpObjectRigidbody.AddForce((VtargetPosition - GpickUpObject.transform.position) * FmoveDampning);
             //RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
-            //pickUpObjectRigidbody.angularVelocity = Quaternion.FromToRotation(GpickUpObject.transform.rotation, Camera.main.transform.rotation * realtivRotation);
-            //Vector3 x = Vector3.Cross((GpickUpObject.transform.rotation * Vector3.one).normalized, ((GpickUpObject.transform.rotation * (Camera.main.transform.rotation * realtivRotation)) * Vector3.one).normalized);
-            Vector3 x = Vector3.zero;
-            float theta = 0.0f;
+            Vector3 x;
+            float theta;
             (Quaternion.Inverse(GpickUpObject.transform.rotation) * (Camera.main.transform.rotation * realtivRotation)).ToAngleAxis(out theta, out x);
-            //Debug.DrawRay(GpickUpObject.transform.position, x * 2.0f, Color.cyan, 10.0f);
-            //print(x);
-            //print(theta);
-            //float theta = Mathf.Asin(x.magnitude);
-            //float angle = Vector3.Angle((GpickUpObject.transform.rotation * Vector3.one).normalized, ((GpickUpObject.transform.rotation * (Camera.main.transform.rotation * realtivRotation)) * Vector3.one).normalized) * Mathf.Deg2Rad;
-            //Vector3 w = x.normalized * theta * Mathf.Deg2Rad;
-            //Quaternion q = transform.rotation * pickUpObjectRigidbody.inertiaTensorRotation;
-            //Vector3 T = q * Vector3.Scale(pickUpObjectRigidbody.inertiaTensor, (Quaternion.Inverse(q) * w));
-            //pickUpObjectRigidbody.angularVelocity = w * FrotDampning;
-            pickUpObjectRigidbody.angularVelocity = x;
-
+            x = GpickUpObject.transform.rotation * x;
+            Vector3 w = x.normalized * theta * Mathf.Deg2Rad;
+            pickUpObjectRigidbody.angularVelocity = w * FrotDampning;
             //If the player hits the PickUp button the object will be dropped
             if(Input.GetButtonDown("PickUp"))
             {
@@ -192,10 +166,6 @@ public class PickUpScript : MonoBehaviour {
         pickUpObjectRigidbody.angularDrag = 0;
     }
 
-    void CallButton(RaycastHit hit)
-    {
-        hit.collider.GetComponent<ButtonActivator>().ButtonActivate();
-    }
 
     void HighlightObject(GameObject obj)
     {

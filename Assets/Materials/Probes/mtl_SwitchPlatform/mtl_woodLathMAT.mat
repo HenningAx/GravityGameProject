@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mtl_woodLathMAT
-  m_Shader: {fileID: 4800000, guid: 4d599954bc08d314c9fcd17653d76824, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8fb36b0e17e54aa4fbd76851afc8d439, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -31,6 +31,13 @@ Material:
       data:
         first:
           name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal2
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -180,6 +187,10 @@ Material:
         first:
           name: _SpecMultiply
         second: .236000001
+      data:
+        first:
+          name: _Outline
+        second: 0
     m_Colors:
       data:
         first:
@@ -197,3 +208,7 @@ Material:
         first:
           name: _AlbedoMultiply
         second: {r: .801470578, g: .701286733, b: .715796113, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}

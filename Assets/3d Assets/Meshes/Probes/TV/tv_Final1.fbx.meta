@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: f985c8cf778b0bb41b0de81cb8904c98
+timeCreated: 1435429983
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: button1
+    100002: button2
+    100004: CableBase
+    100006: CableBase2
+    100008: knob1
+    100010: knob2
+    100012: screen
+    100014: TV_box
+    100016: Tv_box_frame
+    100018: //RootNode
+    100020: TV_holder
+    100022: Tv_holderBase
+    100024: tvBoxpattern
+    100026: woodLath
+    100028: woodLath.001
+    100030: woodLath.002
+    100032: woodLath.003
+    400000: button1
+    400002: button2
+    400004: CableBase
+    400006: CableBase2
+    400008: knob1
+    400010: knob2
+    400012: screen
+    400014: TV_box
+    400016: Tv_box_frame
+    400018: //RootNode
+    400020: TV_holder
+    400022: Tv_holderBase
+    400024: tvBoxpattern
+    400026: woodLath
+    400028: woodLath.001
+    400030: woodLath.002
+    400032: woodLath.003
+    2300000: button1
+    2300002: button2
+    2300004: CableBase
+    2300006: CableBase2
+    2300008: knob1
+    2300010: knob2
+    2300012: screen
+    2300014: TV_box
+    2300016: Tv_box_frame
+    2300018: TV_holder
+    2300020: Tv_holderBase
+    2300022: tvBoxpattern
+    2300024: woodLath
+    2300026: woodLath.001
+    2300028: woodLath.002
+    2300030: woodLath.003
+    3300000: button1
+    3300002: button2
+    3300004: CableBase
+    3300006: CableBase2
+    3300008: knob1
+    3300010: knob2
+    3300012: screen
+    3300014: TV_box
+    3300016: Tv_box_frame
+    3300018: TV_holder
+    3300020: Tv_holderBase
+    3300022: tvBoxpattern
+    3300024: woodLath
+    3300026: woodLath.001
+    3300028: woodLath.002
+    3300030: woodLath.003
+    4300000: CableBase2
+    4300002: CableBase
+    4300004: knob2
+    4300006: TV_holder
+    4300008: Tv_holderBase
+    4300010: woodLath.003
+    4300012: woodLath.002
+    4300014: woodLath.001
+    4300016: tvBoxpattern
+    4300018: button1
+    4300020: button2
+    4300022: knob1
+    4300024: screen
+    4300026: Tv_box_frame
+    4300028: TV_box
+    4300030: woodLath
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

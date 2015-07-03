@@ -25,7 +25,8 @@ public class PistonScript : MonoBehaviour {
     Vector3 VmaxPos;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        VmaxPos = transform.position;
         //VparentOffset = Parent.transform.position;
         VparentOffset = transform.position;
         Transform ChildTemp = transform;
@@ -41,15 +42,10 @@ public class PistonScript : MonoBehaviour {
                 throw new Exception("Infinite Loop or to many childs");
             }
         }
-
-        VmaxPos = transform.position;
-	
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        
-
         if(transform.position.y < VmaxPos.y)
         {
             for (int i = 0; i < Childs.Count; i++)
@@ -60,6 +56,7 @@ public class PistonScript : MonoBehaviour {
         } else
         {
             this.GetComponent<Rigidbody>().MovePosition(VmaxPos);
+            this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
 	}
 }

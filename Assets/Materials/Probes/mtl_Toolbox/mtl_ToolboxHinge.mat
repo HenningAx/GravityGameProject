@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mtl_ToolboxHinge
-  m_Shader: {fileID: 4800000, guid: 4d599954bc08d314c9fcd17653d76824, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8fb36b0e17e54aa4fbd76851afc8d439, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -187,6 +187,10 @@ Material:
         first:
           name: _SpecMultiply
         second: .0579999983
+      data:
+        first:
+          name: _Outline
+        second: 0
     m_Colors:
       data:
         first:
@@ -204,3 +208,7 @@ Material:
         first:
           name: _AlbedoMultiply
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
