@@ -6,6 +6,8 @@ Obj/
 UnityGenerated/
 Library/
 Assets/AssetStoreTools*
+LightmapSnapshot.asset
+ReflectionProbe
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
