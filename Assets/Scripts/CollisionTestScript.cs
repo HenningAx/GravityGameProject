@@ -1,17 +1,9 @@
-﻿using UnityEngine;
+﻿//Script for testing with which objects a the gameobject this script is attached to is colliding
+
+using UnityEngine;
 using System.Collections;
 
 public class CollisionTestScript : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     void OnCollisionEnter(Collision col)
     {

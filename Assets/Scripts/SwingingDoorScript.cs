@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//A script to create a swinging door effected by gravity without using physics
+
+using UnityEngine;
 using System.Collections;
 
 public class SwingingDoorScript : MonoBehaviour {

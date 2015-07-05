@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿/* This script is used to rotate an object accordingly to the gravity and the mass point of the object
+ * the object is only rotated around its forward axis
+ * the upward direction of the object should point to the mass point
+ * it also inherits from ButtonTarget to recieve a button input
+ * while active the object rotates around its forward axis by a speed that can be set in the editor
+ * when it receives a activate input from a button the object stops rotating and gets effected by gravity
+ * when it receives a deactivate input from a button the object starts rotating and is not effected by gravity
+ * */
+
+
+using UnityEngine;
 using System.Collections;
 
 public class SpinningWheelScript : ButtonTarget
@@ -46,7 +56,7 @@ public class SpinningWheelScript : ButtonTarget
 
         if (BisActive)
         {
-            gameObject.transform.Rotate(transform.forward, FrotSpeedActive * Time.deltaTime);
+            gameObject.transform.Rotate(transform.forward, FrotSpeedActive * Time.deltaTime, Space.World);
         }
 
         VGravity = Physics.gravity;
@@ -75,6 +85,7 @@ public class SpinningWheelScript : ButtonTarget
 
     public override void TargetActivate()
     {
+        //Stop the rotation
         base.TargetActivate();
         StartCoroutine(StopRot(FstopTime));
         StartCoroutine(AudioFadeOut(FanSound, FstopTime));
@@ -82,6 +93,7 @@ public class SpinningWheelScript : ButtonTarget
 
     public override void TargetDeactivate()
     {
+        //Start the rotation
         base.TargetDeactivate();
         StartCoroutine(StartRot(FstopTime));
         StartCoroutine(AudioFadeIn(FanSound, FstopTime));
@@ -89,6 +101,7 @@ public class SpinningWheelScript : ButtonTarget
 
     IEnumerator AudioFadeOut(AudioSource Clip, float fadetime)
     {
+        //Fade out the sound of the object
         float fadespeed = 1 / fadetime * Time.deltaTime;
         float t = 1;
         // print(t);
@@ -104,6 +117,7 @@ public class SpinningWheelScript : ButtonTarget
 
     IEnumerator AudioFadeIn(AudioSource Clip, float fadetime)
     {
+        //Fade in the sound of the object
         Clip.Play();
         Clip.volume = 0.0f;
         float fadespeed = 1 / fadetime * Time.deltaTime;
@@ -118,6 +132,7 @@ public class SpinningWheelScript : ButtonTarget
         
     }
 
+    //Coroutine to stop the rotation over a given time
     IEnumerator StopRot(float sTime)
     {
         float stopSpeed = 1 / sTime * Time.deltaTime;
@@ -133,6 +148,7 @@ public class SpinningWheelScript : ButtonTarget
         BisActive = false;
     }
 
+    //Coroutine to stop the rotation over a given time
     IEnumerator StartRot(float sTime)
     {
         BisActive = true;
@@ -148,6 +164,7 @@ public class SpinningWheelScript : ButtonTarget
         
     }
 
+    //Damage the player if he contacts with the active object
     void OnCollisionEnter(Collision col)
     {
         if(col.collider.tag == "Player")

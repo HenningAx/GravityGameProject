@@ -109,14 +109,14 @@ Material:
         first:
           name: _Spec
         second:
-          m_Texture: {fileID: 2800000, guid: c1233da8f66d0ba41b2f27de841372d5, type: 3}
+          m_Texture: {fileID: 2800000, guid: f821d5bdb70cc2f47888a96bf1d71eb9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _Gloss
         second:
-          m_Texture: {fileID: 2800000, guid: c1233da8f66d0ba41b2f27de841372d5, type: 3}
+          m_Texture: {fileID: 2800000, guid: f821d5bdb70cc2f47888a96bf1d71eb9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:

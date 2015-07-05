@@ -1,13 +1,11 @@
-﻿using UnityEngine;
+﻿/* The standard ButtonTarget script
+ * the the function should be overriden by a script extending the ButtonTarget class */
+
+using UnityEngine;
 using System.Collections;
 
 public class ButtonTarget : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
 
     public virtual void TargetActivate()
     {

@@ -54,7 +54,6 @@ public class GravityChanger : MonoBehaviour
             RigidbodyComp.velocity = Vector3.zero;
             float FdistCovered = (Time.time - FstartTime) * FRotSpeed;
             transform.rotation = Quaternion.Slerp(StartRot, TargetRot, FdistCovered);
-            //transform.position = Vector3.Lerp(StartPos, TargetPos, FdistCovered);
             if (FdistCovered >= 1)
             {
                 BisRotating = false;
@@ -74,7 +73,7 @@ public class GravityChanger : MonoBehaviour
             {
                 VCollisionPoint = other.contacts[0].point;
                 RaycastHit AttatchToWall;
-                if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up) - transform.position, out AttatchToWall, 2.0f, 1<<8))
+                if (Physics.Raycast(transform.position, (VCollisionPoint + transform.up/2) - transform.position, out AttatchToWall, 2.0f, 1 << 8))
                 {
                     RaycastHit Temp;
                     if (!Physics.SphereCast(AttatchToWall.point, CharacterCollider.radius, AttatchToWall.normal, out Temp, CharacterCollider.height - CharacterCollider.radius))
@@ -93,7 +92,6 @@ public class GravityChanger : MonoBehaviour
     {
         if (other.gameObject.tag == "Wand" && !BisRotating)
         {
-            //Instantiate(CollisionExitTestObject, transform.position, transform.rotation);
             //Get the vector in which direction the player moves
             VMovmentVector = RigidbodyComp.velocity;
             //Project the vector on the plane the character is walking on 
@@ -102,7 +100,6 @@ public class GravityChanger : MonoBehaviour
             Vector3 RayCastDir = (VMovmentVector.normalized * CharacterCollider.radius * -1) + (transform.up * CharacterCollider.radius * -FMinimumObjectSizeToWalkOn);
             RaycastHit hit;
             RaycastHit Temp;
-            Debug.DrawRay(RayCastStart, RayCastDir.normalized * 1.5f, Color.green, 10.0f);
             if (Physics.Raycast(RayCastStart, RayCastDir, out hit, 3.0f, ~(1 << 13 | Physics.IgnoreRaycastLayer | 1 << 9)))
             {
                 //Check if there is enough space for the character to stand, otherwise don't change gravity
@@ -111,10 +108,7 @@ public class GravityChanger : MonoBehaviour
                     if (LastHitNormal != MathExtensions.round(hit.normal) && LastHitNormal != (MathExtensions.round(hit.normal) * -1) && hit.collider.tag == "Wand")
                     {
                         StartWalkingOnWall(hit);
-                        //Apply some force to push the character over the edge
-                        //RigidbodyComp.velocity = RigidbodyComp.velocity.normalized;
                         RigidbodyComp.velocity = Vector3.zero;
-                        //RigidbodyComp.AddForce(VlastGravity.normalized * FOverEdgePush, ForceMode.Impulse);
                         transform.position += VlastGravity.normalized * FOverEdgePush;
                     }                   
                 } 
@@ -138,12 +132,6 @@ public class GravityChanger : MonoBehaviour
         VUpVector = Wall.normal;
         //Get the new rotation by creating a rotation, that rotates around the axis between the current and the new up Vector
         TargetRot = Quaternion.AngleAxis(-Vector3.Angle(VUpVector, transform.up), Vector3.Cross(VUpVector, transform.up).normalized) * transform.rotation;
-        //Quaternion TargetUpRot = Quaternion.Euler(Vector3.Cross(VUpVector, transform.up).normalized * -Vector3.Angle(VUpVector, transform.up)) * transform.rotation;
-        //Vector3 Pivot =transform.position - transform.up * (this.GetComponent<CapsuleCollider>().height / 2);
-        //StartPos = transform.position;
-        //TargetPos = TargetRot * (transform.position - Pivot) + Pivot;
-        //print(Pivot);
-        //print(TargetRot * Pivot);
 
         //Set the Character in RotationState
         BisRotating = true;
@@ -163,12 +151,6 @@ public class GravityChanger : MonoBehaviour
     {
         if (other.gameObject != Ground && !BisRotating)
         {
-            //Sent an Raycast straight upwards to find the new ground of the Player
-            RaycastHit Wall;
-            if (Physics.Raycast(transform.position, transform.up, out Wall))
-            {
-
-            }
             //Flip the Gravity using the surface hit by the Raycast
             RigidbodyComp.velocity = Vector3.zero;
 
@@ -177,9 +159,6 @@ public class GravityChanger : MonoBehaviour
 
             //Set Animation Speed
             FRotSpeed = FRotSpeedFlip;
-
-            //Set the new Ground the Player is walking on
-            //Ground = Wall.collider.gameObject;
 
             //Callculate the new rotation
             StartRot = transform.rotation;

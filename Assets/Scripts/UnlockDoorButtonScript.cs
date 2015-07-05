@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Activates a rigidbody if the script receives an activate input from a button
+
+
+using UnityEngine;
 using System.Collections;
 
 public class UnlockDoorButtonScript : ButtonTarget {

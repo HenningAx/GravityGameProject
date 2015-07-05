@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Activates the targets when the player enters the trigger
+
+
+using UnityEngine;
 using System.Collections;
 
 public class TriggerActivatorScript : MonoBehaviour {

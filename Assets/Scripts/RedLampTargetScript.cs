@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//A script inheriting from ButtonTarget and used to activate a light
+
+using UnityEngine;
 using System.Collections;
 
 public class RedLampTargetScript : ButtonTarget {

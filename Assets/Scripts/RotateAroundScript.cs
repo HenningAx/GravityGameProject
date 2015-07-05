@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//A script just to test Unity's RotateAround function
+
+using UnityEngine;
 using System.Collections;
 
 public class RotateAroundScript : MonoBehaviour {

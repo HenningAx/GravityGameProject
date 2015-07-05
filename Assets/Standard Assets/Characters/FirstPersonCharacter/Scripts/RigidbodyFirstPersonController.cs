@@ -75,6 +75,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public bool airControl; // can the user control the direction that is being moved in the air
             public float stickToGroundStrength = 2.0f; // the strength the character tries to stick to the ground
             public float maxStepHeight = 0.5f;
+            public bool walkOverStairs = false;
         }
 
 
@@ -162,11 +163,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
 
+            
+
             if (m_IsGrounded)
             {
-                //m_RigidBody.drag = advancedSettings.slowDownRate;
-                //StairsHelper();
                 SlowDown();
+                if(advancedSettings.walkOverStairs)
+                {
+                    StairsHelper();
+                    
+                }
                 
                 if (m_Jump)
                 {
@@ -221,7 +227,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             direction = cleanDesiredMove - transform.up * 10.0f;
             RaycastHit hit;
             Debug.DrawRay(transform.position + cleanDesiredMove * m_Capsule.radius, direction.normalized * m_Capsule.height / 2f);
-            if (Physics.Raycast(transform.position + cleanDesiredMove * m_Capsule.radius, direction, out hit, m_Capsule.height / 2f))
+            if (Physics.Raycast(transform.position + cleanDesiredMove * m_Capsule.radius, direction, out hit, m_Capsule.height / 2f, ~(1<<8 | Physics.IgnoreRaycastLayer)))
             {
                 if (Vector3.Angle(hit.normal, -Physics.gravity.normalized) < 5.0f)
                 {
@@ -231,6 +237,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (stepHeight < advancedSettings.maxStepHeight && Vector3.Angle(stepPos, Physics.gravity.normalized) > 90.0f)
                     {
                         transform.position += transform.up * stepHeight;
+                        print("Stair");
                     }
 
                 }
@@ -295,7 +302,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void SlowDown()
         {
-            m_RigidBody.velocity = Vector3.Scale(m_RigidBody.velocity, Vector3.ProjectOnPlane(Vector3.one, transform.up) * (1 / advancedSettings.slowDownRate) + MathExtensions.absComps(transform.up));
+            Vector3 newVelo = Vector3.ProjectOnPlane(m_RigidBody.velocity, transform.up) * (1 / advancedSettings.slowDownRate);
+            newVelo += Vector3.Project(m_RigidBody.velocity, transform.up);
+            m_RigidBody.velocity = newVelo;
+            //m_RigidBody.velocity = Vector3.Scale(m_RigidBody.velocity, Vector3.ProjectOnPlane(Vector3.one, transform.up) * (1 / advancedSettings.slowDownRate) + MathExtensions.absComps(transform.up));
         }
 
         public void ReInitMouseLook()

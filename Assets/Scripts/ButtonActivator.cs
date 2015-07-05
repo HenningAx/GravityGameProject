@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿/* This script is used to communicate from a button to a target
+ * the target has to be assigned
+ * the button can have a timer after which the targets get deactivated
+ * while the timer is running, the button is playing a tick sound */
+
+
+
+
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -13,6 +21,7 @@ public class ButtonActivator : MonoBehaviour {
     }
 
     [Serializable]
+    //Variables for the sound
     public class ButtonSound
     {
         public bool BhasSound = false;
@@ -23,6 +32,7 @@ public class ButtonActivator : MonoBehaviour {
     }
 
     [Serializable]
+    //Variables for a timer
     public class ButtonTimer
     {
         public bool BhasTimer = false;
@@ -51,6 +61,7 @@ public class ButtonActivator : MonoBehaviour {
 	
 	}
 
+    //Coroutine for activate the target with a delay
     IEnumerator delay(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -68,7 +79,7 @@ public class ButtonActivator : MonoBehaviour {
         }
     }
 	
-
+    //Method that is called when the button is activated
     public void ButtonActivate()
     {
         if (playerInRange && !BisActive)
@@ -128,12 +139,14 @@ public class ButtonActivator : MonoBehaviour {
         return playerInRange;
     }
 
+    //Coroutine for the button timer
     IEnumerator ButtonCountdown(float timer)
     {
-        float t = 0;
         int countdown = (int) (timer / Time.deltaTime);
+        //Starting the tick sound
         StartCoroutine(PlayTickSound(countdown));
         yield return new WaitForSeconds(timer);
+        //Deactivate the targets after the timer ran out
         foreach(ButtonTarget b in targets)
         {
             b.TargetDeactivate();
@@ -146,16 +159,19 @@ public class ButtonActivator : MonoBehaviour {
         StopAllCoroutines();
     }
 
+    //Coroutine for playing the tick sound, giving the player feedback over the button timer
     IEnumerator PlayTickSound(int countdown)
     {
         float tickTimer = 4.0f;
         float startTime = Time.time;
+        //While the button is active the tick sound is played
         while(BisActive)
         {
             yield return new WaitForSeconds(tickTimer);
             buttonSound.tickSound.Play();
             if (tickTimer > 0.2f)
             {
+                //The sound between the ticks is reduced
                 tickTimer -= tickTimer / ((buttonTimer.Ftimer - (Time.time - startTime)) / tickTimer);
             }
             else

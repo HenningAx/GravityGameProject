@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* This script should be attached to a switch platform
+ * when the player enters the platform the FlipGravity function is called
+ * */
+
+using UnityEngine;
 using System.Collections;
 
 public class SwitchPlatformScript : MonoBehaviour {

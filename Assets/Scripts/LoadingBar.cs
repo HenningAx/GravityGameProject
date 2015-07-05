@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* A script for a loading bar that shows the process of loading a scene
+ * */
+
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -34,6 +38,5 @@ public class LoadingBar : MonoBehaviour {
     {
         async = Application.LoadLevelAsync(levelID);
         yield return async;
-        Debug.Log("LoadComplete");
     }
 }

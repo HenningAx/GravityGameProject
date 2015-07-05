@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/* This script sets a new checkpoint
+ * the script has to be attached to the checkpoint
+ * the setCheckpoint function has to be called from outside for example by a trigger
+ * a CheckPointManager need to be in the scene to capture the checkpoint
+ * */
+
+using UnityEngine;
 using System.Collections;
 
 public class SetCheckpoint : MonoBehaviour {

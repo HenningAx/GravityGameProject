@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/* This script is used to create a pressure plate
+ * the pressure plate moves down if a rigidbody lays on it which mass is higher then the threshold
+ * */
+
+
+using UnityEngine;
 using System.Collections;
 
 public class PressurePlate : MonoBehaviour {
@@ -17,14 +22,12 @@ public class PressurePlate : MonoBehaviour {
     GameObject GtriggerObject;
     GameObject GpressurePlate;
 
-	// Use this for initialization
 	void Start () 
     {
         GpressurePlate = transform.FindChild("PressurePlate").gameObject;
         VoriginalPos = GpressurePlate.transform.position;
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () 
     {
         if(BisMoving)

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿/* This script is used for setting checkpoints and resetting the player to them
+ * a initial checkpoint has to be assigned */
+
+using UnityEngine;
 using System.Collections;
 
 public class CheckPointManager : MonoBehaviour {
@@ -18,12 +21,14 @@ public class CheckPointManager : MonoBehaviour {
         changerScript = Target.GetComponent<GravityChanger>();
     }
 
+    //Set a new Checkpoint
     public void setCheckpoint(Vector3 newCheckpoint, RaycastHit gd)
     {
         VactiveCheckpoint = newCheckpoint;
         ground = gd;
     }
 
+    //Reset the player to the last Checkpoint
     public void resetToCheckpoint()
     {
         Target.transform.position = VactiveCheckpoint;

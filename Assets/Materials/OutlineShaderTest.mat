@@ -37,13 +37,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
@@ -84,6 +77,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -99,6 +99,10 @@ Material:
         second: 0
       data:
         first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
           name: _ZWrite
         second: 1
       data:
@@ -109,10 +113,6 @@ Material:
         first:
           name: _BumpScale
         second: 1
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
       data:
         first:
           name: _OcclusionStrength
@@ -127,11 +127,11 @@ Material:
         second: 0
       data:
         first:
-          name: _Mode
+          name: _EmissionScaleUI
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
+          name: _Mode
         second: 0
       data:
         first:
@@ -140,7 +140,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00499999989
+        second: 0
     m_Colors:
       data:
         first:
@@ -149,7 +149,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .897058845, g: 0, b: 0, a: 1}
       data:
         first:
           name: _SpecColor

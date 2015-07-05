@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Event script for the elvator crash
+
+
+using UnityEngine;
 using System.Collections;
 
 public class ElevatorCrash : MonoBehaviour {
@@ -16,6 +19,7 @@ public class ElevatorCrash : MonoBehaviour {
 	
     void OnCollisionEnter(Collision col)
     {
+        //Kill the player and add an explosion force to surronding rigidbodies
         if(col.collider.tag == "DamagePlayer" && !BisCrashed && BplayerInside)
         {
             crashSound.Play();
@@ -25,6 +29,8 @@ public class ElevatorCrash : MonoBehaviour {
         }
     }
 
+
+    //Set the playerInside variable to only be true if the player is inside the elevator
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")

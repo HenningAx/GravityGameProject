@@ -47,6 +47,7 @@ public class PickUpScript : MonoBehaviour {
                 //If the player hits the PickUp Button the object will be picked up
                     if (objectHit.collider.tag == "PickUp")
                     {
+                        //Highlight the Object if the player hovers over it
                         HighlightObject(objectHit.collider.gameObject);
                         GlastRaycastHit = objectHit.collider.gameObject;
                         if (Input.GetButtonDown("PickUp"))
@@ -56,16 +57,19 @@ public class PickUpScript : MonoBehaviour {
                         }
                     } else
                     {
+                        //React to Buttons
                         if(objectHit.collider.tag == "Button")
                         {
-                            print(objectHit.collider);
+                            //Get the button script
                             ButtonActivator buttonScript = objectHit.collider.GetComponentInParent<ButtonActivator>();
                             if(buttonScript.GetInRange() && !buttonScript.BisActive)
                             {
                                 if (Input.GetButtonDown("PickUp"))
                                 {
+                                    //Activate the Button
                                     buttonScript.ButtonActivate();
                                 }
+                                //Highlight the button
                                 HighlightObject(objectHit.collider.gameObject);
                                 GlastRaycastHit = objectHit.collider.gameObject; 
                             }
@@ -87,8 +91,7 @@ public class PickUpScript : MonoBehaviour {
             VtargetPosition = Camera.main.transform.position + Camera.main.transform.forward.normalized * Foffset;
             //Apply a velocity to the rigidbody towards the target position and rotate the object relative to the player 
             pickUpObjectRigidbody.velocity = (VtargetPosition - GpickUpObject.transform.position) * FmoveDampning;
-            //pickUpObjectRigidbody.AddForce((VtargetPosition - GpickUpObject.transform.position) * FmoveDampning);
-            //RotateToWithDamp(GpickUpObject, Camera.main.transform.rotation * realtivRotation, FrotDampning);
+            //Apply a angular velocity to rotate the rigidbody towards the tartget rotation relative to the camera
             Vector3 x;
             float theta;
             (Quaternion.Inverse(GpickUpObject.transform.rotation) * (Camera.main.transform.rotation * realtivRotation)).ToAngleAxis(out theta, out x);

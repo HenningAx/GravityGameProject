@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿//This script activates the rigidbody this script is attached to when the Activate function is called
+
+using UnityEngine;
 using System.Collections;
 
 public class RBActivateByTrigger : MonoBehaviour {
 
     Rigidbody RBComp;
 
-	// Use this for initialization
 	void Start () {
         RBComp = this.GetComponent<Rigidbody>();
         RBComp.isKinematic = true;

@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿//A script to capture screenshots
+
+using UnityEngine;
 using System.Collections;
 
 public class ScreenshotCapture : MonoBehaviour {
+
+    int ScreenshotNum = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +16,8 @@ public class ScreenshotCapture : MonoBehaviour {
 	void Update () {
 	    if(Input.GetButtonDown("Screenshot"))
         {
-            Application.CaptureScreenshot("Screenshot.png");
+            Application.CaptureScreenshot("Screenshot" + ScreenshotNum+ ".png", 2);
+            ScreenshotNum++;
         }
 	}
 }

@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 412118}
   - 54: {fileID: 5436304}
   - 65: {fileID: 6548866}
+  - 114: {fileID: 11420642}
   m_Layer: 2
   m_Name: DeathParent
   m_TagString: Untagged
@@ -82,7 +83,7 @@ GameObject:
   - 4: {fileID: 419614}
   - 20: {fileID: 2013614}
   - 81: {fileID: 8179892}
-  - 114: {fileID: 11493602}
+  - 114: {fileID: 11420508}
   m_Layer: 2
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -133,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.6299992, y: 6.19999981, z: -104.589996}
+  m_LocalPosition: {x: 4.40999985, y: 1.24000001, z: 8.60999966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 412118}
@@ -441,12 +442,47 @@ MonoBehaviour:
     smooth: 1
     smoothTime: 18
   advancedSettings:
-    groundCheckDistance: .100000001
+    groundCheckDistance: .300000012
     stickToGroundHelperDistance: .600000024
     slowDownRate: 1.29999995
     airControl: 0
-    stickToGroundStrength: 2
+    stickToGroundStrength: 5
     maxStepHeight: .649999976
+    walkOverStairs: 1
+--- !u!114 &11420508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Radius: .400000006
+  m_SampleCount: 2
+  m_OcclusionIntensity: 1
+  m_Blur: 3
+  m_Downsampling: 1
+  m_OcclusionAttenuation: 1
+  m_MinZ: .00999999978
+  m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}
+  m_RandomTexture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
+--- !u!114 &11420642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a55ddfa4ad74043947068510a48e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnPoint: {fileID: 0}
+  PlayerPrefab: {fileID: 120212}
+  DamageUI: {fileID: 0}
 --- !u!114 &11423942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,58 +546,6 @@ MonoBehaviour:
   FhighlightStrength: .00999999978
   aniTarget: {fileID: 0}
   HighlightColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &11493602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c81407209f85e4c87c0cda8b32868e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 2013614}
-  motionBob:
-    HorizontalBobRange: .100000001
-    VerticalBobRange: .0500000007
-    Bobcurve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: .5
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 1.5
-        value: -1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 2
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    VerticaltoHorizontalRatio: 2
-  jumpAndLandingBob:
-    BobDuration: .150000006
-    BobAmount: .200000003
-  rigidbodyFirstPersonController: {fileID: 11405892}
-  StrideInterval: 4
-  RunningStrideLengthen: .722000003
 --- !u!136 &13605170
 CapsuleCollider:
   m_ObjectHideFlags: 1

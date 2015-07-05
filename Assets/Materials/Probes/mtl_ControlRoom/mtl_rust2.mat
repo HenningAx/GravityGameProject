@@ -95,7 +95,7 @@ Material:
         first:
           name: _Normal
         second:
-          m_Texture: {fileID: 2800000, guid: 3b5f883d6793ba44b90cce055f2d22b9, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -109,14 +109,14 @@ Material:
         first:
           name: _Spec
         second:
-          m_Texture: {fileID: 2800000, guid: fa598ebeda7d8f842833ac20e755fc6a, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _Gloss
         second:
-          m_Texture: {fileID: 2800000, guid: fa598ebeda7d8f842833ac20e755fc6a, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -189,11 +189,11 @@ Material:
       data:
         first:
           name: _GlossMultiply
-        second: .275000006
+        second: .330000013
       data:
         first:
           name: _SpecMultiply
-        second: .442999989
+        second: .00999999978
     m_Colors:
       data:
         first:

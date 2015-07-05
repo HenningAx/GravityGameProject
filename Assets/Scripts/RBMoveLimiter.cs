@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/* This script limits the movement of a rigidbody to stay inside the min and max pos
+ * only works if the movment is in the forward direction only
+ * the movment is limited by the bounds of the object collider
+ * */
+
+
+using UnityEngine;
 using System.Collections;
 
 public class RBMoveLimiter : MonoBehaviour {
@@ -11,7 +17,6 @@ public class RBMoveLimiter : MonoBehaviour {
     float FmaxPosValue;
 
 
-	// Use this for initialization
 	void Start () {
         objectCollider = GetComponentInChildren<Collider>();
         VRealtiveForwardVector = objectCollider.transform.rotation * transform.forward;
@@ -24,7 +29,6 @@ public class RBMoveLimiter : MonoBehaviour {
         FmaxPosValue = maxPosForwardComp.x + maxPosForwardComp.y + maxPosForwardComp.z;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         Vector3 posForwardComp = Vector3.Scale(transform.position, transform.forward);
         float forwardValue = posForwardComp.x + posForwardComp.y + posForwardComp.z;
